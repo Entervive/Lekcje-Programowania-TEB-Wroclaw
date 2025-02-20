@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background-color: darkslategray;
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: fit-content;
+    font-size: x-large;
+}
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+table {
+    background-color: rgb(105, 108, 112);
+    color: black;
+    width: 50%;
+    height: fit-content;
+}
+tr:nth-of-type(even) {
+    border-color: rgb(56, 58, 60);
+    color: rgb(180, 180, 180);
+}
+td {
+    border: 1px solid black;
+}
+footer {
+    bottom: 0;
+    margin: auto;
+}
+header, footer {
+    background-color: slategray;
+    width: 100%;
+}
+header {
+    position: sticky;
+}
+header {
+    margin-bottom: 10px;
+}
+img {
+    width: 250px;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    color: white;
+}
+a:hover {
+    background-color: black;
+    color: white;
+}
+::placeholder {
+    color: white;
+    padding-left: 15px;
+}
+input[type="text"] {
+    transition: all 2s;
+    background-color: slategray;
+    border: none;
+    width: 30%;
+    height: 25px;
+    color: white;
+}
+input[type="number"] {
+    transition: all 2s;
+    background-color: slategray;
+    border: none;
+    width: 10%;
+    height: 25px;
+    color: white;
+}
+input[type="submit"] {
+    transition: all 2s;
+    background-color: slategray;
+    border: none;
+    width: 15%;
+    height: 25px;
+    color: white;
+}

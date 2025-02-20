@@ -1,0 +1,35 @@
+SELECT
+	a.last_name
+FROM
+	actor a
+WHERE
+	a.last_name LIKE "%s"
+
+===============================================
+
+SELECT
+	f.title
+FROM
+	film f 
+WHERE
+	f.length > 150
+
+===============================================
+
+SELECT
+	*
+FROM
+	customer c
+WHERE
+	c.active = 1
+
+===============================================
+
+SELECT
+	*
+FROM
+	payment p
+WHERE
+	p.amount > 5
+ORDER BY
+	p.amount DESC

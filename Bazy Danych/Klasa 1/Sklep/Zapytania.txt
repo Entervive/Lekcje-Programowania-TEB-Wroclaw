@@ -1,0 +1,11 @@
+1) Wybierz wszystkie rekody z tabeli 'suppliers'
+2) Wybierz wszystkie rekody z tabeli 'suppliers' w których krajem jest polska(poland)
+3) Wybierz wszystkich kolmne aktywnych(active) dostawców z ich imieniem(supplier_name) z tabeli 'suppliers' i posortuj ich tak aby aktywni byli na górze 
+
+4) Wybież wszystich urzytkowników których imę kończu się na s ?
+5)jaki są unikalne indyfikatory dostawców (supplier_id) w tabelie suppliers?
+6) Jaka jest średnia wartość zamówieńdla poszczegółnych dostawców w tabeli 'suppliers' ?
+
+7) Zaktualizuj numer telefonu osoby, której imie zaczyna sie na "Rafa"
+9) Policz dostawców,ktorzy są z rosji.
+10) policz ile dostawców jest z Chin.

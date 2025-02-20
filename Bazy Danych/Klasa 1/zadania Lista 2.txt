@@ -1,0 +1,55 @@
+Lista 2
+Zadanie 1
+
+SELECT 
+  COUNT(*) AS "Ile ich jest" 
+FROM 
+  actor 
+WHERE 
+  first_name = "Scarlett"
+
+Zadanie 2
+
+SELECT 
+	a.last_name,
+    COUNT(*) AS "ileRazy"
+FROM 
+	actor a
+GROUP BY
+	a.last_name
+ORDER BY
+	ileRazy DESC
+
+Zadanie 4
+
+SELECT 
+	s.store_id, 
+    COUNT(c.customer_id) AS liczba_klientów
+FROM 
+	store s
+JOIN 
+	customer c 
+	ON s.store_id = c.store_id
+GROUP BY 
+	s.store_id;
+
+
+Zadanie 9 
+
+SELECT
+    s.staff_id,
+    SUM(p.amount) AS suma,
+    AVG(p.amount) AS średnia,
+    COUNT(p.payment_id) AS liczba_płatności,
+    MIN(p.amount) AS minimum,
+    MAX(p.amount) AS maksimum,
+    STDDEV(p.amount) AS odchylenie_standardowe
+FROM 
+	payment p
+JOIN 
+	staff s 
+    ON s.staff_id = p.staff_id
+GROUP BY 
+	s.staff_id;
+
+

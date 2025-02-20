@@ -1,0 +1,101 @@
+NAPISZ ZAPYTANIA, KTÓRE WYJMĄ Z BAZY NASTĘPUJĄCE INFORMACJE:
+ 1. Imię i nazwisko (tylko te dwie dane) klienta numer 4.
+SELECT k.imie, k.nazwisko FROM klienci k WHERE idklienta = 4;
+
+ 2. Wszystkie dane samochodów z rocznika 2010.
+SELECT * FROM auta WHERE rocznik = 2010;
+
+ 3. Wszystkie dane na temat samochodów marki Ford posiadanych przez nas 
+(innymi słowy: "jakie mamy auta marki Ford w firmie i co o nich wiemy?").
+SELECT * FROM `auta` WHERE marka = 'ford';
+
+ 4. Samochody o numerach w bazie od 2 do 4 włącznie.
+SELECT * FROM `auta` WHERE idauta BETWEEN 2 and 4
+
+ 5. Imiona i nazwiska klientów, którzy mieszkają w Katowicach na ulicy Rolnej (pod 
+dowolnym numerem).
+SELECT * FROM klienci k WHERE k.miasto = "Katowice" AND k.adres LIKE "Rolna%";
+
+ 6. Samochód w bazie (marka, model), którego ubezpieczenie jest najdroższe z 
+wszystkich aut.
+SELECT a.marka, a.model FROM auta a ORDER BY a.ubezpieczenie DESC LIMIT 1;
+
+ 7. Samochód (idauta, marka, model), który został najwcześniej wypożyczony 
+(decyduje datawyp).
+SELECT a.idauta, a.marka, a.model FROM auta a JOIN wypozyczenia w ON a.idauta = w.idauta ORDER BY w.datawyp ASC LIMIT 1;
+
+ 8. Imiona i nazwiska osób, które wypożyczyły kiedykolwiek samochód nr 1.
+SELECT k.imie, k.nazwisko FROM klienci k
+JOIN wypozyczenia w
+ON k.idklienta = w.idklienta
+WHERE w.idauta = 1
+
+ 9. Jakie auta (marka, model) kiedykolwiek wypożyczyła u nas osoba nr 4?
+SELECT a.marka, a.model FROM auta a
+JOIN wypozyczenia w 
+ON a.idauta = w.idauta
+WHERE w.idklienta = 4
+
+ 10. Jakie auta (marka, model) kiedykolwiek wypożyczyła u nas osoba o nazwisku 
+"Pastewniak"
+SELECT a.marka, a.model FROM auta a
+JOIN wypozyczenia w 
+ON a.idauta = w.idauta
+JOIN klienci k
+ON w.idklienta = k.idklienta
+WHERE k.nazwisko = "Pastewnia
+
+NAPISZ ZAPYTANIA, KTÓRE DODAJĄ DO TABELI NASTĘPUJĄCE REKORDY
+ 1. Dodaj do tabeli auta nowy samochód Lamburgini Aventador przebieg 500 km rocznik 2022 kolor gold i ubezpieczenie 8000 zł
+INSERT INTO `auta` (`idauta`, `marka`, `model`, `przebieg`, `rocznik`, `kolor`, `ubezpieczenie`) VALUES (NULL, 'Lamburgini ', 'Aventador', '500000', '2022', 'gold', '8000')
+
+ 2. Za pomocą jednego zapytania dodaj 2 nowe samochody, które kupiliśmy prosto z salonu 
+INSERT INTO `auta` (`idauta`, `marka`, `model`, `przebieg`, `rocznik`, `kolor`, `ubezpieczenie`) VALUES (NULL, 'Lamburgini ', 'Aventador', '0', '2024', 'gold', '8000', NULL, 'Lamburgini ', 'Aventador', '0', '2024', 'gold', '8000');
+
+ 3. Dodaj 2 nowych klientów, każdego inną metodą. 
+a) INSERT INTO klienci VALUES(Null, "Adrian", "Baśinski", "POM1234", "ŁÓDKĄ 2", "Pod Mostek", "m")
+b) INSERT INTO `klienci` (`idklienta`, `imie`, `nazwisko`, `dowod`, `adres`, `miasto`, `plec`) VALUES (NULL, 'Helena', 'Paterek', 'MIL1234', 'Bardzka 13', 'Milcz', 'k')
+
+ 4. Dodaj klienta o nazwisku Hu-o-ming niestety jego imie jest zapisane po hińsku i poprostu je pominiemy
+ żeby nie utrudniać sobie życia, tak samo zrobimy z dowodem. Adres. Malinowa 8 Wrocław. klient jest Mężczyzną 
+INSERT INTO `klienci` (`idklienta`, `nazwisko`, `adres`, `miasto`, `plec`) VALUES (NULL, 'Hu-o-ming', 'Malinowa 8', 'Wrocłąw', 'm')
+
+ 5.Nasz nowy Klient pochodzenia Hińskiego zamówił lamburgini w dniu dzisijeszym, za kwote 4000zł
+INSERT INTO `wypozyczenia` (`idwyp`, `idklienta`, `idauta`, `datawyp`, `naleznosc`) VALUES (NULL, '7', '6', '2024-10-25', '4000');
+
+ 6. dodaj 2 dowolne zamówienia do naszej bazy 
+INSERT INTO `wypozyczenia` (`idwyp`, `idklienta`, `idauta`, `datawyp`, `datazwrotu`, `naleznosc`) VALUES (NULL, '4', '6', '2024-10-25', '0000-00-00', '8000'), (Null, '5', '1', '2024-12-15', '0000-00-00', '4000')
+ 
+ Napisz zapytania które zaktualizują informacje w bazie. 
+ 1. zamówienie nr. 2 przedłużyło się o tydzień, popraw właściwe rekordy w bazie. 
+UPDATE `wypozyczenia` SET `datazwrotu` = '2012-11-21' WHERE `wypozyczenia`.`idwyp` = 2
+
+ 2. Pan Jan przerysował nasz samochód, dopisz do jego wypożyczenia opłatę w wysokosci 1500 zł
+UPDATE `wypozyczenia` SET `naleznosc` = '1602' WHERE `wypozyczenia`.`idwyp` = 3
+
+ 3. Inflacja dopadła również i nas, musimy podnieść ubezpieczenie samochodów o 15% 
+UPDATE auta SET ubezpieczenie = (ubezpieczenie + (ubezpieczenie * 0.15))
+
+ 4. Robimy promocję dla stałych klientów wybież sobie klienta i daj mu 30zł rabatu 
+UPDATE `wypozyczenia` SET `naleznosc` = '59' WHERE `wypozyczenia`.`idwyp` = 1
+
+ 5. Pan Hu-o-ming wyrobił sobie Polski dokument tożsamości zaktualizuj informacje w bazie nr D.O CTY887766
+UPDATE `klienci` SET `dowod` = 'CTY887766' WHERE `klienci`.`idklienta` = 7
+
+ 6. Fiesta w zeszłym mieisącu przejechała 800 km, punto przejechało 500 km a Astra 1030, popraw informacje w tabeli auta 
+UPDATE `auta` SET `przebieg` = 124150 + 500 WHERE `auta`.`idauta` = 1;
+UPDATE `auta` SET `przebieg` = 88056 + 800  WHERE `auta`.`idauta` = 3;
+UPDATE `auta` SET `przebieg` = 145001 + 1030 WHERE `auta`.`idauta` = 4;
+ 
+ USUŃ z tabeli 
+ 1. usuń kolor samochodu opel corsa, po ostatniej naprawie ciężko zdefinować jaki ten kolor właściwie jest wiec pole niech lepiej pozostanie puste.
+UPDATE `auta` SET `kolor` = '' WHERE `auta`.`idauta` = 5
+
+ 2. Ford focus został wczoraj skasowany, nie opłaca się go naprawaić dlatego usuń go z tabeli 
+DELETE FROM auta WHERE `auta`.`idauta` = 2
+
+ 3. usuń 2 najstarszych klientów z naszej bazy, od lat nic nie zamawiali po co zaśmieciać nimi przestrzeń dyskową 
+DELETE FROM klienci ORDER BY idklienta ASC LIMIT 2
+
+ 4. kliienit właśnie zadzwonił że jednak się rozmyślił usuń ostatnie zamówienie 
+DELETE FROM wypozyczenia WHERE `wypozyczenia`.`idwyp` = 8

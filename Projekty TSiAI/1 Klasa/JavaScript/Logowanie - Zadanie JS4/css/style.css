@@ -1,0 +1,48 @@
+* {
+    justify-content: center;
+}
+body{
+    background-color: lightyellow;
+}
+header{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 1vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
+    background-color: #D0B17A;
+}
+main{
+    padding: 10px;
+    margin-bottom: 1vh;
+    background-color: #D0B17A;
+}
+#glownyPojemnik{
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    padding: 2vh;
+    margin-right: 8vh;
+    margin-left: 8vh;
+    background-color: #F5C396;
+}
+footer{
+    font-weight: bold;
+    margin-top: 1vh;
+    padding: 1vh;
+    margin-left: 15vh;
+    margin-right: 15vh;
+    background-color: #D0B17A;
+}
+img{
+    width: 300px;
+    height: 250px;
+}
+#user{
+    font-weight: bold;
+}
+h3{
+    font-size: larger;
+}
+section{
+    font-size: large;
+}

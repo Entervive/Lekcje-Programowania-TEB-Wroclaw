@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moje Notatki</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h1>Moje Notatki</h1>
+    </header>
+
+    <main>
+      <div id="notatki">
+        <div id="formularz">
+          <input type="text" id="nazwa" placeholder="Nazwa Notatki" />
+          <input type="text" id="tekst" placeholder="Tekst Notatki" />
+          <button onclick="sprawdzPrzed()">Dodaj Notatkę</button>
+          <label for="kolorNotatki">Kolor Notatki:</label>
+          <input type="color" id="kolorNotatki" value="#FFFFFF" />
+          <label for="kolorCzcionki">Kolor Czcionki:</label>
+          <input type="color" id="kolorCzcionki" value="#000000" />
+          <button onclick="wyzeruj()">Wyzeruj Notatki</button>
+        </div>
+
+        <div class="notatki-grid" id="notatki-grid"></div>
+      </div>
+    </main>
+
+    <footer>
+      <p>Zrobione przez &copf; Aleksandra Staszków</p>
+    </footer>
+  </body>
+  <script src="script.js"></script>
+</html>

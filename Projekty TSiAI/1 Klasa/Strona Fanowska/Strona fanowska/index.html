@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="magia.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <link rel="stylesheet" href="magia.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="logo.ico">
+    <meta name="author" content="Aleksander Staszków">
+    <script src="code.js"></script>
+    <title>Star Trek</title>
+</head>
+<body>
+    <header>
+        <h1 class="animate__animated animate__lightSpeedInLeft" style="font-size: 100px; padding-top: 40vh; font-weight: 100;">STAR TREK</h1>
+        <h2 class="animate__animated animate__delay-1s animate__fadeIn">
+            <a style="color:white; text-decoration: none; font-weight: 100; padding-bottom: 40vh;" class="typewrite" data-period="1000" data-type='[ "Śmiało dążyć tam, gdzie nie dotarł jeszcze żaden człowiek", "Beam me up Scotty", "Khaaannn!", "Jestem doktorem a nie ..." ]'>
+              <span class="wrap" style="color:white; text-decoration: none"></span>
+            </a>
+        </h2>
+    <div class="arrow animate__animated animate__fadeIn animate__delay-2s" id="arrrrrow"></div>
+    </header>
+    <main>
+        <section id="wstep" style="padding-top: 20vh;">
+            <h2 class="naglowek" style="font-size: 80px; font-weight: 100;">WSTĘP</h2>
+            <p class="podtekst" style="font-size: 30px; font-weight: 100; padding-top: 0.5vh; text-align: center;">
+                Witaj na stronie fanowskiej o tematyce Star Treka!<br>
+                Ta strona została stworzona przez Aleksandera Staszków, któr chce dzielić się swoją miłością do tego uniwersum.<br>
+                Na stronie znajdziesz informacje o wszystkich aspektach Star Treka, od seriali i filmów po gry i książki.
+            </p>
+        </section>
+        <section id="historia" style="padding-top: 20vh; text-align: justify; padding-left: 15vh;">
+            <h2 class="naglowek" style="font-size: 80px; font-weight: 100; padding-top: 5vh; float: left;">HISTORIA</h2>
+            <p class="podtekst" style="font-size: 30px; font-weight: 100; padding-top: 0.5vh; float: left;">
+                Star Trek to uniwersum science fiction, które powstało w 1966 roku. Jego twórcą jest Gene Roddenberry.<br>
+                Pierwsza seria, "Star Trek: The Original Series", opowiadała o przygodach załogi statku kosmicznego Enterprise.<br>
+                W kolejnych latach powstało wiele kolejnych serii i filmów, które rozszerzyły uniwersum Star Treka.
+            </p>
+        </section>
+        <section id="historia" style="padding-top: 20vh; text-align: justify; padding-right: 15vh;">
+            <h2 class="naglowek" style="font-size: 80px; font-weight: 100; padding-top: 5vh; float: right;">POSTACIE</h2>
+            <p class="podtekst" style="font-size: 30px; font-weight: 100; padding-top: 0.5vh; float: right;">
+                W uniwersum Star Treka występuje wiele ważnych postaci. Do najpopularniejszych należą:<br>
+                Kapitan Kirk - dowódca statku Enterprise w serii "Star Trek: The Original Series"
+                Spock - mroźny i logiczny Vulcanin, drugi oficer Enterprise
+                Doktor McCoy - lekarz statku Enterprise
+                Scotty - inżynier statku Enterprise
+                Uhura - łącznik statku Enterprise
+            </p>
+        </section>
+    </main>
+	<script>
+		ScrollReveal().reveal('.naglowek', { delay: 100 });
+        ScrollReveal().reveal('.podtekst', { delay: 300 });
+	</script>
+</body>
+</html>

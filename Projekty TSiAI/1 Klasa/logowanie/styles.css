@@ -1,0 +1,33 @@
+body {
+    background-color: #0E4ABB;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nieaktywne {
+    display: none;
+}
+
+.aktywne {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    height: 35vh;
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 30vh;
+    box-shadow: 6px 6px 10px 5px black;
+}

@@ -1,0 +1,32 @@
+body {
+    background-color: black;
+    text-align: center;
+    color: black;
+}
+.cyk {
+    height: 1vh;
+}
+header {
+    background-color: yellow;
+    width: 99vw;
+    height: 8vh;
+}
+main {
+    background-color: orange;
+    width: 99vw;
+}
+footer {
+    clear: both;
+    background-color: red;
+    width: 99vw;
+    height: 8vh;
+}
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 20px;
+}

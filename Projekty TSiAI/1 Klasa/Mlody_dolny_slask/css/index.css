@@ -1,0 +1,27 @@
+@font-face {
+    font-family: klavika_bold;
+    src: url(../Assets/Fonts/Klavika/klavika-bold.otf);
+}
+@font-face {
+    font-family: klavika_medium;
+    src: url(../Assets/Fonts/Klavika/klavika-medium.otf);
+}
+h1 {
+    font-family: klavika_bold;
+    font-size: 4em;
+}
+p {
+    font-size: 1em;
+    font-family: klavika_medium;
+}
+#background {
+    background-image: url("../Assets/backgroudn.jpg");
+    min-height: 890px; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.theme-toggle-btn {
+    transition: color 0.3s ease;
+}

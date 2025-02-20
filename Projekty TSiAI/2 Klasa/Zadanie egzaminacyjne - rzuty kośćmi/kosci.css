@@ -1,0 +1,73 @@
+* {
+  font-family: "Courier New";
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+header,
+footer {
+  text-align: center;
+  background-color: #ffd700;
+  padding: 10px;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin: 1% auto;
+  width: 75%;
+}
+main {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 75%;
+}
+#rzuty {
+  background-color: goldenrod;
+  padding: 1%;
+  width: 75%;
+  height: 400px;
+}
+
+#rzuty img {
+  cursor: pointer;
+}
+#kostki > img {
+  width: 250px;
+}
+aside {
+  width: 20%;
+  height: 500px;
+  padding: 1%;
+}
+aside form input[type="text"],
+aside form input[type="number"] {
+  width: 50px;
+  border: 2px dashed gold;
+  margin-bottom: 10px;
+}
+aside form button {
+  width: 200px;
+  margin: 10px 0;
+}
+aside ul {
+  list-style-type: none;
+  padding: 0;
+}
+aside ul li {
+  padding: 2px;
+  transition: background-color 0.3s, color 0.3s;
+}
+aside ul li:hover {
+  background-color: goldenrod;
+  color: #fff;
+}
+footer {
+  padding: 10px;
+}

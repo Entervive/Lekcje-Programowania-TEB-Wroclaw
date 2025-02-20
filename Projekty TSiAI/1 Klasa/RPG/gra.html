@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>RPG - GRA</title>
+</head>
+<body>
+    <header>
+        <div id="wynik">
+            <p>Pomidor</p>
+        </div>
+        <div id="atakbox">
+            <p>Pomarańcze?!</p>
+        </div>
+        <div id="up">
+            <h2 style="margin-top: 1.5vh;">Ulepszenia</h2>
+            <button onclick="ulepszAtk()" onmouseover="infoAtk()" onmouseout="info()" style="margin-top: 1vh;" id="plusatak"></button>
+            <button onclick="ulepszHeal()" onmouseover="infoHeal()" onmouseout="info()" id="plusheal"></button>
+            <button onclick="ulepszHp()" onmouseover="infoHp()" onmouseout="info()" id="plushp"></button>
+            <p style="margin-top: 1vh;" id="info"></p>
+        </div>
+    </header>
+    <main>
+        <div>
+            <div class="sprite" id="sprite1"></div>
+            <div>
+                <img style="position: absolute; zoom: 2; top: 72%; left: 17.5%" src="Assets/Misc/Heart.png">
+                <p id="bochaterHp" style="position: absolute; top: 74.9%; left: 18.7%" >100</p>
+            </div>
+        </div>
+        <div id="przeciwnik">
+            <div class="sprite" id="sprite2"></div>
+            <div>
+                <img style="position: absolute; zoom: 2; top: 72%; right: 18.2%" src="Assets/Misc/Heart.png">
+                <p style="position: absolute; top: 74.9%; right: 19.2%" id="przeciwnikHp">100</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div>
+            <button id="atak" onclick="Atakk()"></button>
+        </div>
+        <div>
+            <button id="def" onclick="Def()"></button>
+        </div>
+        <div>
+            <button id="heal" onclick="Heall()"></button>
+        </div>
+    </footer>
+    <audio id="audio" src="Muzyka/Elder_Scrolls.mp3" autoplay loop></audio>
+</body>
+<script src="JS/script.js"></script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Formularz</title>
+</head>
+<body>
+    <main>
+        <div>
+            <label>Nazwa</label>
+            <input id="imie" type="text" onfocus="zabawa(event)" onblur="nieZabawanie(event)"><br>
+            <label>E-mail</label>
+            <input id="email" type="email" onfocus="zabawa(event)" onblur="nieZabawanie(event)"><br>
+            <label>Hasło</label>
+            <input type="password" onfocus="zabawa(event)" onfocusout="maslo()"><br>
+            <label>Zmień kolor strony</label>
+            <input type="color" onchange="schizofremia()"><br>
+            <button id="przeslij" onclick="przeslij()" onmouseover="stylowo(event)" onmouseout="nieStylowo(event)">Prześlij</button>
+            <button onmousedown="demencja(event)" onmouseup="czystaDemencja(event)">Zresetuj</button>
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>

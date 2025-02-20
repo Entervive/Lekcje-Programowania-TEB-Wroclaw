@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zdarzenia JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h2><a href='zadanie.html'>Przejdź do treści zadania</a></h2>
+    </section>
+    <section>
+        <h2>Zdarzenie 'load'</h2>
+        <p>To zdjęcie ma przypisane zdarzenie 'onload'.</p>
+        <img src='fox.jpg' onload='alert("Hello world!")' width='200px'>
+        <p>Zdarzenie 'onload' aktywuje się przy załadowaniu strony do tego miejsca. Nadaje się do użycia tylko z elementami, które potrzebują czasu, żeby się załadować w pełni (np. obrazy)</p>
+    </section>
+    <section>
+        <h2>Zdarzenie 'click'</h2>
+        <button onclick='alert("Dzięki za kliknięcie :3")'>Ten przycisk ma przypisaną funkcję do zdarzenia 'onclick'</button>
+        <p>Aktywuje się przy kliknięciu.</p>
+    </section>
+    <section>
+        <h2>Zdarzenie 'blur'</h2>
+        <p>Ten input ma przypisaną funkcję do zdarzenia 'onblur' <input type='text' placeholder='Wpisz tu coś' onblur='alert("Opuszczono pole tekstowe")'</p>
+        <p>Ten jest tu po to, żeby było do czego przejść 'tabem' <input type='text' placeholder='Ja tu nic ważnego nie robię'></p>
+        <p>Zdarzenie blur aktwyuje się przy utracie 'skupienia' (focus)</p>
+    </section>
+    <section>
+        <h2>Zdarzenie 'change'</h2>
+        <p>Ten input ma przypisaną funkcję do zdarzenia 'onchange'. Wpisz lub usuń coś z niego, a potem przejdź gdzieś dalej albo naciśnij 'Enter'. </p>
+        <input type='text' id='textarea1' onchange='countChanges()'>
+        <h3>Ilość zmian w inpucie powyżej: <span id="changeCountDisplay">0</span></h3>
+        <p>Zdarzenie change aktywuje się przy zmianie treści, zawartości lub wyglądu obiektu.</p>
+    </section>
+    <section>
+        <h2>Zdarzenie 'focus'</h2>
+        <p>Kliknij jeden, a potem przełączaj się 'tabem' i 'shift+tab'</p>
+        <button class='focusButtons' onfocus='changeColor(event)' onfocusout='changeBack(event)'>Button 1</button>
+        <button class='focusButtons' onfocus='changeColor(event)' onfocusout='changeBack(event)'>Button 2</button>
+        <button class='focusButtons' onfocus='changeColor(event)' onfocusout='changeBack(event)'>Button 3</button>
+        
+        <p>Te trzy przyciski mają przypisane dwa zdarzenia: 'onfocus' i 'onfocusout'. Przy 'skupieniu się' na każdym z nich (np. 'tabem') powinny zmienić kolor, a po utracie 'skupienia' powinny kolorem wrócić.</p>
+        <p>Wszystkie mają tę samą funkcję. Trzeba jakoś funkcji zatem powiedzieć, o który button nam teraz konkretnie chodzi.</p>
+        <p>Poprzednie 'zabawki' miały po prostu wpisane np. onclick='alert("Treść alertu")', albo onchange='countChanges()'</p>
+        <p>Tutaj kod lekko różni się od pozostałych. Każdy button ma przypisane:</p>
+        <pre>
+            onfocus='changeColor(event)'
+            onfocusout='changeBack(event)'
+            //jednemu obiektowi można przypisać wiele zdarzeń
+        </pre>
+        <p>Dodano słowo kluczowe 'event' - jest ono ważne, bo przechowuje informacje o tym, co (jaki obiekt i jakie okoliczności) wywołało dane zdarzenie.</p>
+        <p>W skrypcie JS trzeba teraz odwołać się do tego przekazanego argumentu 'event'</p>
+        <pre>
+            function changeColor(event) {
+                event.target.style.backgroundColor = 'red';
+            }
+            
+            function changeBack(event) {
+                event.target.style.backgroundColor = 'green';
+            }
+            //aby wskazać, który obiekt ma zmienić kolor
+            //trzeba skorzystać z event.target 
+            //event - informacje o wywołaniu zdarzenia
+            //event.target - jaki obiekt to zdarzenie wywołał
+        </pre>
+    </section>
+    <section>
+        <h2>Zdarzenia myszy</h2>
+        <h3>Zdarzenia 'onmouseover' i 'onmouseout'</h3>
+        <p>Te zdarzenia aktywują się przy najechaniu i zjechaniu myszą.</p>
+        <button class='focusButtons' onmouseover='changeColor(event)' onmouseout='changeBack(event)'>Najedź na mnie</button>
+        <h3>Zdarzenia 'onmousedown' i 'onmouseup'</h3>
+        <p>Te zdarzenia aktywują się, gdy lewy przycisk myszy jest naciśnięty na tym obiekcie i gdy ten przycisk jest zwalniany</p>
+        <button class='focusButtons' onmousedown='changeColor(event)' onmouseup='changeBack(event)'>Przytrzymaj mnie</button>
+        <pre>
+            //btw: te przyciski też korzystają z funkcji changeColor() i changeBack()
+        </pre>
+    </section>
+</body>
+<script src='script.js'></script>
+</html>

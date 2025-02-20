@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zdarzenia JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h2><a href='index.html'>Przejdź do strony głównej</a></h2>
+    </section>
+    <section>
+        <h2><a href='form.html'>Przejdź do formularza</a></h2>
+    </section>
+    <section>
+        <h2>Interaktywny formularz</h2>
+        <p>Zbuduj formularz, który wykorzysta zdarzenia omówione na tej lekcji.</p>
+        <p>Niech formularz składa się z pól na imię, email i hasło oraz zawiera przyciski do przesłania formularza i anulowania wpisanych wartości. Do tego dodaj jeszcze pole do wybrania koloru: input type='color'</p>
+        <p>Jak użyć poszczególnych zdarzeń:
+            <ul>
+                <li>onload - kiedy strona się załaduje, wyświetl alert "Formularz został załadowany!".</li>
+                <li>onclick - kiedy użytkownik kliknie przycisk "Zapisz", wyświetl alert z podanym imieniem i emailem.</li>
+                <li>onmouseover - kiedy mysz przejedzie nad przyciskiem "Zapisz", zmień jego kolor tła (podobnie jak :hover w CSS)</li>
+                <li>onmouseout - kiedy mysz opuści przycisk "Zapisz", przywróć oryginalny kolor.</li>
+                <li>onfocus - kiedy pole tekstowe (np. "Imię" lub "Email") jest wybrane/zaznaczone, zmień jego obramowanie na białe.</li>
+                <li>onblur - kiedy pole tekstowe traci fokus, przywróć oryginalne obramowanie.</li>
+                <li>onfocusout - kiedy użytkownik opuści pole hasła, wyświetl alert przypominający o bezpieczeństwie hasła (np. "Czy twoje hasło ma minimum 8 znaków, znak specjalny, wielką i małą literę i cyfrę?").</li>
+                <li>onmousedown - kiedy przycisk "Anuluj" zostanie wciśnięty, zmień jego kolor, kolor tekstu i dodaj zaokrąglone obramowania.</li>
+                <li>onmouseup - kiedy przycisk "Anuluj" zostanie zwolniony, przywróć jego kolor, kolor tekstu i normalne obramowania. </li>
+                <li>onchange - kiedy użytkownik wybierze kolor tła formularza, zmień tło formularza na wybrany kolor. Skorzystaj z wartości .value tego pola i użyj jej przy zmianie stylu.</li>
+            </ul>
+        </p>
+    </section>
+</body>
+</html>

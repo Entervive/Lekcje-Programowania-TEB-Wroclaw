@@ -1,0 +1,63 @@
+12; 21; 12@co.com; 213 
+12; 21; 12@co.com; 213 
+12; 21; 12@co.com; 213 
+Metoda GET 12; 21; 12@co.com; 213 
+Metoda GET 12; 21; 12@co.com; 213 
+Metoda GET; 12; 21; 12@co.com; 213;08-03-24
+Metoda GET; 12; 21; 12@co.com; 213; Data 08-03-24
+Metoda GET 
+ Nazwa 12; 
+ Hasło 
+ 21; Mail 12@co.com 
+; Opinia 213 
+; 
+ Data 08-03-24
+Metoda GET 
+ Nazwa 12; 
+ Hasło 21 
+; Mail 12@co.com 
+; Opinia 213 
+; 
+ Data 08-03-24
+
+ Metoda GET 
+ Nazwa 12 
+ Hasło 21 
+ Mail 12@co.com 
+ Opinia 213 
+ Data08-03-24
+
+ Metoda GET 
+ Nazwa 12 
+ Hasło 21 
+ Mail 12@co.com 
+ Opinia 213 
+ Data 08-03-24
+
+ Metoda GET 
+ Nazwa 21 
+ Hasło 21 
+ Mail 12@co.com 
+ Opinia 12 
+ Data 08-03-24
+
+ Metoda Post 
+ Nazwa 21 
+ Hasło 21 
+ Mail 12@co.com 
+ Opinia 12 
+ Data 08-03-24
+
+ Metoda POST 
+ Nazwa: 21 
+ Hasło: 21 
+ Mail: 12@co.com 
+ Opinia: 12 
+ Data: 08-03-24
+
+ Metoda POST 
+ Nazwa: 21 
+ Hasło: 21 
+ Mail: 12@co.com 
+ Opinia: 12 
+ Data: 08/03/24 10:06:42

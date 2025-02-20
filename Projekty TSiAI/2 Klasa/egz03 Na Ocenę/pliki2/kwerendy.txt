@@ -1,0 +1,20 @@
+Kwerenda 1
+INSERT INTO `logowanie` (`id`, `nick`, `haslo`) 
+VALUES (3, 'Jeremi', 'Jer123');
+
+Kwerenda 2
+
+
+Kwerenda 3
+SELECT u.imie, u.nazwisko, l.nick, l.haslo
+FROM uczestnicy u
+JOIN logowanie l
+ON u.logowanie_id = l.id
+WHERE u.imie LIKE "J%"
+
+Kwerenda 4
+CREATE USER 'uczestnik'@"localhost" 
+IDENTIFIED BY 'Ucz123&'
+
+Kwerenda 5
+GRANT SELECT, UPDATE ON `chat`.`uczestnicy` TO 'uczestnik'@'localhost';

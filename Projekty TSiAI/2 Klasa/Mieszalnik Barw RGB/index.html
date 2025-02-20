@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mieszalnik Barw RGB</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        transition: all 0.3s;
+      }
+      header {
+        height: 20vh;
+        gap: 30px;
+      }
+      header,
+      footer {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        background-color: #f8f9fa;
+        padding: 10px;
+        height: 10vh;
+      }
+      main {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #colorPreview {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #000000;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Mieszalnik Barw RGB</h1>
+      <img src="ja.gif" />
+    </header>
+    <main>
+      <div id="colorPreview"></div>
+      <p style="color: black !important" id="textColorPreview"></p>
+      <label for="red">Czerwony:</label>
+      <input
+        onchange="aktualizujPodglad()"
+        type="range"
+        id="red"
+        name="red"
+        min="0"
+        max="255"
+        value="0"
+      />
+      <label for="green">zielony:</label>
+      <input
+        onchange="aktualizujPodglad()"
+        type="range"
+        id="green"
+        name="green"
+        min="0"
+        max="255"
+        value="0"
+      />
+      <label for="blue">Blue:</label>
+      <input
+        onchange="aktualizujPodglad()"
+        type="range"
+        id="blue"
+        name="blue"
+        min="0"
+        max="255"
+        value="0"
+      />
+      <label for="alfa">Alfa:</label>
+      <input
+        onchange="aktualizujPodglad()"
+        type="range"
+        id="alfa"
+        name="alfa"
+        min="0"
+        max="100"
+        value="100"
+      />
+    </main>
+    <footer>
+      <p>
+        &copy; 2024 Mieszalnik Barw RGB. Strona stworzona przez Aleksandra
+        Staszków.
+      </p>
+    </footer>
+  </body>
+  <script>
+    let colorPreview = document.getElementById("colorPreview");
+    let textColorPreview = document.getElementById("textColorPreview");
+    let czerwony = document.getElementById("red");
+    let zielony = document.getElementById("green");
+    let niebieski = document.getElementById("blue");
+    let alfa = document.getElementById("alfa");
+    let tekst = document.getElementById("textColorPreview");
+
+    function aktualizujPodglad() {
+      let czerwonyV = czerwony.value;
+      let zielonyV = zielony.value;
+      let niebieskiV = niebieski.value;
+      let alfaV = alfa.value;
+      tekst.innerText = `rgba(${czerwonyV}, ${zielonyV}, ${niebieskiV}, ${alfaV})`;
+      colorPreview.style.backgroundColor = `rgba(${czerwonyV}, ${zielonyV}, ${niebieskiV}, ${alfaV}%)`;
+      textColorPreview.style.color =
+        czerwonyV + zielonyV + niebieskiV + alfaV > 382 ? "black" : "white";
+    }
+  </script>
+</html>

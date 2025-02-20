@@ -1,0 +1,46 @@
+ZAD 4
+
+SELECT
+	c.store_id,
+    	COUNT(*)
+FROM
+	customer c
+GROUP BY
+	c.store_id
+
+ZAD 6
+
+SELECT
+	r.customer_id,
+    	COUNT(r.rental_id) AS "Liczba_Filmow"
+FROM
+	rental r
+GROUP BY
+	r.customer_id
+ORDER BY
+	Liczba_Filmow DESC
+LIMIT
+	10
+
+Zad 7
+
+SELECT
+	AVG(f.length) AS "dlugosci wszystkich filmow"
+FROM
+	film f
+
+
+Zadanie 9 
+
+SELECT
+    p.staff_id,
+    SUM(p.amount) AS suma,
+    AVG(p.amount) AS średnia,
+    COUNT(p.payment_id) AS zliczenie,
+    MIN(p.amount) AS minimum,
+    MAX(p.amount) AS maksimum,
+    STDDEV(p.amount) AS odchylenie_standardowe
+FROM 
+	payment p
+GROUP BY 
+	p.staff_id;

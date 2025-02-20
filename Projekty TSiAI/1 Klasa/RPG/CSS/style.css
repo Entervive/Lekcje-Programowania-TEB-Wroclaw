@@ -1,0 +1,131 @@
+* {
+    color: white;
+    margin: auto;
+    text-align: center;
+    font-family: bit;
+}
+@font-face {
+    font-family: bit;
+    src: url('../Assets/Fonts/EightBitDragon-anqx.ttf');
+}
+body{
+    transition: all 4s;
+    background-image: url(../Assets/BG/game.gif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    justify-content: center;
+    align-items: center;
+}
+button {
+    background: none;
+}
+footer{
+    padding-top: 30%;
+    padding-left: 5vh;
+    clear: both;
+    display: flex;
+}
+span{
+    color: red;
+}
+#info{
+    opacity: 0;
+    text-align: center;
+    transition: all 3s;
+}
+#wynik{
+    position: absolute;
+    font-size: 3vh;
+    left: 46%;
+    top: 5%;
+}
+#up{
+    position: absolute;
+    width: 250px;
+    opacity: 0;
+    transition: all 2s;
+    top: 13%;
+    left: 42%;
+    height: 125px;
+    margin: auto;
+    border: 5px white dashed;
+    background-color: rgba(255, 215, 166, 0.5);
+}
+#plusatak{
+    background-image: url(../Assets/Bronie/sword_up.png);
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#plusheal{
+    background-image: url(../Assets/Potki/rp_up.png);
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#plushp{
+    background-image: url(../Assets/Misc/Heart_up.png);
+    width: 64px;
+    height: 64px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+#atakbox{
+    padding-top: 20vh;
+    width: 50%;
+    height: 100px;
+}
+#atak{
+    background-image: url(../Assets/Bronie/ISW.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 64px;
+    height: 64px;
+}
+#def{
+    background-image: url(../Assets/Bronie/IS.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 64px;
+    height: 64px;
+}
+#heal{
+    background-image: url(../Assets/Potki/rp.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 64px;
+    height: 64px;
+}
+#potka{
+    background-image: url(../Assets/Misc/Chest.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 64px;
+    height: 64px;
+}
+.sprite {
+    background-position: 0 0;
+    display: inline-block;
+}
+#sprite1 {
+    background-image: url("../Assets/Bochater/Idle.png");
+    position: absolute;
+    top: 40%;
+    left: 6%;
+    zoom: 2;
+    width: 180px;
+    height: 180px;
+}
+
+#sprite2 {
+    position: absolute;
+    top: 43%;
+    right: 10%;
+    zoom: 2;
+    width: 150px;
+    height: 150px;
+    transform: scaleX(-1);
+    background-image: url("../Assets/Enemy/Medieval_Warrior_Pack/Sprites/Idle.png");
+}

@@ -1,0 +1,18 @@
+body {
+    background-color: darkseagreen;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+main {
+    color: white;
+    background-color: seagreen;
+    width: 90%;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}

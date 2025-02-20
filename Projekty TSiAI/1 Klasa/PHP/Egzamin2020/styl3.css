@@ -1,0 +1,55 @@
+html {
+    overflow-y: hidden;
+}
+* {
+    font-family: sans-serif;
+}
+header {
+    background-color: tomato;
+    color: white;
+    padding: 10px;
+}
+main {
+    background-color: seashell;
+    overflow-y: scroll;
+    height: 500px;
+}
+footer{
+    background-color: tomato;
+    float: left;
+    color: white;
+    width: 25%;
+    height: 160px;
+}
+main > div{
+    background-color: white;
+    color: dimgray;
+    width: 60%;
+    height: 220px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin: auto;
+    box-shadow: 5px 5px 10px;
+}
+img {
+    float: left;
+    margin: 10px;
+    border-radius: 10px;
+}
+blockquote {
+    padding: 10px;
+    font-size: 150%;
+    font-style: italic;
+}
+h1, h2 {
+    text-align: center;
+}
+h4 {
+    text-align: right;
+    margin-right: 40px;
+    font-size: 150%;
+    font-style: italic;
+}
+a {
+    color: white;
+}

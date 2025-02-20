@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stylee.css">
+    <title>Kalkulator kosztów wycieczki</title>
+</head>
+<body>
+    <header>
+        <img id="logo" src="img/Rr.png"><h1>Kalkulator kosztów wycieczki</h1>
+        <nav>
+            <a href="index.html">Strona główna</a>
+            <a href="kalkulator_kosztow.html">Kalkulator Kosztów</a>
+            <a href="atrakcje.html">Atrakcje Turystyczne</a>
+        </nav>
+        <button class="change" onclick="zmien()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
+            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg>
+        </button>
+    </header>
+    <main>
+        <article style="float: left; margin-left: 150px;">
+            <form>
+                <label for="dorosli">Ile będzie osób dorosłych:</label>
+                <input type="number" id="dorosli" name="dorosli" min="0" required><br>
+                <label for="dzieci">Ile będzie dzieci:</label>
+                <input type="number" id="dzieci" name="dzieci" min="0" required><br>
+                <label for="dni">Na ile dni wszyscy chcą wyjechać:</label>
+                <input type="number" id="dni" name="dni" min="1" required><br>
+                <label for="standard">Jaki ma być „standard” wycieczki:</label>
+                <select id="standard" name="standard" required>
+                    <option value="regular">regular</option>
+                    <option value="VIP">VIP</option>
+                    <option value="All-inclusive">All-inclusive</option>
+                </select><br>
+                <button type="button" onclick="obliczKoszt()">Oblicz koszt wycieczki</button>
+            </form>
+            <p id="wynik"></p>
+        </article>
+        <aside style="float: right; margin-right: 150px; margin-top: 125px;">
+            <h2>Cennik za dzień</h2><br>
+            <table>
+                <tr>
+                    <td style="border-bottom: 0px;"></td>
+                    <td>Dorośli</td>
+                    <td>Dzieci</td>
+                </tr>
+                <tr>
+                    <td>Standard</td>
+                    <td>200 zł</td>
+                    <td>150zł</td>
+                </tr>
+                <tr>
+                    <td>Vip</td>
+                    <td>300 zł</td>
+                    <td>225 zł</td>
+                </tr>
+                <tr>
+                    <td>All-inclusive</td>
+                    <td>400 zł</td>
+                    <td>300 zł</td>
+                </tr>
+            </table>
+        </aside>
+    </main>
+    <footer style="padding-top: 20px;">
+        &copf; Strona Stworzona przez Aleksandra Staszków. 
+    </footer>
+</body>
+<script src="script.js"></script>
+</html>

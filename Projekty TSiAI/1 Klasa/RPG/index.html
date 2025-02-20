@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/menu.css">
+    <link rel="stylesheet" href="CSS/animacje.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <title>RPG - MENU</title>
+</head>
+<body>
+    <h1>RPG</h1>
+    <div id="mainbox">
+        <div id="opcje">
+            <a style="margin-top: 6vh" href="gra.html">Graj</a>
+            <a onclick="how()">Jak Grać?</a>
+        </div>
+        <div class="pisz" style="display: none;" id="howw">
+            <p id="text" style="display: none; width: 75%; padding-top: 2vh; padding-bottom: 2vh; overflow-y: auto; height: 469px; width: 600px;">Witaj w mojej grze rpg!<br>
+
+                Celem tej gry jest pokonanie króla, który jest potężnym i okrutnym władcą. Aby to zrobić, musisz stoczyć wiele walk z jego poddanymi możesz ulepszać swój Atak, Leczenie i Maksymalne zdrowie po pokonaniu przeciwnika. Gdy osiągniesz wynik dziesięciu punktów, staniesz twarzą w twarz z królem i będziesz miał szansę go pokonać.<br>
+                
+                Aby grać w tę grę, musisz używać trzech przycisków na dole ekranu, które odpowiadają trzem akcjom, które możesz wykonać: atak, defensywa i leczenie.<br>
+                
+                Atak pozwala ci zadawać obrażenia przeciwnikowi. Im większa jest twoja moc ataku, tym większe są obrażenia, które możesz zadać. Im większy jest twój gwarantowany atak, tym mniejsza jest szansa, że twój atak nie trafi. Twój atak może trafić lub nie trafić przeciwnika, w zależności od twojej i jego szansy na trafienie. Jeśli twój atak trafi, to zadaje obrażenia równe losowej liczbie z zakresu od twojego gwarantowanego ataku do twojej mocy ataku. Jeśli twój atak nie trafi, to nie zadaje żadnych obrażeń.<br>
+                
+                Defensywa pozwala ci zmniejszać obrażenia otrzymane od przeciwnika. Jeśli użyjesz defensywy, to obrażenia, które otrzymasz od przeciwnika, będą o połowę mniejsze. Defensywa działa tylko na jeden atak przeciwnika, więc musisz ją używać w odpowiednim momencie.<br>
+                
+                Leczenie pozwala ci przywracać swoje zdrowie. Im większa jest twoja moc leczenia, tym więcej zdrowia możesz przywrócić. Im większe jest twoje gwarantowane leczenie, tym mniejsza jest szansa, że twoje leczenie nie zadziała. Twoje leczenie może zadziałać lub nie zadziałać, w zależności od twojej i przeciwnika szansy na trafienie. Jeśli twoje leczenie zadziała, to przywraca zdrowie równe losowej liczbie z zakresu od twojego gwarantowanego leczenia do twojej mocy leczenia. Jeśli twoje leczenie nie zadziała, to nie przywraca żadnego zdrowia.<br>
+                
+                Aby wygrać walkę, musisz zredukować zdrowie przeciwnika do zera lub poniżej. Aby przegrać walkę, musisz zredukować swoje zdrowie do zera lub poniżej.<br>
+                
+                Aby wygrać grę, musisz pokonać króla, który jest znacznie silniejszy niż pozostali przeciwnicy. Aby stoczyć walkę z królem, musisz pokonać dziesięciu przeciwników.<br>
+                
+                Powodzenia i baw się dobrze!
+                </p>
+            <a onclick="back()">Powrót</a>
+        </div>
+    </div>
+</body>
+<script src="JS/menu.js"></script>
+</html>

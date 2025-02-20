@@ -1,0 +1,44 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: "Bowlby One SC", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+i {
+    width: 32px;
+    height: 32px;
+}
+input[type=password] {
+    width: 40%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-bottom: 2px white;
+    border: none;
+    background-color: #000000;
+    color: white;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #000000;
+    border-bottom: 2px white;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
+    background-color: gray;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+input:focus {
+    border: 3px solid white;
+}

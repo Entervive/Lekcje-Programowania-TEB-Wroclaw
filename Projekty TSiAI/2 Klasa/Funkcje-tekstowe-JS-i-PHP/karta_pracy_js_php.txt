@@ -1,0 +1,151 @@
+##################################
+#                                #
+# JavaScript i PHP – karta pracy #
+#                                #
+##################################
+// podobnych pytań można spodziewać się na "prawdziwym" teście
+##################################
+#                                #
+###    Część 1 - JavaScript    ###
+#                                #
+##################################
+
+1.	(2 pkt) Opisz działanie i podaj przykład użycia wyzwalaczy "onmouseover" i "onmousedown".
+onmouseover działa w ten sposób że kiedy najedziemy kursorem na button to wykonuje się skrypt, a onmousedown jest podobny do onclick, ale onmousedown przytrzymujemy 
+
+
+
+2.	(2 pkt) Wyjaśnij działanie i podaj przykład użycia funkcji: 
+    a.	document.getElementById()   
+	działa tak że wybiera nam unikalny element z kodu po id, dzięki czemu możemy stworzyć tylko do niego skrypt albo dodać coś innerHTML lub .style
+	document.getElementById(tlo).style.backgroundColor = 'Red';
+
+    b.	document.getElementsByClassName()
+	pobiera wszystkie elementy z daną klasą wpisaną w (), po której możemy przejść do skryptu dla danych klas
+	document.getElementsByClassName().style.backgroundColor = 'blue';
+
+3.	(5 pkt) Napisz kod, który:
+    a.	stworzy nową zmienną "menu"
+	let menu = 'Pita 10zl'
+    b.	przypisze do niej element ze strony o id = "pasekMenu"
+	menu = document.getElementById("pasekMenu");     
+    c.	stworzy nową zmienną "menuItem"
+    d.	przypisze do niej nowo utworzony element typu "div"
+	let menuItem = document.createElement("div");
+    e.	umieści element "menuItem" w elemencie "menu" (menu jest rodzicem menuItem)
+	menu.appendChild(menuItem);
+// poniżej wstaw swój kod
+
+let menu = 'Pita 10zl'
+menu = document.getElementById("pasekMenu");
+
+let menuItem = document.createElement("div");
+
+menu.appendChild(menuItem);
+4.	(2 pkt) Napisz kod, który:
+    a.	stworzy zmienną o nazwie "rzut"
+    b.	przypisze do niej losową wartość z zakresu <2- 10>
+// poniżej wstaw swój kod
+
+let rzut = Math.floor(Math.random() * (10 - 2 + 1)) + 2;
+
+
+
+
+5.	(2 pkt) Na stronie istnieje następujące pole formularza:
+                    
+                    <input type=’text’ name=’imie’ id=’imieKlienta’>
+
+            W skrypcie JS istnieje następująca tablica:
+                    
+                    let klienci = [‘Jan’, ‘Anna’]
+
+            Napisz kod, który zamieni imię ‘Anna’ na wartość pobraną z formularza
+//poniżej wstaw swój kod
+
+let klienci = ['Jan','Anna'];
+let imie2 = document.getElementById("imieKlienta").value;
+klienci[1] = imie2;
+
+
+
+            
+6.	(2 pkt) Napisz kod pętli for, która wyświetli w konsoli przeglądarki kolejne potęgi trzeciego stopnia liczb od 1 do 5. Spodziewany wynik: 1, 8, 27, 81, 125  
+//poniżej wstaw swój kod
+
+
+for( i = 1; i <=5; i++) {
+	console.log(Math.pow(i, 3));
+]
+
+
+
+##################################
+#                                #
+###       Część 2 - PHP        ###
+#                                #
+##################################
+
+7.	(3 pkt) Podaj 3 różnice między cookies, a sesjami.
+
+cookie - dane są przechowywane na kompie, a w sesji zapisują się na serwerze. Ciastka mają ograniczenia co do pamieci, a sesja za bardzo nie ma takich. Cookie nie
+są tak bezpieczne jak sesje
+
+
+8.	(2 pkt) Napisz kod, który:
+    a.	stworzy zmienną "bazaDanych"
+    b.	przypisze do niej słowo "sklep"
+//poniżej wstaw swój kod
+
+<?php
+$bazaDanych = "sklep";
+?>
+
+
+
+9.	(5 pkt) Napisz kod, który:
+    a.	stworzy zmienną "x" i przypisze do niej wartość = 128
+    b.	sprawdzi, czy 128 jest podzielne bez reszty przez 0 (czy jest parzyste):
+    c.	jeżeli tak, to stworzy zmienną "message" i przypisze do niej napis "parzysta"
+    d.	jeżeli nie, to stworzy zmienną "message" i przypisze do niej napis "nieparzysta"
+    e.	wyświetli wartość zmiennej "message" na stronie
+//poniżej wstaw swój kod
+<?php
+$x = 128;
+
+if ($x % 2 ==0) {
+	$message = "parzysta";
+}
+else {
+	$message = "nieparzysta";
+}
+echo $message;
+?>
+
+
+
+
+10.	(5 pkt) Wyjaśnij działanie i podaj przykład użycia funkcji:
+    a.	setcookie()
+	funkcja służy do stworzenia ciasteczek na stronie które przechowują jakieś dane klienta
+	setcookie("borys", "", time() +86400);
+    b.	isset()
+	isset sprawdza czy funkcja ma jakąś wartość inną niż null, wypisuje true albo false 
+	if (isset($_POST["--"])) {
+
+    c.	mysqli_connect()
+	dzięki temu łączymy naszą bazę do kodu php
+
+	
+	$conn = mysqli_connect("host","username","password","db")
+
+    d.	mysqli_query()
+	służy do wykonania pytań z SQL w kodzie php po podłączeniu do mysqli_connect
+	$.... = mysqli_query($polaczenie, "SELECT * FROM komputery")
+
+    e.	mysqli_fetch_row()
+	pobiera nam wyniki zapytań z SQla 
+	$mercedes = mysqli_fetch_row($wynik)) 
+	echo($mercedes);
+	
+         

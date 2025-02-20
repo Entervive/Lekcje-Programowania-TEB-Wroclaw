@@ -1,0 +1,59 @@
+* {
+    margin: auto;
+    text-align: center;
+    font-family: popins;
+    color: white;
+    -webkit-text-stroke: 1.5px black;
+}
+@font-face {
+    font-family: popins;
+    src: url(Poppins-Black.ttf);
+}
+body {
+    background-image: url("img/Poland_Houses_Sky_508076_1920x1080.png");
+}
+main {
+    height: 60vh;
+    margin-left: 2%;
+    margin-right: 2%;
+    width: 96%;
+    background-color: rgba(255, 255, 255, 0.5);
+    float: left;
+}
+#logo {
+    width: 64px;
+    height: 64px;
+    padding-top: 5px;
+}
+h1 {
+    font-size: 30px;
+}
+header {
+    margin-bottom: 10px;
+}
+footer {
+    clear: both;
+    font-size: 20px;
+}
+.change {
+    background: none;
+    border: none;
+    zoom: 2.5;
+}
+form{
+    margin-top: 20px;
+}
+option {
+    color: black;
+}
+div {
+    margin-top: 120px;
+    gap: 10px;
+    float: left;
+    width: 50%;
+    display: flex;
+}
+div > img {
+    width: 250px;
+    height: 200px;
+}

@@ -1,0 +1,63 @@
+body{
+       background-color: lightsalmon;
+}
+p{
+       text-align: center;
+       color: white;
+}
+a{
+       text-decoration: none;
+       text-align: center;
+       color: white;
+}
+aside{
+       height: 36rem;
+       background-color: chocolate;
+       font-size: medium;
+}
+#LEFT{
+       float: left;
+       width: 20%;
+}
+#RIGHT{
+       float: right;
+       width: 20%;
+}
+main{
+       background-color: coral;
+       width: 55%;
+       float: left;
+       margin-left: 2rem;
+}
+footer{
+       padding: 0.3rem;
+       clear: both;
+       background-color: brown;
+}
+h1{
+       color: white;
+       font-weight: bold;
+       text-align: center;
+}
+article, header{
+       background-color: rgba(255, 255, 255, 15%);
+       margin: 0.5rem;
+       text-align: center;
+}
+table{
+       border: 1px dotted white;
+       margin: auto;
+
+}
+img{
+       width: 150px;
+       height: 100px;
+}
+form{
+       color: white;
+       margin: auto;
+}
+.nwm{
+       height: 30px;
+       width: 300px;
+}

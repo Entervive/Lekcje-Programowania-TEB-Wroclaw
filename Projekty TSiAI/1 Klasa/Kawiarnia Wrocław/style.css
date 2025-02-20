@@ -1,0 +1,34 @@
+html{
+    background-color: black;
+}
+.Banner{
+    color: white;
+    font-size: 2.5rem;
+    font-family: 'Rajdhani', sans-serif;
+    text-decoration: none;
+    position: fixed;
+    left: 0px;
+    padding-left: 3rem;
+}
+.navbaralenie{
+    position: absolute;
+    right: 0px;
+    padding-right: 3rem;
+}
+.h222{
+    color: white;
+    font-size: 2.5rem;
+}
+.Button{
+    border: 0.625rem;
+    font-size: 1.4rem;
+    text-decoration: none;
+    color: white;
+    border-style: solid;
+    border-color: black;
+    background: black;
+}
+@font-face {
+    font-family: 'Rajdhani', sans-serif;
+    src: url(https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap);
+}

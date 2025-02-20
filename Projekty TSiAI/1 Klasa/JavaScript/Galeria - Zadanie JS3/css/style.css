@@ -1,0 +1,67 @@
+* {
+    text-align: center;
+    margin: auto;
+    font-family: sans-serif;
+}
+body{
+    background-color: black;
+    color: white;
+}
+aside{
+    width: 15%;
+    float: left;
+}
+a{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 135%;
+}
+#Lewo{
+    background-image: black;
+}
+#Prawo{
+    background-image: black;
+}
+#Lewoo{
+    transition: all 500ms ease-in-out;
+    height: 64px;
+    width: 64px;
+}
+#Prawoo{
+    transition: all 500ms;
+    height: 64px;
+    width: 64px;
+}
+#Lewoo:hover{
+    transition: all 500ms;
+    height: 78px;
+    width: 78px;
+}
+#Prawoo:hover{
+    transition: all 500ms;
+    height: 78px;
+    width: 78px;
+}
+#Galeria{
+    height: 85vh;
+    width: 65%;
+    float: left;
+}
+img{
+    position: absolute;
+    width: 600px;
+    top: 25vh;
+    left: 50vh; 
+    height: 400px;
+    color: #111;  
+    background: white;  
+    border-radius: 10%; 
+    box-shadow: 0 0 100px white;
+    display: block;
+
+}
+footer{
+    clear: both;
+    justify-content:center;
+}

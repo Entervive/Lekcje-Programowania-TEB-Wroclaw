@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Formularz logowania</title>
+</head>
+<body>
+    <main>
+        <div id="formularz">
+            <form>
+                <h1>Zaloguj się</h1>
+                <div id="1" class="aktywne">
+                    <label for="nazwa">Podaj nazwę</label>
+                    <input type="text" name="nazwa" id="nazwa"><br>
+                    <input type="button" name="logowanie" id="logowanie" value="Zaloguj" onclick="next(1, 2)">
+                </div>
+                <div id="2" class="nieaktywne">
+                    <h2 id="witaj"></h2>
+                    <label for="haslo">Podaj hasło</label>
+                    <input type="password" name="haslo" id="haslo"><br>
+                    <input type="button" name="logowanie" id="logowanie" value="Zaloguj" onclick="next(2, 3)">
+                </div>
+                <div id="3" class="nieaktywne">
+                    <h2 id="witaj"></h2>
+                    <label for="robot">Jesteś robotem?</label>
+                    <input type="checkbox" name="robot" id="robot"><br>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+        <div id="progress">
+
+        </div>
+    </main>
+</body>
+<script src="script.js"></script>
+</html>
