@@ -1,7 +1,7 @@
 class Uczen:
     #Specjalna funkcja inicjalizująca obiekt
     def __init__(self, imie, nazwisko, wiek):
-        self.imie = imie #Domyślne dane self.imie = "Ania"
+        self.imie = imie
         self.nazwisko = nazwisko
         self.wiek = wiek
 
