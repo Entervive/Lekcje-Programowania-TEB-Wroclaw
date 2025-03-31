@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista zadań JS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Lista zadań powtórzeniowych JavaScript</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Zadanie 1</h2>
+            <p>Stwórz zmienne "imie" i "wiek". Przypisz do nich swoje imię i swój wiek. </p><p> Napisz pętlę "for", która wyświetli w konsoli twoje imię tyle razy, ile wynosi twój wiek. </p><p> Przypisz ten kod do funkcji, która wykonuje się, gdy użytkownik klika przycisk z napisem "start".</p>
+            <button onclick="wiekk()">Start</button>
+            <script>
+                let imie = "Alek";
+                let wiek = 16;
+
+                function wiekk(){
+                    for(i=0; i < wiek; i++) {
+                        console.log(imie)
+                    }
+                }
+            </script>
+        </section>
+
+        <section>
+            <h2>Zadanie 2</h2>
+            <p>Stwórz pole edycyjne formularza o typie numerycznym, obok niego przycisk z napisem "Uruchom". Pod nimi utwórz pusty blok sekcji. </p><p> Stwórz funkcję, która pobierze wartość z pola formularza, a następnie powiększy ją o 20. </p><p> Następnie obliczy resztę z dzielenia tej powiększonej wartości przez 6. </p><p> Następnie obliczy ile ta reszta z dzielenia wynosi po podniesieniu do kwadratu. </p><p> Finalną wartość wyświetl we wcześniej utworzonym bloku sekcji. </p><p> Całą funkcję przypisz do wcześniej utworzonego przycisku.</p>
+            <input type="number" id="liczba" name="liczba"><button onclick="policz()">Uruchom</button>
+            <script>
+                function policz(){
+                    let liczba = document.getElementById("liczba").value;
+                    let sekcja = document.getElementById("wynik");
+                    let wynik = parseInt(liczba);
+
+                    wynik += 20;
+                    wynik %= 6;
+                    wynik = Math.pow(wynik, 2);
+
+                    sekcja.innerText = wynik;
+                }
+            </script>
+            <section id="wynik">
+
+            </section>
+        </section>
+
+        <section>
+            <h2>Zadanie 3</h2>
+            <p>Pobierz z Internetu trzy zdjęcia i nadaj im nazwy "1.jpg", "2.jpg", "3.jpg" - zadbaj o odpowiedni format pliku (użyj programu do edycji grafiki rastrowej). </p><p> Następnie utwórz trzy pola formularza typu "radio", z etykietami "zdjęcie 1", "zdjęcie 2" i "zdjęcie 3". Niech pierwszy z nich będzie domyślnie zaznaczony. Pod nimi umieść zdjęcie numer 1. </p><p> Do każdego z tych przycisków przypisz tę samą funkcję, która będzie sprawdzać, który z przycisków radio jest wybrany i wyświetlać odpowiednie zdjęcie (czyli wybranie przycisku 2 spowoduje wyświetlenie zdjęcia 2, itd.)</p><p>Niech funkcja wywołuje się po kliknięciu w dowolne pole formularza.</p>
+            <input type="radio" id="zdj1" name="zdjecie" onchange="zmiana()" checked><label for="zdj1">Zdjęcie 1</label>
+            <input type="radio" id="zdj2" name="zdjecie" onchange="zmiana()"><label for="zdj2">Zdjęcie 2</label>
+            <input type="radio" id="zdj3" name="zdjecie" onchange="zmiana()"><label for="zdj3">Zdjęcie 3</label>
+            <section>
+                <img src="1.jpg" style="width: 100vh;" id="obrazek">
+                <script>
+                    let zdj1 = document.getElementById("zdj1");
+                    let zdj2 = document.getElementById("zdj2");
+                    let zdj3 = document.getElementById("zdj3");
+                    let obrazek = document.getElementById("obrazek");
+
+                    function zmiana(){
+                        if(zdj1.checked) {
+                            obrazek.src = "1.jpg";
+                        } else if(zdj2.checked) {
+                            obrazek.src = "2.jpg";
+                        } else if(zdj3.checked) {
+                            obrazek.src = "3.jpg";
+                        }
+                    }
+                </script>
+            </section>
+        </section>
+
+        <section>
+            <h2>Zadanie 4</h2>
+            <p>Stwórz blok div z dowolnym napisem. Obok niego stwórz dwa przyciski z napisami "+" i "-". </p><p> Skryptem nadaj rozmiar czcionki tego bloku na 30px. Po kliknięciu w odpowiedni przycisk, rozmiar czcionki napisu ma zwiększać/zmniejszać się o 5px. Rozmiar czcionki warto przechować w zmiennej.</p>
+            <div id="napis" style="font-size: 30px;">Dowolny Napis</div>
+            <button onclick="plus()">+</button>
+            <button onclick="minus()">-</button>
+            <script>
+                let napis = document.getElementById("napis");
+                let rozmiar = 30;
+
+                function plus(){
+                    rozmiar += 5;
+                    napis.style.fontSize = rozmiar + "px";
+                }
+
+                function minus(){
+                    rozmiar -= 5;
+                    napis.style.fontSize = rozmiar + "px";
+                }
+            </script>
+        </section>
+
+        <section>
+            <h2>Zadanie 5</h2>
+            <p>Stwórz listę uporządkowaną z trzema dowolnymi elementami (np. lista ostatnio obejrzanych filmów). Nad nią umieść tekstowe pole edycyjne formularza. </p><p> Po wpisaniu treści i opuszczeniu pola formularza, wpisana treść ma zostać dodana jako kolejny element listy. </p><p> Zapewnij sprawdzanie, że użytkownik coś wpisał. W przeciwnym przypadku wyświetl stosowny alert.</p>
+            <h5>List Elemntów</h5>
+            <ol id="lista">
+                <li>Element 1</li>
+                <li>Element 2</li>
+                <li>Element 3</li>
+            </ol>
+            <input type="text" id="element" name="element" onblur="dodaj()">
+            <script>
+                let element = document.getElementById("element");
+                let lista = document.getElementById("lista");
+
+                function dodaj(){
+                    if(element.value == "") {
+                        alert("Wpisz coś!");
+                    } else {
+                        let nowy = document.createElement("li");
+                        nowy.innerText = element.value;
+                        lista.appendChild(nowy);
+                        element.value = "";
+                    }
+                }
+            </script>
+        </section>
+
+        <section>
+            <h2>Zadanie 6</h2>
+            <p>Stwórz div, który rozciąga się na całą stronę. Nadaj mu dowolny kolor tła. </p><p> Korzystając z funkcji setInterval, co sekundę wywołuj funkcję zmieniającą kolor tego div'a na losowy. </p><p> W tej funkcji stwórz trzy zmienne i losuj im wartości z zakresu <0-255>. Następnie "złóż" z nich napis "rgb(R, G, B)", gdzie w miejsca R, G i B wstawisz wylosowane wartości.</0-255></p>
+            <div id="kolor" style="width: 95vw; height: 50vh; background-color: red;"></div>
+            <script>
+                let kolor = document.getElementById("kolor");
+
+                setInterval(function(){
+                    let r = Math.floor(Math.random() * 255);
+                    let g = Math.floor(Math.random() * 255);
+                    let b = Math.floor(Math.random() * 255);
+
+                    kolor.style.backgroundColor = "rgb(" + r + ", " + g + ", " + b + ")";
+                }, 1000);
+            </script>
+        </section>
+
+        <section>
+            <h2>Zadanie 7</h2>
+            <p>Stwórz div o dowolnym kolorze tła, wymiarach 50x50, pozycjonowaniu względnym (relative) i położeniu górnym 0 i lewym 0. </p><p>Po najechaniu na ten div, jego położenie górne i lewe mają ulec zmianie na losowe z zakresu <0-500></p>
+            <div id="div" style="width: 50px; height: 50px; background-color: blue; position: relative; top: 0; left: 0;" onmouseover="zmiana()"></div>
+            <script>
+                let div = document.getElementById("div");
+
+                function zmiana(){
+                    let top = Math.floor(Math.random() * 500);
+                    let left = Math.floor(Math.random() * 500);
+
+                    div.style.top = top + "px";
+                    div.style.left = left + "px";
+                }
+            </script>
+        </section>
+
+        <section>
+            <h2>Zadanie 8</h2>
+            <p>Stwórz przycisk, który będzie miał czarny kolor tła i biały kolor tekstu, z napisem "10".</p><p> Każde kliknięcie przycisku ma powodować zmniejszenie liczby na przycisku o jeden. </p><p> Kiedy wartość osiągnie zero, zamień kolory na przycisku na odwrotne (białe tło, czarny napis) i powtórz proces. </p><p> Ponowne osiągnięcie zera ma ponowić proces.</p>
+            <button id="przycisk" style="background-color: black; color: white;" onclick="zmniejsz()">10</button>
+            <script>
+                let przycisk = document.getElementById("przycisk");
+
+                function zmniejsz(){
+                    let liczba = parseInt(przycisk.innerText);
+                    ilerazy = 0;
+                    liczba--;
+
+                    if(liczba == 0){
+                        if (ilerazy % 2 != 0){
+                            przycisk.style.backgroundColor = "black";
+                            przycisk.style.color = "white";
+                            ilerazy++;
+                        } else {
+                            przycisk.style.backgroundColor = "white";
+                            przycisk.style.color = "black";
+                            ilerazy++;
+                        }
+                        liczba = 10;
+                    }
+
+                    przycisk.innerText = liczba;
+                }
+            </script>
+        </section>
+
+        <section>
+            <h2>Zadanie 9</h2>
+            <p>Stwórz pole tekstowe formularza z napisem pomocniczym "Limit 10 znaków". Po naciścnięciu dowolnego przycisku na klawiaturze, funkcja ma sprawdzać, czy to, co jest w polu tekstowym, nie przekracza limitu. </p><p> Jeżeli tak, to zmień obramowanie pola na czerwone i wyświetl pod tym polem napis "Przekroczono limit znaków". </p><p> Jeżeli użytkownik skróci tekst, przywróć obramowanie oryginalne i usuń tekst ostrzegawczy.</p>
+            <input type="text" id="pole" name="pole" onblur="sprawdz()" onkeypress="sprawdz()"><p>Limit 10 znaków</p>
+            <p id="komunikat"></p>
+            <script>
+                let pole = document.getElementById("pole");
+                let komunikat = document.getElementById("komunikat");
+
+                function sprawdz(){
+                    if(pole.value.length > 10){
+                        pole.style.border = "2px solid red";
+                        komunikat.innerText = "Przekroczono limit znaków";
+                    } else {
+                        pole.style.border = "1px solid black";
+                        komunikat.innerText = "";
+                    }
+                }
+            </script>
+        </section>
+
+        <section>
+            <h2>Zadanie 10</h2>
+            <p>Po wciścnięciu przycisku, przechowaj w localStorage tekst, który użytkownik wpisał w pole z poprzedniego zadania. </p><p>Przy odświeżeniu strony, w konsoli wyświetl ten napis z localStorage. Przypisz wywołanie funkcji odczytującej do &lt;body&gt; strony. </p>
+            <button onclick="zapisz()">Zapisz</button>
+            <script>
+                let polee = document.getElementById("pole");
+
+                function zapisz(){
+                    localStorage.setItem("tekst", pole.value);
+                }
+
+                function odczytaj(){
+                    console.log(localStorage.getItem("tekst"));
+                }
+
+                document.body.onload = odczytaj;
+            </script>
+
+        </section>
+
+        <section>
+            <h2>Gotowe zadania</h2>
+            <p><a href="gotowe.html">Przejdź tutaj</a></p>
+        </section>
+    </main>
+</body>
+</html>

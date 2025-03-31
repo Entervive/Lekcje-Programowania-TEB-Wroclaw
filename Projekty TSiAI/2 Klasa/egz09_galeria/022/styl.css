@@ -1,0 +1,83 @@
+* {
+  font-family: Georgia;
+  color: white;
+}
+
+header,
+footer {
+  background-color: maroon;
+  text-align: center;
+  padding: 2px;
+}
+
+aside,
+main {
+  background-color: lightsalmon;
+  height: 527px;
+  float: left;
+}
+
+footer {
+  clear: both;
+}
+
+aside {
+  width: 15%;
+}
+
+main {
+  width: 70%;
+}
+
+section {
+  width: 100%;
+  background-color: maroon;
+  height: 70px;
+  float: left;
+}
+
+button {
+  background-color: lightsalmon;
+  color: maroon;
+  border: none;
+  font-size: 400%;
+  display: block;
+  margin: auto;
+  padding-top: 210px;
+}
+
+@keyframes miniatury {
+  from {
+    padding-left: 50px;
+  }
+  to {
+    padding-left: 0px;
+  }
+}
+
+section > img {
+  height: 70px;
+  animation: miniatury;
+  animation-duration: 4s;
+}
+
+main > img {
+  display: block;
+  margin: auto;
+  padding-top: 45px;
+}
+
+@keyframes obraz {
+  from {
+    scale: 100%;
+  }
+  to {
+    scale: 120%;
+  }
+}
+
+main > img:hover {
+  scale: 120%;
+  animation: obraz;
+  animation-duration: 5s;
+}

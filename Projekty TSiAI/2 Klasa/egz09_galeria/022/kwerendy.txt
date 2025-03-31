@@ -1,0 +1,19 @@
+1.
+SELECT w.miejsce, w.liczbaDni
+FROM wycieczki w
+WHERE w.cena < 1000;
+
+2.
+SELECT AVG(w.cena) AS "Średnia cena", w.liczbaDni
+FROM wycieczki w
+GROUP BY liczbaDni;
+
+3.
+SELECT w.miejsce, z.nazwa
+FROM wycieczki w
+JOIN zdjecia z 
+ON w.id = z.Wycieczki_id
+WHERE w.cena > 500;
+
+4.
+CREATE USER 'Ewa' Identified by 'Ewa!Ewa';

@@ -1,0 +1,20 @@
+1.
+SELECT z.dataZadania, z.wpis
+FROM zadania z
+WHERE z.miesiac = "sierpien"
+
+2.
+SELECT z.miesiac, z.rok
+FROM zadania z
+WHERE z.dataZadania = "2020-08-07"
+
+3.
+SELECT z.miesiac, COUNT(z.miesiac)
+FROM zadania z
+WHERE z.wpis LIKE "%Weterynarz%"
+GROUP BY z.miesiac
+
+4.
+UPDATE zadania 
+SET wpis = 'Wycieczka:  Zalew Mietkowski' 
+WHERE zadania.id = 40;
