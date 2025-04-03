@@ -1,0 +1,516 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista zadań JS 2</title>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lista zadań powtórzeniowych JavaScript 2</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Zadanie 1</h2>
+        <p>
+          Stwórz pole formularza z etykietą "wzrost w cm". Upewnij się, że
+          użytkownik nie może wpisać tam wartości ujemnej. Dodaj tekst
+          pomocniczy (placeholder)
+        </p>
+        <p>Obok niego stwórz przycisk z napisem "konwertuj".</p>
+        <p>
+          Po naciścnięciu przycisku, funkcja ma przekonwertować podany przez
+          użytkownika wzrost w centymetrach na cale.
+        </p>
+        <p>Wynik konwersji należy wpisać jako treść przycisku.</p>
+        <p>
+          Stwórz kolejny taki zestaw pole-przycisk, który będzie konwertować
+          wagę z kg na funty. Wyniki zaokrąglij do liczby całkowitej.
+        </p>
+        <input
+          type="number"
+          id="wzrost"
+          placeholder="wzrost w cm"
+          onblur=""
+          min="0"
+        />
+        <button id="konwertujWzrost" onclick="konwertujWzrost()">
+          Konwertuj
+        </button>
+        <script>
+          function wzrostUjemny() {
+            let wzrost = document.getElementById("wzrost").value;
+            if (wzrost < 0) {
+              alert("Wzrost nie może być ujemny!");
+              document.getElementById("wzrost").value = "";
+            }
+          }
+
+          function konwertujWzrost() {
+            let przycisk = document.getElementById("konwertujWzrost");
+            let wzrost = document.getElementById("wzrost").value;
+            let wzrostWCalach = Math.round(wzrost / 2.54);
+
+            przycisk.innerHTML = wzrostWCalach + " cali";
+          }
+        </script>
+        <input
+          type="number"
+          id="waga"
+          placeholder="waga w kg"
+          onblur="wagaUjemna()"
+          min="0"
+        />
+        <button id="konwertujWage" onclick="konwertujWage()">Konwertuj</button>
+        <script>
+          function wagaUjemna() {
+            let waga = document.getElementById("waga").value;
+            if (waga < 0) {
+              alert("Waga nie może być ujemna!");
+              document.getElementById("waga").value = "";
+            }
+          }
+
+          function konwertujWage() {
+            let przycisk = document.getElementById("konwertujWage");
+            let waga = document.getElementById("waga").value;
+            let wagaWFuntach = Math.round(waga * 2.20462);
+
+            przycisk.innerHTML = wagaWFuntach + " funtów";
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 2</h2>
+        <p>
+          Wykorzystując pętlę for i parseInt(prompt()) poproś użytkownika o 5
+          cyfr. Zapisz je w tablicy.
+        </p>
+        <p>
+          Następnie napisz algorytm sortowania bąbelkowego (bubble sort), który
+          posortuje te liczby w kolejności.
+        </p>
+        <p>
+          Wizualizacja tego algorytmu sortującego
+          <a href="https://www.youtube.com/watch?v=0BkoXZBbhfU">tutaj</a>.
+        </p>
+        <button id="sortuj" onclick="sortuj()">Sortuj</button>
+        <p>Wyniki są podawane w konsoli!</p>
+        <script>
+          function sortuj() {
+            let tablica = [];
+            for (let i = 0; i < 5; i++) {
+              let liczba = parseInt(prompt("Podaj cyfrę:"));
+              tablica.push(liczba);
+            }
+            console.log("Tablica przed sortowaniem:", tablica);
+
+            for (let i = 0; i < tablica.length - 1; i++) {
+              for (let j = 0; j < tablica.length - i - 1; j++) {
+                if (tablica[j] > tablica[j + 1]) {
+                  let temp = tablica[j];
+                  tablica[j] = tablica[j + 1];
+                  tablica[j + 1] = temp;
+                }
+              }
+            }
+            console.log("Tablica po sortowaniu:", tablica);
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 3</h2>
+        <p>
+          Stwórz trzy przyciski z ikonami "kamień", "papier", "nożyce".
+          Kliknięcie dowolnego z nich oznacza wybór użytkownika i ma uruchomić
+          funkcję. To ma być funkcja z parametrem - czyli kliknięcie kamienia
+          oznacza wykonanie funkcji "zad3(0)", kliknięcie papieru "zad3(1)",
+          itd.
+        </p>
+        <p>Funkcja losuje liczbę 0 - kamień, 1 - papier, 2 - nożyce.</p>
+        <p>Napisz logikę if-else-... która obsłuży tę grę.</p>
+        <p>
+          Dodaj też licznik zwycięstw, remisów i przegranych. Niech wyświetla
+          się w konsoli.
+        </p>
+        <button id="kamien" onclick="zad3(0)">🪨</button>
+        <button id="papier" onclick="zad3(1)">📝</button>
+        <button id="nozyce" onclick="zad3(2)">✂️</button>
+        <script>
+          let wygrane = 0;
+          let przegrane = 0;
+          let remisy = 0;
+
+          function zad3(uzytkownik) {
+            let komputer = Math.floor(Math.random() * 3);
+            console.log("Użytkownik:", uzytkownik, "Komputer:", komputer);
+
+            if (uzytkownik === komputer) {
+              remisy++;
+              console.log("Remis! Liczba remisów:", remisy);
+            } else if (
+              (uzytkownik === 0 && komputer === 2) ||
+              (uzytkownik === 1 && komputer === 0) ||
+              (uzytkownik === 2 && komputer === 1)
+            ) {
+              wygrane++;
+              console.log("Wygrana! Liczba wygranych:", wygrane);
+            } else {
+              przegrane++;
+              console.log("Przegrana! Liczba przegranych:", przegrane);
+            }
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 4</h2>
+        <p>Umieść na stronie wybrane zdjęcie.</p>
+        <p>
+          Napisz funkcję, która wywołuje się od razu po załadowaniu strony, co 5
+          sekund i zmienia zdjęcie na następne w kolejce (np. zdj1.jpg na
+          zdj2.jpg, itd.)
+        </p>
+        <p>
+          Obok zdjęcia umieść blok sekcji, w którym pojawi się opis tego
+          zdjęcia, który również zmienia się automatycznie po czasie.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 10px">
+          <img
+            src="zdj1.png"
+            alt="Zdjęcie"
+            id="zdjecie"
+            style="width: 300px; height: 200px"
+          />
+          <section id="opis"></section>
+        </div>
+        <script>
+          let zdjecia = ["zdj1.png", "zdj2.jpeg", "zdj3.jpeg"];
+          let opisy = ["Opis zdjęcia 1", "Opis zdjęcia 2", "Opis zdjęcia 3"];
+          let index = 0;
+
+          function zmienZdjecie() {
+            index = (index + 1) % zdjecia.length;
+            document.getElementById("zdjecie").src = zdjecia[index];
+            document.getElementById("opis").innerText = opisy[index];
+          }
+
+          setInterval(zmienZdjecie, 5000);
+          window.onload = function () {
+            zmienZdjecie();
+          };
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 5</h2>
+        <p>
+          Stwórz listę wydatków i oszczędności użytkownika. Stwórz blok sekcji,
+          w którym będzie przechowywany stan konta bankowego użytkownika (na
+          początek niech to będzie 1000 zł)
+        </p>
+        <p>
+          Pod tą sekcją, stwórz dwa pola formularza: tekstowe (na wpisywanie co
+          to za wydatek lub oszczędność) i numeryczne (na wpisywanie kwoty).
+          Obok nich, przycisk "zatwierdź".
+        </p>
+        <p>
+          Funkcja przypisana do przycisku ma najpierw sprawdzić, czy użytkownik
+          chce do konta coś dodać, czy z niego odjąć - jeżeli chciałby odjąć
+          kwotę przekraczająca stan konta uniemożliw mu to.
+        </p>
+        <p>
+          Następnie dodaje do listy wydatków/oszczędności (zwykła lista
+          nieuporządkowana) wpis, na podstawie tego, co użytkownik wpisał w pola
+          formularza. Odpowiednia kwota jest też dodawana/odejmowana od stanu
+          konta.
+        </p>
+        <section id="stan-konta">
+          <h3>Stan konta: 1000 zł</h3>
+        </section>
+        <input
+          type="text"
+          id="nazwa"
+          placeholder="Nazwa wydatku/oszczędności"
+        />
+        <input
+          type="number"
+          id="kwota"
+          placeholder="Kwota"
+          onblur="sprawdzKwote()"
+        />
+        <button id="zatwierdz" onclick="dodajWydatek()">Zatwierdź</button>
+        <ul id="lista-wydatkow"></ul>
+        <script>
+          let stanKonta = 1000;
+
+          function sprawdzKwote() {
+            let kwota = document.getElementById("kwota").value;
+            if (kwota < 0) {
+              alert("Kwota nie może być ujemna!");
+              document.getElementById("kwota").value = "";
+            }
+          }
+
+          function dodajWydatek() {
+            let nazwa = document.getElementById("nazwa").value;
+            let kwota = parseFloat(document.getElementById("kwota").value);
+            let lista = document.getElementById("lista-wydatkow");
+            let stanKontaSekcja = document.getElementById("stan-konta");
+
+            if (nazwa === "" || isNaN(kwota)) {
+              alert("Proszę wypełnić wszystkie pola.");
+              return;
+            }
+
+            if (kwota < 0 && Math.abs(kwota) > stanKonta) {
+              alert("Nie możesz wydać więcej niż masz na koncie!");
+              return;
+            }
+
+            stanKonta += kwota;
+            stanKontaSekcja.innerHTML =
+              "Stan konta: " + stanKonta.toFixed(2) + " zł";
+            let li = document.createElement("li");
+            li.innerText = nazwa + ": " + kwota.toFixed(2) + " zł";
+            lista.appendChild(li);
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 6</h2>
+        <p>
+          Napisz algorytm, który sprawdzi, czy podany przez użytkownika rok jest
+          rokiem przestępnym (ma 366 dni), według następujących reguł.
+        </p>
+        <p>Jeżeli rok nie jest podzielny przez 4, jest zwykły.</p>
+        <p>
+          Jeżeli jest podzielny przez 4 i do tego nie jest podzielny przez 100,
+          jest przestępny.
+        </p>
+        <p>
+          Jeżeli jest podzielny przez 4 i 100, ale nie jest podzielny przez 400,
+          jest zwykły.
+        </p>
+        <p>W pozostałych przypadkach, jest przestępny.</p>
+        <input type="number" id="rok" placeholder="Podaj rok" />
+        <button id="sprawdzRok" onclick="sprawdzRok()">Sprawdź</button>
+        <script>
+          function sprawdzRok() {
+            let rok = document.getElementById("rok").value;
+            let wynik = document.getElementById("wynikRoku");
+
+            if (rok % 4 !== 0) {
+              wynik.innerHTML = "Rok " + rok + " jest zwykły.";
+            } else if (rok % 100 !== 0) {
+              wynik.innerHTML = "Rok " + rok + " jest przestępny.";
+            } else if (rok % 400 !== 0) {
+              wynik.innerHTML = "Rok " + rok + " jest zwykły.";
+            } else {
+              wynik.innerHTML = "Rok " + rok + " jest przestępny.";
+            }
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 7</h2>
+        <p>
+          Stwórz pole typu "select" z kilkoma przypisanymi polami "option" -
+          lista rozwijana. Na każdym z tych pól napisz nazwę jakiejś czcionki,
+          którą możesz wykorzystać na stronie.
+        </p>
+        <p>
+          Obok tego pola, stwórz pole numeryczne, w którym użytkownik może
+          określić wielkość czcionki.
+        </p>
+        <p>
+          Obok nich stwórz pole, w którym użytkownik może wpisać jakiś tekst.
+          Obok nich przycisk uruchamiający funkcję.
+        </p>
+        <p>
+          Funkcja ma pobrać tekst z pola formularza i wpisać go do jakiegoś
+          nowego pola (np. sekcji), ale zachowując wybraną przez użytkownika
+          czcionkę i jej wielkość.
+        </p>
+        <select id="czcionka" onchange="zmienCzcionke()">
+          <option value="Arial">Arial</option>
+          <option value="Courier New">Courier New</option>
+          <option value="Georgia">Georgia</option>
+          <option value="Times New Roman">Times New Roman</option>
+          <option value="Verdana">Verdana</option>
+        </select>
+        <input
+          type="number"
+          id="czcionkaWielkosc"
+          placeholder="Wielkość czcionki"
+          onchange="zmienCzcionke()"
+        />
+        <input
+          type="text"
+          id="czcionkaTekst"
+          placeholder="Tekst"
+          onblur="zmienCzcionke()"
+        />
+        <div id="wynikCzcionki" style="border: 1px solid black; padding: 10px">
+          Tutaj pojawi się tekst
+        </div>
+        <script>
+          function zmienCzcionke() {
+            let czcionka = document.getElementById("czcionka").value;
+            let wielkosc = document.getElementById("czcionkaWielkosc").value;
+            let tekst = document.getElementById("czcionkaTekst").value;
+            let sekcja = document.getElementById("wynikCzcionki");
+
+            sekcja.style.fontFamily = czcionka;
+            sekcja.style.fontSize = wielkosc + "px";
+            sekcja.innerHTML = tekst;
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 8</h2>
+        <p>
+          Stwórz blok "div", który będzie korzystał z animacji @keyframes i
+          przemieszczał się po stronie od lewej do prawej, odbijając się.
+        </p>
+        <p>
+          Po kliknięciu tego diva, animacja ma przyspieszyć o pewną wartość
+          (zmodyfikuj skryptem wartość "animation-duration", np. podziel ją na
+          pół). Kolejne kliknięcia mają dalej przyspieszać animację.
+        </p>
+        <style>
+          #klocek {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+            animation: ruch 5s linear infinite;
+          }
+          @keyframes ruch {
+            0% {
+              left: 0;
+            }
+            50% {
+              left: calc(100vw - 50px);
+            }
+            100% {
+              left: 0;
+            }
+          }
+        </style>
+        <div id="klocek"></div>
+        <script>
+          let klocek = document.getElementById("klocek");
+          let animationDuration = 5;
+
+          klocek.addEventListener("click", function () {
+            animationDuration /= 2;
+            klocek.style.animationDuration = animationDuration + "s";
+          });
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 9</h2>
+        <p>Stwórz blok z obrazkiem. Pod nim input typu "range" - suwak.</p>
+        <p>
+          Zmiana wartości suwaka ma powodować nałożenie na obrazek filtru
+          rozmycia "blur" o zadanej wartości.
+        </p>
+        <p>
+          Możesz pod spodem dodać inne suwaki, które dodają inne efekty (np.
+          sepię, jasność)
+        </p>
+        <div style="display: flex; flex-direction: column; align-items: center">
+          <img
+            src="zdj1.png"
+            alt="Zdjęcie"
+            id="obrazek"
+            style="height: 275px; width: 20%"
+          />
+          <div>
+            <input
+              type="range"
+              id="suwakBlur"
+              min="0"
+              max="10"
+              step="0.1"
+              value="0"
+              onchange="zmienFiltr()"
+            />
+            <input
+              type="range"
+              id="suwakSepia"
+              min="0"
+              max="1"
+              step="0.1"
+              value="0"
+              onchange="zmienFiltr()"
+            />
+            <input
+              type="range"
+              id="suwakJasnosc"
+              min="0"
+              max="2"
+              step="0.1"
+              value="1"
+              onchange="zmienFiltr()"
+            />
+          </div>
+        </div>
+        <script>
+          function zmienFiltr() {
+            let obrazek = document.getElementById("obrazek");
+            let blur = document.getElementById("suwakBlur").value;
+            let sepia = document.getElementById("suwakSepia").value;
+            let jasnosc = document.getElementById("suwakJasnosc").value;
+
+            obrazek.style.filter = `blur(${blur}px) sepia(${sepia}) brightness(${jasnosc})`;
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 10</h2>
+        <p>
+          Stwórz kalkulator BMI (wzory i opisy
+          <a href="https://www.calculatowr.net/bmi-calculator.html">tutaj</a>),
+          pobierający od użytkownika wzrost i wagę (możesz użyć pól z zadania
+          1.). Następnie zapisz obliczone BMI w localStorage i wyświetl
+          użytkownikowi je jako alert() przy następnym odświeżeniu strony.
+        </p>
+        <input type="number" id="wagaBMI" placeholder="Waga w kg" />
+        <input type="number" id="wzrostBMI" placeholder="Wzrost w cm" />
+        <button id="obliczBMI" onclick="obliczBMI()">Oblicz BMI</button>
+        <script>
+          function obliczBMI() {
+            let waga = document.getElementById("wagaBMI").value;
+            let wzrost = document.getElementById("wzrostBMI").value / 100;
+            let bmi = (waga / (wzrost * wzrost)).toFixed(2);
+
+            localStorage.setItem("bmi", bmi);
+            alert("Twoje BMI to: " + bmi);
+          }
+
+          window.onload = function () {
+            let bmi = localStorage.getItem("bmi");
+            if (bmi) {
+              alert("Twoje poprzednie BMI to: " + bmi);
+            }
+          };
+        </script>
+      </section>
+
+      <section>
+        <h2>Gotowe zadania</h2>
+        <p><a href="gotowe_2.html">Przejdź tutaj</a></p>
+      </section>
+    </main>
+  </body>
+</html>

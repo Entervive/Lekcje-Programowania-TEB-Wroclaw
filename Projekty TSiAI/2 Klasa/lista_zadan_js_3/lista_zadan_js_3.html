@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista zadań JS 3</title>
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Lista zadań powtórzeniowych JavaScript 3</h1>
+    </header>
+    <main>
+      <section>
+        <h2>Zadanie 1</h2>
+        <p>
+          Stwórz trzy pola formularza typu numerycznego - nie mogą przyjmować
+          wartości ujemnych.
+        </p>
+        <p>
+          Sprawdź, czy z podanych wartości można złożyć trójkąt (czy suma
+          długości dowolnych dwóch boków jest większa, niż trzeci bok - to
+          sprawdzenie musi być prawdziwe dla każdego zestawu boków!)
+        </p>
+        <p>
+          Jeżeli tak, oblicz i wyświetl pod polami formularza obliczone pole, na
+          podstawie wzoru poniżej:
+        </p>
+        <img src="wzor.png" />
+        <p>
+          Jeżeli długości boków nie pozwalają na stworzenie trójkąta, wyświetl
+          odpowiedni alert.
+        </p>
+        <input type="number" id="bok1" placeholder="Bok 1" min="0" />
+        <input type="number" id="bok2" placeholder="Bok 2" min="0" />
+        <input type="number" id="podstawa" placeholder="Podstawa" min="0" />
+        <button id="oblicz" onclick="policzPole()">Oblicz pole</button>
+        <p id="wynik"></p>
+        <script>
+          function policzPole() {
+            let bok1 = parseFloat(document.getElementById("bok1").value);
+            let bok2 = parseFloat(document.getElementById("bok2").value);
+            let podstawa = parseFloat(
+              document.getElementById("podstawa").value
+            );
+            let wynik = document.getElementById("wynik");
+
+            if (bok1 <= 0 || bok2 <= 0 || podstawa <= 0) {
+              alert("Wszystkie boki muszą być większe od zera.");
+              return;
+            }
+
+            if (
+              bok1 + bok2 > podstawa &&
+              bok1 + podstawa > bok2 &&
+              bok2 + podstawa > bok1
+            ) {
+              let p = (bok1 + bok2 + podstawa) / 2;
+              let pole = Math.sqrt(
+                p * (p - bok1) * (p - bok2) * (p - podstawa)
+              );
+              wynik.textContent = `Pole trójkąta wynosi: ${pole.toFixed(2)}`;
+            } else {
+              alert("Nie można stworzyć trójkąta z tych długości.");
+            }
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 2</h2>
+        <p>
+          Stwórz przycisk z napisem "Zadaj w myślach pytanie wyroczni i sprawdź,
+          czy twoje myśli się spełnią".
+        </p>
+        <p>
+          Po kliknięciu w ten przycisk, ma wykonać się funkcja, która wylosuje
+          liczbę z przedziału 0 - 100. Następnie wyświetli na stronie napis:
+          "Prawdopodobieństwo, że tak się stanie, wynosi X%", gdzie w miejsce X
+          zostanie wpisana wylosowana liczba.
+        </p>
+        <p>
+          Dodatkowo, jeżeli prawdopodobieństwo jest w zakresie 0 - 33%, napis ma
+          być czerwony. Jeżeli jest w zakresie 34 - 66%, napis ma być żółty.
+          Jeżeli jest w zakresie 67 - 100%, napis ma być zielony.
+        </p>
+        <button id="wyrocznia" onclick="sprawdzWyrocznie()">
+          Zadaj w myślach pytanie wyroczni i sprawdź, czy twoje myśli się
+          spełnią
+        </button>
+        <p id="wynikWyroczni"></p>
+        <script>
+          function sprawdzWyrocznie() {
+            let prawdopodobieństwo = Math.floor(Math.random() * 101);
+            let wynikWyroczni = document.getElementById("wynikWyroczni");
+            wynikWyroczni.textContent = `Prawdopodobieństwo, że tak się stanie, wynosi ${prawdopodobieństwo}%`;
+
+            if (prawdopodobieństwo <= 33) {
+              wynikWyroczni.style.color = "red";
+            } else if (prawdopodobieństwo <= 66) {
+              wynikWyroczni.style.color = "yellow";
+            } else {
+              wynikWyroczni.style.color = "green";
+            }
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 3</h2>
+        <p>
+          Stwórz dwa tekstowe pola formularza. Po wciśnięciu przycisku, na
+          stronie ma pojawić się napis, który składa się z tych słów, ale z
+          zamienionymi pierwszymi literami (np. "liść dębu - diść lębu")
+        </p>
+        <input type="text" id="tekst1" placeholder="Tekst 1" />
+        <input type="text" id="tekst2" placeholder="Tekst 2" />
+        <button id="zmienLitery" onclick="zmienLitery()">Zamień litery</button>
+        <p id="wynikTekst"></p>
+        <script>
+          function zmienLitery() {
+            let tekst1 = document.getElementById("tekst1").value;
+            let tekst2 = document.getElementById("tekst2").value;
+            let wynikTekst = document.getElementById("wynikTekst");
+
+            if (tekst1 && tekst2) {
+              let pierwszaLitera1 = tekst1.charAt(0);
+              let pierwszaLitera2 = tekst2.charAt(0);
+              let nowyTekst1 = pierwszaLitera2 + tekst1.slice(1);
+              let nowyTekst2 = pierwszaLitera1 + tekst2.slice(1);
+              wynikTekst.textContent = `${nowyTekst1} ${nowyTekst2}`;
+            } else {
+              alert("Proszę wprowadzić oba teksty.");
+            }
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Zadanie 4</h2>
+        <p>
+          Stwórz pole formularza na tekst. W konsoli wyświetl informację
+          "TAK/CZĘSCIOWO/NIE", w zależności od tego, czy tekst spełnia podane
+          założenia:
+        </p>
+        <ul>
+          <li>Czy tekst ma minimum 6 liter?</li>
+          <li>Czy w tekście znajduje się słowo "kot"?</li>
+          <li>Czy tekst zaczyna się z wielkiej litery?</li>
+          <br />
+        </ul>
+        <p>
+          Jeżeli wszystkie założenia są spełnione - TAK. Jeżeli tylko jedno, lub
+          dwa - CZĘŚCIOWO. Jeżeli żadne - NIE.
+        </p>
+        <input type="text" id="tekst4" placeholder="Tekst" />
+        <button id="sprawdzTekst" onclick="sprawdzTekst()">
+          Sprawdź tekst
+        </button>
+        <script>
+          function sprawdzTekst() {
+            let tekst4 = document.getElementById("tekst4").value;
+            let maMinimum6Liter = tekst4.length >= 6;
+            let maKot = tekst4.includes("kot");
+            let zaczynaZWielkiej =
+              tekst4.charAt(0) === tekst4.charAt(0).toUpperCase();
+
+            if (maMinimum6Liter && maKot && zaczynaZWielkiej) {
+              console.log("TAK");
+            } else if (maMinimum6Liter || maKot || zaczynaZWielkiej) {
+              console.log("CZĘŚCIOWO");
+            } else {
+              console.log("NIE");
+            }
+          }
+        </script>
+      </section>
+
+      <section>
+        <h2>Gotowe zadania</h2>
+        <p><a href="gotowe_3.html">Przejdź tutaj</a></p>
+      </section>
+    </main>
+  </body>
+</html>
