@@ -1,39 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Formularz logowania</title>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <div id="formularz">
-            <form>
-                <h1>Zaloguj się</h1>
-                <div id="1" class="aktywne">
-                    <label for="nazwa">Podaj nazwę</label>
-                    <input type="text" name="nazwa" id="nazwa"><br>
-                    <input type="button" name="logowanie" id="logowanie" value="Zaloguj" onclick="next(1, 2)">
-                </div>
-                <div id="2" class="nieaktywne">
-                    <h2 id="witaj"></h2>
-                    <label for="haslo">Podaj hasło</label>
-                    <input type="password" name="haslo" id="haslo"><br>
-                    <input type="button" name="logowanie" id="logowanie" value="Zaloguj" onclick="next(2, 3)">
-                </div>
-                <div id="3" class="nieaktywne">
-                    <h2 id="witaj"></h2>
-                    <label for="robot">Jesteś robotem?</label>
-                    <input type="checkbox" name="robot" id="robot"><br>
-                    <input type="submit">
-                </div>
-            </form>
-        </div>
-        <div id="progress">
-
-        </div>
+      <div id="login-form">
+        <form>
+          <h1>Zaloguj się</h1>
+          <!-- Pierwszy krok: Wprowadzenie nazwy użytkownika -->
+          <div id="step1" class="active">
+            <label for="username">Podaj nazwę użytkownika</label>
+            <input type="text" name="username" id="username" /><br />
+            <input
+              type="button"
+              name="next"
+              id="nextStep1"
+              value="Dalej"
+              onclick="navigateToStep(1, 2)"
+            />
+          </div>
+          <!-- Drugi krok: Wprowadzenie hasła -->
+          <div id="step2" class="inactive">
+            <h2 id="welcome-message"></h2>
+            <label for="password">Podaj hasło</label>
+            <input type="password" name="password" id="password" /><br />
+            <input
+              type="button"
+              name="next"
+              id="nextStep2"
+              value="Dalej"
+              onclick="navigateToStep(2, 3)"
+            />
+          </div>
+          <!-- Trzeci krok: Potwierdzenie, że użytkownik nie jest robotem -->
+          <div id="step3" class="inactive">
+            <h2 id="final-message"></h2>
+            <label for="robot-check">Czy jesteś robotem?</label>
+            <input type="checkbox" name="robot-check" id="robot-check" /><br />
+            <input type="submit" value="Zaloguj" />
+          </div>
+        </form>
+      </div>
+      <div id="progress-bar">
+        <!-- Można dodać pasek postępu -->
+      </div>
     </main>
-</body>
-<script src="script.js"></script>
+  </body>
+  <script src="script.js"></script>
 </html>

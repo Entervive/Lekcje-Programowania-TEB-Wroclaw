@@ -1,56 +1,59 @@
-var TxtType = function(el, toRotate, period) {
-    this.toRotate = toRotate;
-    this.el = el;
-    this.loopNum = 0;
-    this.period = parseInt(period, 10) || 2000;
-    this.txt = '';
-    this.tick();
-    this.isDeleting = false;
-};
-
-TxtType.prototype.tick = function() {
-    var i = this.loopNum % this.toRotate.length;
-    var fullTxt = this.toRotate[i];
-
-    if (this.isDeleting) {
-    this.txt = fullTxt.substring(0, this.txt.length - 1);
-    } else {
-    this.txt = fullTxt.substring(0, this.txt.length + 1);
+/**
+ * Klasa obsługująca efekt pisania na stronie.
+ * @param {HTMLElement} element - Element HTML, w którym wyświetlany jest tekst.
+ * @param {Array} textArray - Tablica tekstów do wyświetlenia.
+ * @param {number} typingDelay - Opóźnienie między zmianami tekstu.
+ */
+class TypewriterEffect {
+    constructor(element, textArray, typingDelay) {
+        this.textArray = textArray;
+        this.element = element;
+        this.loopIndex = 0;
+        this.typingDelay = parseInt(typingDelay, 10) || 2000;
+        this.currentText = '';
+        this.isDeleting = false;
+        this.type();
     }
 
-    this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+    type() {
+        const currentIndex = this.loopIndex % this.textArray.length;
+        const fullText = this.textArray[currentIndex];
 
-    var that = this;
-    var delta = 200 - Math.random() * 100;
+        // Obsługa usuwania lub dodawania tekstu
+        if (this.isDeleting) {
+            this.currentText = fullText.substring(0, this.currentText.length - 1);
+        } else {
+            this.currentText = fullText.substring(0, this.currentText.length + 1);
+        }
 
-    if (this.isDeleting) { delta /= 2; }
+        // Wyświetlanie tekstu w elemencie
+        this.element.innerHTML = `<span class="wrap">${this.currentText}</span>`;
 
-    if (!this.isDeleting && this.txt === fullTxt) {
-    delta = this.period;
-    this.isDeleting = true;
-    } else if (this.isDeleting && this.txt === '') {
-    this.isDeleting = false;
-    this.loopNum++;
-    delta = 500;
+        let typingSpeed = 200 - Math.random() * 100;
+        if (this.isDeleting) typingSpeed /= 2;
+
+        // Przełączanie między dodawaniem a usuwaniem tekstu
+        if (!this.isDeleting && this.currentText === fullText) {
+            typingSpeed = this.typingDelay;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.currentText === '') {
+            this.isDeleting = false;
+            this.loopIndex++;
+            typingSpeed = 500;
+        }
+
+        setTimeout(() => this.type(), typingSpeed);
     }
+}
 
-    setTimeout(function() {
-    that.tick();
-    }, delta);
-};
-
-window.onload = function() {
-    var elements = document.getElementsByClassName('typewrite');
-    for (var i=0; i<elements.length; i++) {
-        var toRotate = elements[i].getAttribute('data-type');
-        var period = elements[i].getAttribute('data-period');
-        if (toRotate) {
-          new TxtType(elements[i], JSON.parse(toRotate), period);
+// Inicjalizacja efektu pisania po załadowaniu strony
+window.onload = () => {
+    const elements = document.getElementsByClassName('typewrite');
+    for (let element of elements) {
+        const textArray = JSON.parse(element.getAttribute('data-type'));
+        const typingDelay = element.getAttribute('data-period');
+        if (textArray) {
+            new TypewriterEffect(element, textArray, typingDelay);
         }
     }
-    // INJECT CSS
-    var css = document.createElement("style");
-    css.type = "text/css";
-    css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-    document.body.appendChild(css);
 };

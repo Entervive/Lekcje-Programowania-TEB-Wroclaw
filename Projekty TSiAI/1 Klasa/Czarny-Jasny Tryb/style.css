@@ -1,0 +1,69 @@
+/* Ustawienia ogólne */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition:
+    background-color 0.4s,
+    color 0.4s;
+}
+
+/* Styl dla jasnego motywu */
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Styl dla ciemnego motywu */
+body.dark {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+}
+
+/* Kontener z nagłówkiem i przyciskiem */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Styl tekstu lorem */
+p {
+  text-align: center;
+  margin: 20px;
+}
+
+/* Styl przycisku */
+#toggleButton {
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Styl "kółka" w środku przycisku */
+#toggleButton .slider {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* Styl przycisku po aktywacji */
+#toggleButton.active {
+  background-color: #555;
+}
+
+/* Animacja przesunięcia kółka w prawo po aktywacji */
+#toggleButton.active .slider {
+  transform: translateX(30px);
+}

@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Star Trek - Strona Fanowska</title>
+
+    <!-- Linki do stylów -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="css/magia.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/linia.css" />
+    <link rel="icon" type="image/x-icon" href="img/1301196-200.ico" />
+
+    <!-- Informacje meta -->
+    <meta name="author" content="Aleksander Staszków" />
+    <meta
+      name="description"
+      content="Strona fanowska Star Trek - informacje o postaciach, technologiach i historii uniwersum."
+    />
+
+    <!-- Skrypty -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="JS/code.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <!-- Main header -->
+      <section>
+        <h1
+          class="animate__animated animate__lightSpeedInLeft"
+          style="font-size: 100px; padding-top: 40vh; font-weight: 100"
+        >
+          STAR TREK
+        </h1>
+        <h2 class="animate__animated animate__delay-1s animate__fadeIn">
+          <a
+            style="
+              color: white;
+              text-decoration: none;
+              font-weight: 100;
+              padding-bottom: 40vh;
+            "
+            class="typewrite"
+            data-period="1000"
+            data-type='[ "Śmiało dążyć tam, gdzie nie dotarł jeszcze żaden człowiek", "Beam me up Scotty", "Khaaannn!", "Jestem doktorem a nie ..." ]'
+          >
+            <span
+              class="wrap"
+              style="color: white; text-decoration: none"
+            ></span>
+          </a>
+        </h2>
+        <div
+          class="arrow animate__animated animate__fadeIn animate__delay-2s"
+          id="arrrrrow"
+        ></div>
+      </section>
+    </header>
+    <!-- Znacznik noscript, który nie pozwala wejść na stronę bez działąjącego javascripta -->
+    <noscript>
+      <section id="nojs">
+        <h2>
+          Aby zapewnić prawidłowe działanie strony proszę o włączenie Java
+          Scripta
+        </h2>
+      </section>
+    </noscript>
+    <div>
+      <!-- Wstęp -->
+      <section id="wstep">
+        <h2 class="naglowek" style="padding-top: 60vh">WSTĘP</h2>
+        <p
+          class="podtekst"
+          style="font-size: 30px; font-weight: 100; width: 50%; float: left"
+        >
+          Witaj na stronie fanowskiej o tematyce Star Treka!<br />
+          Ta strona została stworzona przez Aleksandera Staszków, który chce
+          dzielić się swoją miłością do tego uniwersum.<br />
+          Na stronie znajdziesz informacje o wszystkich aspektach Star Treka, od
+          seriali i filmów po gry i książki.
+        </p>
+      </section>
+      <!-- Sekcja postaci -->
+      <section id="postacie">
+        <h2 class="naglowek" style="padding-top: 0.5vh; padding-bottom: 0.2vh">
+          POSTACIE
+        </h2>
+        <p
+          class="podtekst"
+          style="font-size: 30px; font-weight: 100; padding-bottom: 5vh"
+        >
+          W uniwersum Star Treka występuje wiele ważnych postaci. Do
+          najpopularniejszych należą
+        </p>
+        <div class="postacie">
+          <div id="kirk">
+            <img src="img/postacie/JamesKirk.png" alt="Kapitan James T. Kirk" />
+            <h3>Kapitan Kirk</h3>
+            <p>
+              Kapitan James T. Kirk to nieustraszony dowódca statku kosmicznego
+              USS Enterprise. Jego podejście do dowodzenia jest zdecydowanie
+              pełne pasji.
+            </p>
+          </div>
+          <div id="Spock">
+            <img src="img/postacie/spock.png" alt="Spock" />
+            <h3>Pierwszy Oficer Spock</h3>
+            <p>
+              Spock, pierwszy oficer i naukowiec, reprezentuje logikę i chłodne
+              myślenie, łącząc zdolności analityczne z empatią.
+            </p>
+          </div>
+          <div id="McCoy">
+            <img src="img/postacie/bones.png" alt="Doktor McCoy" />
+            <h3>Doktor "Bones" McCoy</h3>
+            <p>
+              Doktor Leonard McCoy, znany jako "Bones", to lekarz pokładowy o
+              bezpośredniej i sarkastycznej osobowości.
+            </p>
+          </div>
+          <div id="Scott">
+            <img src="img/postacie/Scott.png" alt="Porucznik Scott" />
+            <h3>Porucznik Scott</h3>
+            <p>
+              Montgomery Scott, zwany "Scotty", jest szefem inżynierów o
+              niezrównanych umiejętnościach technicznych.
+            </p>
+          </div>
+          <div id="Uhura">
+            <img src="img/postacie/Uhura.png" alt="Oficer Uhura" />
+            <h3>Łącznik Oficer Uhura</h3>
+            <p>
+              Uhura, oficer komunikacji, biegła w wielu językach i utalentowana
+              muzycznie.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- Sekcja technologii -->
+      <section id="technologie">
+        <div class="galeria">
+          <h2 id="tekstdoobrazu">Test</h2>
+          <p id="tekstpodobraz">test</p>
+          <img
+            id="obrazjeden"
+            onmouseover="na1()"
+            class=""
+            src="img/pokoje/warp.png"
+          />
+          <img
+            id="obrazdwa"
+            onmouseover="na2()"
+            class=""
+            src="img/pokoje/bridge.png"
+          />
+          <img
+            id="obraztrzy"
+            onmouseover="na3()"
+            class=""
+            src="img/pokoje/holodeck.png"
+          />
+          <img
+            id="obrazcztery"
+            onmouseover="na4()"
+            class=""
+            src="img/pokoje/transporter.png"
+          />
+          <img id="dog" src="img/postacie/dog.png" />
+          <p id="dog1">
+            To jest bug z czarnym ekranem z tyłu nie wiem jak go naprawić<br />
+            Miłego temu kto go znajdzie<br />
+          </p>
+        </div>
+      </section>
+      <!-- Sekcja historii -->
+      <section id="historia">
+        <h2
+          class="naglowek"
+          style="font-size: 80px; font-weight: 100; padding-top: 1.5vh"
+        >
+          HISTORIA
+        </h2>
+        <p
+          class="podtekst"
+          style="
+            font-size: 30px;
+            font-weight: 100;
+            padding-top: 0.5vh;
+            padding-bottom: 5vh;
+            width: 80%;
+          "
+        >
+          Star Trek to uniwersum science fiction, które powstało w 1966 roku.<br />
+          Jego twórcą jest Gene Roddenberry. Pierwsza seria, "Star Trek: The
+          Original Series", opowiadała o przygodach załogi statku kosmicznego
+          Enterprise.<br />
+          W kolejnych latach powstało wiele kolejnych serii i filmów, które
+          rozszerzyły uniwersum Star Treka.<br />
+          W poniższej lini czasu przedstawione są wydarzenia z roku w filmach i
+          serialach.
+        </p>
+        <div class="timeline">
+          <div class="con lewo">
+            <div class="zawartosc">
+              <h2>2063</h2>
+              <p>
+                Pierwszy kontakt między ludźmi a Kosmitami (film: "Star Trek:
+                First Contact").
+              </p>
+            </div>
+          </div>
+          <div class="con prawo">
+            <div class="zawartosc">
+              <h2>2151</h2>
+              <p>
+                Wylot pierwszego statku z napędem Warp 5, Enterprise NX-01
+                (serial: "Star Trek: Enterprise").
+              </p>
+            </div>
+          </div>
+          <div class="con lewo">
+            <div class="zawartosc">
+              <h2>2161</h2>
+              <p>
+                Powstanie Federacji Zjednoczonych Planet (serial: "Star Trek:
+                Enterprise").
+              </p>
+            </div>
+          </div>
+          <div class="con prawo">
+            <div class="zawartosc">
+              <h2>2258</h2>
+              <p>
+                Alternatywna linia czasu z filmu "Star Trek", wprowadzająca
+                młode wersje oryginalnych postaci.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="historia2">
+        <div class="timeline" style="top: -19px">
+          <div class="con lewo">
+            <div class="zawartosc">
+              <h2>2265-2269</h2>
+              <p>
+                Misje załogi USS Enterprise pod dowództwem Jamesa T. Kirka
+                (seriale: "Star Trek: The Original Series", filmy: różne).
+              </p>
+            </div>
+          </div>
+          <div class="con prawo">
+            <div class="zawartosc">
+              <h2>2293</h2>
+              <p>
+                Podpisanie traktatu pokojowego Khitomer między Federacją a
+                Imperium Klingońskim (film: "Star Trek VI: The Undiscovered
+                Country").
+              </p>
+            </div>
+          </div>
+          <div class="con lewo">
+            <div class="zawartosc">
+              <h2>2371-2378</h2>
+              <p>
+                Misje załogi USS Voyager podczas podróży przez Deltę Kwadrant
+                (serial: "Star Trek: Voyager").
+              </p>
+            </div>
+          </div>
+          <div class="con prawo">
+            <div class="zawartosc">
+              <h2>2387</h2>
+              <p>
+                Wydarzenia związane z Romulanami i Supernową (film: "Star Trek
+                (2009)").
+              </p>
+            </div>
+          </div>
+          <div class="con lewo">
+            <div class="zawartosc">
+              <h2>2399</h2>
+              <p>
+                Wydarzenia związane z Jean-Lucem Picardem po przejściu na
+                emeryturę (serial: "Star Trek: Picard").
+              </p>
+            </div>
+          </div>
+          <div class="con prawo">
+            <div class="zawartosc">
+              <h2>XXI wiek</h2>
+              <p>
+                Zapowiedź kolejnych projektów związanych z universum Star Treka.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="footer">
+        <!-- Stopka -->
+        <footer>
+          <p style="padding-top: 40vh">
+            Strona stworzona przez &copy;Aleksandera Staszków<br />
+            Strona została stworzna w celach edukacyjnych.<br />
+            Do strony zostały wykorzystane obrazy:<br />
+            Strona główna:
+            <a
+              href="https://www.deviantart.com/enethrin/art/Left-You-Wandering-Star-Trek-Desktop-Background-911269764"
+              target="_blank"
+              >Left You Wandering</a
+            ><br />
+            Wstep:
+            <a
+              href="https://www.hdwallpapers.in/moon_nebula_planet_space_star_trek_4k_hd_star_trek-wallpapers.html"
+              target="_blank"
+              >Nebula</a
+            ><br />
+            Postacie:
+            <a
+              href="https://kellyplanet.com/star-trek-timelines/dr-bones-mccoy/"
+              target="_blank"
+              >Bones</a
+            >
+            <a
+              href="http://pgnsmundo.blogspot.com/2016/06/png-james-t-kirk.html"
+              target="_blank"
+              >Kirk</a
+            >
+            <a
+              href="https://www.pinterest.com/pin/97038566942172875/"
+              target="_blank"
+              >Spock</a
+            >
+            <a
+              href="https://kellyplanet.com/star-trek-timelines/comm-officer-uhura/"
+              target="_blank"
+              >Uhura</a
+            >
+            <a
+              href="https://kellyplanet.com/star-trek-timelines/lt-commander-scott/"
+              target="_blank"
+              >Scotty</a
+            >
+            <a
+              href="https://i.ytimg.com/vi/znKvYe7S0tg/maxresdefault.jpg"
+              target="_blank"
+              >Pies Undertale</a
+            ><br />
+            Technologie:
+            <a
+              href="https://lowerdecks.trekcore.com/gallery/albums/screencaps/s1/101/101-second-contact-br-133.jpg"
+              target="_blank"
+              >Warp</a
+            >
+            <a
+              href="https://lowerdecks.trekcore.com/gallery/albums/screencaps/s1/101/101-second-contact-br-142.jpg"
+              target="_blank"
+              >Holodeck</a
+            >
+            <a
+              href="https://lowerdecks.trekcore.com/gallery/albums/screencaps/s1/101/101-second-contact-br-179.jpg"
+              target="_blank"
+              >Transporter</a
+            >
+            <a
+              href="https://lowerdecks.trekcore.com/gallery/albums/screencaps/s1/101/101-second-contact-br-192.jpg"
+              target="_blank"
+              >Mostek</a
+            ><br />
+            Stopka:
+            <a href="https://wallpapercave.com/wp/a9Z1mvb.jpg" target="_blank"
+              >LCARS</a
+            >
+          </p>
+        </footer>
+      </section>
+    </div>
+  </body>
+  <!-- Skrypt ScrollReveal -->
+  <script>
+    ScrollReveal().reveal(".naglowek", { delay: 100 });
+    ScrollReveal().reveal(".podtekst", { delay: 300 });
+    ScrollReveal().reveal("#kirk", { delay: 800 });
+    ScrollReveal().reveal("#Spock", { delay: 1200 });
+    ScrollReveal().reveal("#McCoy", { delay: 1600 });
+    ScrollReveal().reveal("#Scott", { delay: 2000 });
+    ScrollReveal().reveal("#Uhura", { delay: 2400 });
+    ScrollReveal().reveal(".timeline", { delay: 500 });
+    ScrollReveal().reveal("#footer", { duration: 5000, opacity: 0 });
+  </script>
+</html>

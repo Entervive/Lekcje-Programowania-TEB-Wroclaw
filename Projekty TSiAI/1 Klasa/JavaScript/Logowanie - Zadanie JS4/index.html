@@ -1,30 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zadanie 3</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadanie 4 - Logowanie</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
     <header>
-        <h1>JavaScript-Zadanie 3</h1>
-        <h2>Interaktywna strona z logowaniem</h2>
+      <h1>JavaScript - Zadanie 4</h1>
+      <h2>Interaktywna strona z logowaniem</h2>
     </header>
-        <div id="glownyPojemnik">
-            <h2>Zaloguj Się</h2>
-            <form>
-                Login: <input type="logins" name="Login" id="Login"><br>
-                Hasło: <input type="password" name="Passwd" id="Passwd"><br>
-                <input type="submit" value="Zaloguj" onclick="Logowanie()">
-            </form>
-        </div>
+    <div id="glownyPojemnik">
+      <h2>Zaloguj się</h2>
+      <!-- Formularz logowania -->
+      <form onsubmit="Logowanie(); return false;">
+        Login:
+        <input
+          type="text"
+          name="Login"
+          id="Login"
+          placeholder="Wpisz login"
+        /><br />
+        Hasło:
+        <input
+          type="password"
+          name="Passwd"
+          id="Passwd"
+          placeholder="Wpisz hasło"
+        /><br />
+        <input type="submit" value="Zaloguj" />
+      </form>
+    </div>
     <footer>
-        <p style="padding-bottom: 1px; margin-bottom: 1px;">&copf; Aleksander Staszków</p>
-        <p style="padding-top: 1px; margin-top: 1px;">Hasło to "aaa"</p>
+      <p>&copy; Aleksander Staszków</p>
+      <p>Hasło to "aaa"</p>
     </footer>
-</body>
-
-<script src="js/script.js"></script>
-
+    <script src="js/script.js"></script>
+  </body>
 </html>

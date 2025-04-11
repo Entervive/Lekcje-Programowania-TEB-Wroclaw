@@ -1,34 +1,44 @@
-html{
-    background-color: black;
+/* Styl dla całej strony */
+html {
+  background-color: #000; /* Czarny kolor tła */
+  font-family: "Rajdhani", sans-serif;
 }
-.Banner{
-    color: white;
-    font-size: 2.5rem;
-    font-family: 'Rajdhani', sans-serif;
-    text-decoration: none;
-    position: fixed;
-    left: 0px;
-    padding-left: 3rem;
+
+/* Styl dla tytułu w pasku nawigacyjnym */
+.navbar-title {
+  color: white;
+  font-size: 2.5rem;
+  text-decoration: none;
+  position: fixed;
+  left: 3rem;
 }
-.navbaralenie{
-    position: absolute;
-    right: 0px;
-    padding-right: 3rem;
+
+/* Styl dla przycisków w pasku nawigacyjnym */
+.navbar-button {
+  font-size: 1.4rem;
+  text-decoration: none;
+  color: white;
+  border: 2px solid black;
+  background-color: black;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
 }
-.h222{
-    color: white;
-    font-size: 2.5rem;
+
+/* Styl dla wiadomości powitalnej */
+.welcome-message {
+  color: white;
+  font-size: 2.5rem;
+  text-align: center;
+  padding-top: 25rem;
 }
-.Button{
-    border: 0.625rem;
-    font-size: 1.4rem;
-    text-decoration: none;
-    color: white;
-    border-style: solid;
-    border-color: black;
-    background: black;
+
+/* Styl dla dynamicznego tekstu */
+.typewriter-message {
+  text-align: center;
+  color: white;
 }
-@font-face {
-    font-family: 'Rajdhani', sans-serif;
-    src: url(https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap);
+
+/* Styl dla animacji pisania */
+.typewrite > .wrap {
+  border-right: 0.08em solid #fff;
 }

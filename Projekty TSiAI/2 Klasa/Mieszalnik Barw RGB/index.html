@@ -1,52 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mieszalnik Barw RGB</title>
     <style>
+      /* Resetowanie marginesów i dodanie płynnych przejść */
       * {
         box-sizing: border-box;
         transition: all 0.3s;
+        overflow-y: none;
       }
+
+      /* Stylizacja nagłówka */
       header {
         height: 20vh;
         gap: 30px;
-      }
-      header,
-      footer {
         display: flex;
         text-align: center;
         justify-content: center;
         background-color: #f8f9fa;
         padding: 10px;
+      }
+
+      /* Stylizacja stopki */
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #f8f9fa;
         height: 10vh;
       }
+
+      /* Stylizacja głównej sekcji */
       main {
-        height: 80vh;
+        height: 69vh;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
       }
+
+      /* Podgląd koloru */
       #colorPreview {
         width: 200px;
         height: 200px;
         border-radius: 50%;
         background-color: #000000;
+        margin-bottom: 20px;
       }
     </style>
   </head>
   <body>
     <header>
       <h1>Mieszalnik Barw RGB</h1>
-      <img src="ja.gif" />
+      <img src="ja.gif" alt="Logo projektu" />
     </header>
     <main>
+      <!-- Podgląd koloru -->
       <div id="colorPreview"></div>
-      <p style="color: black !important" id="textColorPreview"></p>
+      <p id="colorCodePreview" style="color: black !important"></p>
+
+      <!-- Suwaki do ustawiania wartości kolorów -->
       <label for="red">Czerwony:</label>
       <input
-        onchange="aktualizujPodglad()"
+        onchange="updateColorPreview()"
         type="range"
         id="red"
         name="red"
@@ -54,9 +72,9 @@
         max="255"
         value="0"
       />
-      <label for="green">zielony:</label>
+      <label for="green">Zielony:</label>
       <input
-        onchange="aktualizujPodglad()"
+        onchange="updateColorPreview()"
         type="range"
         id="green"
         name="green"
@@ -64,9 +82,9 @@
         max="255"
         value="0"
       />
-      <label for="blue">Blue:</label>
+      <label for="blue">Niebieski:</label>
       <input
-        onchange="aktualizujPodglad()"
+        onchange="updateColorPreview()"
         type="range"
         id="blue"
         name="blue"
@@ -74,12 +92,12 @@
         max="255"
         value="0"
       />
-      <label for="alfa">Alfa:</label>
+      <label for="alpha">Przezroczystość (Alfa):</label>
       <input
-        onchange="aktualizujPodglad()"
+        onchange="updateColorPreview()"
         type="range"
-        id="alfa"
-        name="alfa"
+        id="alpha"
+        name="alpha"
         min="0"
         max="100"
         value="100"
@@ -91,25 +109,37 @@
         Staszków.
       </p>
     </footer>
-  </body>
-  <script>
-    let colorPreview = document.getElementById("colorPreview");
-    let textColorPreview = document.getElementById("textColorPreview");
-    let czerwony = document.getElementById("red");
-    let zielony = document.getElementById("green");
-    let niebieski = document.getElementById("blue");
-    let alfa = document.getElementById("alfa");
-    let tekst = document.getElementById("textColorPreview");
+    <script>
+      // Pobranie elementów HTML
+      const colorPreview = document.getElementById("colorPreview");
+      const colorCodePreview = document.getElementById("colorCodePreview");
+      const redSlider = document.getElementById("red");
+      const greenSlider = document.getElementById("green");
+      const blueSlider = document.getElementById("blue");
+      const alphaSlider = document.getElementById("alpha");
 
-    function aktualizujPodglad() {
-      let czerwonyV = czerwony.value;
-      let zielonyV = zielony.value;
-      let niebieskiV = niebieski.value;
-      let alfaV = alfa.value;
-      tekst.innerText = `rgba(${czerwonyV}, ${zielonyV}, ${niebieskiV}, ${alfaV})`;
-      colorPreview.style.backgroundColor = `rgba(${czerwonyV}, ${zielonyV}, ${niebieskiV}, ${alfaV}%)`;
-      textColorPreview.style.color =
-        czerwonyV + zielonyV + niebieskiV + alfaV > 382 ? "black" : "white";
-    }
-  </script>
+      /**
+       * Funkcja aktualizująca podgląd koloru na podstawie wartości suwaków.
+       */
+      function updateColorPreview() {
+        // Pobranie wartości z suwaków
+        const redValue = redSlider.value;
+        const greenValue = greenSlider.value;
+        const blueValue = blueSlider.value;
+        const alphaValue = alphaSlider.value / 100; // Przeliczenie alfa na zakres 0-1
+
+        // Ustawienie koloru podglądu
+        const rgbaColor = `rgba(${redValue}, ${greenValue}, ${blueValue}, ${alphaValue})`;
+        colorPreview.style.backgroundColor = rgbaColor;
+
+        // Wyświetlenie kodu koloru
+        colorCodePreview.innerText = rgbaColor;
+
+        // Zmiana koloru tekstu w zależności od jasności
+        const brightness =
+          parseInt(redValue) + parseInt(greenValue) + parseInt(blueValue);
+        colorCodePreview.style.color = brightness > 382 ? "black" : "white";
+      }
+    </script>
+  </body>
 </html>

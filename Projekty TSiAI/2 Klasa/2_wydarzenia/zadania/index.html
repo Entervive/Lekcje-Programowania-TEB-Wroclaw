@@ -1,26 +1,75 @@
-<!DOCTYPE html>
-<html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Formularz</title>
-</head>
-<body>
-    <main>
-        <div>
-            <label>Nazwa</label>
-            <input id="imie" type="text" onfocus="zabawa(event)" onblur="nieZabawanie(event)"><br>
-            <label>E-mail</label>
-            <input id="email" type="email" onfocus="zabawa(event)" onblur="nieZabawanie(event)"><br>
-            <label>Hasło</label>
-            <input type="password" onfocus="zabawa(event)" onfocusout="maslo()"><br>
-            <label>Zmień kolor strony</label>
-            <input type="color" onchange="schizofremia()"><br>
-            <button id="przeslij" onclick="przeslij()" onmouseover="stylowo(event)" onmouseout="nieStylowo(event)">Prześlij</button>
-            <button onmousedown="demencja(event)" onmouseup="czystaDemencja(event)">Zresetuj</button>
-        </div>
-    </main>
-</body>
-<script src="script.js"></script>
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zadania z wydarzeń</title>
+    <!-- Link do pliku CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Nagłówek strony -->
+    <h1>Zadania z obsługi zdarzeń w JavaScript</h1>
+
+    <!-- Formularz interaktywny -->
+    <form id="interactiveForm">
+      <!-- Pole tekstowe z obsługą zdarzeń onfocus i onblur -->
+      <label for="name">Imię:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        onfocus="highlightField(this)"
+        onblur="resetField(this)"
+      />
+      <br /><br />
+
+      <!-- Pole tekstowe dla adresu e-mail -->
+      <label for="email">E-mail:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        onfocus="highlightField(this)"
+        onblur="resetField(this)"
+      />
+      <br /><br />
+
+      <!-- Pole tekstowe dla hasła -->
+      <label for="password">Hasło:</label>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        onfocus="highlightField(this)"
+        onblur="resetField(this)"
+      />
+      <br /><br />
+
+      <!-- Pole wyboru koloru z obsługą onchange -->
+      <label for="color">Wybierz kolor:</label>
+      <select
+        id="color"
+        name="color"
+        onchange="changeBackgroundColor(this.value)"
+      >
+        <option value="white">Biały</option>
+        <option value="lightblue">Jasny niebieski</option>
+        <option value="lightgreen">Jasny zielony</option>
+      </select>
+      <br /><br />
+
+      <!-- Przyciski z obsługą zdarzeń onmousedown i onmouseup -->
+      <button
+        type="button"
+        onmousedown="changeButtonColor(this, 'red')"
+        onmouseup="changeButtonColor(this, 'green')"
+      >
+        Kliknij mnie
+      </button>
+    </form>
+
+    <!-- Skrypt JavaScript -->
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,162 +1,201 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ćwiczenia z JS</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ćwiczenia z JavaScript 2</title>
     <style>
-        html {
-            background-color: #AAFAC8;
-            font-size: large;
-            padding: 20px;
-            text-align: center;
-        }
+      html {
+        background-color: #aafac8;
+        font-size: large;
+        padding: 20px;
+        text-align: center;
+      }
 
-        section {
-            background-color: #C7FFED;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 2px #BBC8CA;
-        }
+      section {
+        background-color: #c7ffed;
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 2px #bbc8ca;
+      }
 
-        section li {
-            text-align: left;
-            margin-left: 33%;
-        }
+      section li {
+        text-align: left;
+        margin-left: 33%;
+      }
 
-        .staraKlasa {
-            width: 200px;
-            height: 100px;
-            background-color: red;
-        }
+      .staraKlasa {
+        width: 200px;
+        height: 100px;
+        background-color: red;
+      }
 
-        .nowaKlasa {
-            width: 300px;
-            height: 100px;
-            background-color: blue;
-        }
+      .nowaKlasa {
+        width: 300px;
+        height: 100px;
+        background-color: blue;
+      }
+
+      #wyswietlacz {
+        border: 1px dotted black;
+        padding: 10px;
+        margin-top: 10px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Ćwiczenia z JavaScript 2</h1>
+      <h1>Ćwiczenia z JavaScript 2</h1>
     </header>
     <main>
-        <section id="wstep">
-            <h2>Wstęp</h2>
-            <p>Wykonaj poniższe ćwiczenia w tym dokumencie: albo pisząc skrypt lokalnie w znaczniku &lt;script&gt;, albo podłączając skrypt zewnętrznie. Pamiętaj o komentarzach objaśniających działanie programu. Skrypty "podepnij" do przycisków poprzez "onclick()" (w pierwszym zadaniu jest przykład jak to zrobić).</p>
-        </section>
-        <section id="cw1">
-            <h2>Zadanie 1.</h2>
-            <p>Korzystając z polecenia "for()" i "console.log()" zapisz pętlę, która wypisze w konsoli przeglądarki liczby od 1 do 10.</p>
-            <button onclick="zad1()">Wykonaj</button>
-            <script>
-                function zad1(){
-                    for(i = 1; i <= 10; i++){
-                        console.log(i);
-                    }
-                }
-            </script>
-        </section>
-        <section id="cw2">
-            <h2>Zadanie 2.</h2>
-            <p>Zapisz pętlę "for()", która pobierze od użytkownika (dzięki "prompt()") i przypisze do zmiennych ("let") trzy wartości: startową, ilość powtórzeń oraz "krok". Niech pętla wypisze w konsoli wynik dodawania "wartość startowa" + "krok" tyle razy, ile wynosi liczba powtórzeń. Do każdego kolejnego wykonania pętli, jako wartość startowa wybierz wynik poprzedniego wykonania pętli (np. 'startowa = startowa + krok'). <br><br>Wykorzystaj metodę "parseInt()" aby wartości pobrane poprzez "prompt()" zamienić na wartości liczbowe (domyślnie są one rozumiane jako łańcuchy znaków, a nie liczby).</p><p>Przykład:<br>Wartość startowa: 2;<br>Liczba powtórzeń: 4;<br>Krok: 5;<br>Wynik pętli: 7, 12, 17, 22.</p>
-            <button onclick="zad2()">Wykonaj</button>
-            <script>
-                function zad2(){
-                    let x = parseInt(prompt("Podaj wartośc startową"));
-                    let y = parseInt(prompt("Podaj ilość 'kroków'"));
-                    let z = parseInt(prompt("Podaj ilość powtórzeń"));
+      <section id="wstep">
+        <h2>Wstęp</h2>
+        <p>
+          Wykonaj poniższe ćwiczenia w tym dokumencie. Skrypty są podpięte do
+          przycisków za pomocą atrybutu <code>onclick()</code>. Każde zadanie
+          zawiera komentarze tłumaczące działanie kodu.
+        </p>
+      </section>
 
-                    for(i = 0; i < z; i++){
-                        x = x + y;
-                        console.log(x);
-                    }
-                }
-            </script>
-        </section>
-        <section id="cw3">
-            <h2>Zadanie 3.</h2>
-            <p>Zapisz pętlę "for()" liczącą kolejne wartości ciągu Fibonacciego, która pobierze od użytkownika ilość liczb do wypisania i wyświetli wartości w konsoli przeglądarki.</p><p>Ciąg Fibonacciego to taki ciąg liczb, którego dwie pierwsze wartości to "1" i "1", a każda kolejna wartość jest sumą dwóch poprzednich.</p><p>Zatem kolejne wartości tego ciągu to:<ol><li>1</li><li>1</li><li>2</li><li>3</li><li>5</li><li>8</li><li>13</li><li>21</li><li>...</li></ol>Przypisz dwie pierwsze wartości tego ciągu do dwóch zmiennych (np. x, y). <br><br>Do trzeciej zmiennej przypisz (pamiętaj o "parseInt(prompt())") ile liczb ma zostać wypisane (np. "iloscPowtorzen"). <br><br>W pętli zastosuj warunek: jeżeli pętla jest na pierwszym powtórzeniu (np. i = 0), to po prostu wyświetl wartość pierwszej zmiennej (powinna zawierać po prostu jedynkę). W przeciwnym wypadku: wyświetl wartość pierwszej zmiennej, dodaj do pierwszej zmiennej drugą zmienną (np. x = x + y), a wartość drugiej zmiennej ustal na "pierwsza zmienna" - "druga zmienna" (np. y = x - y) </p>
-            <button onclick="zad3()">Wykonaj</button>
-            <script>
-                function zad3(){
-                    x = 1;
-                    y = 1;
-                    z = parseInt(prompt("Podaj ilość powtórzeń"))
-                        for(i = 0; i < z; i++){
-                            if(i==0){
-                                console.log(x);
-                            }
-                            else{
-                                console.log(x);
-                                x = x + y;
-                                y = x - y;
-                            }
-                        }
-                }
-            </script>
-        </section>
-        <section id="cw4">
-            <h2>Zadanie 4.</h2>
-            <p>Zapisz pętlę "for()", która pobierze od użytkownika pewną (określ z góry) liczbę słów (np. nazw owoców). Zapisz te wartości w tablicy (np. "owoce[]" - możesz skorzystać z metody "owoce.push('wartość')"). Następnie napisz pętlę "for()", która wypisze te słowa jako tekst wewnętrzny ("innerText()") bloku &lt;div&gt; o id = "wyswietlacz" (stwórz taki blok poniżej, przed przyciskiem "Wykonaj" - możesz także nadać mu jakiś styl, np. obramowanie).<br><br>Wskazówka: możesz skorzystać z konkatenacji (złączeń) łańcuchów tekstowych, aby poprawić czytelność wyświetlanego tekstu - niech z każdym powtórzeniem pętli wyświetlającej, doklej najpierw pusty łańcuch tekstowy (" ") do zawartości "wyświetlacza", zanim dołączysz kolejną wartość tablicy (np. "ekran.innerText += ' ' + owoce[i]").</p>
-            <div id="wyswietlacz"></div>
-            <button onclick="zad4()">Wykonaj</button>
-            <script>
-                function zad4(){
-                    let owoce = [];
-                    const x = 3;
-                    for(i = 0; i < x; i++){
-                        let y = prompt("Podaj słowo");
-                        owoce.push(y);
-                    }
-                    document.getElementById("wyswietlacz").innerText = "";
-                    for(i = 0; i < x; i++){
-                        document.getElementById("wyswietlacz").innerText +=" " + owoce[i] + " ";
-                    }
-                }
-            </script>
-            <style>
-                #wyswietlacz{
-                    border: black 1px dotted;
-                }
-            </style>
-        </section>
-        <section id="cw5">
-            <h2>Zadanie 5.*</h2>
-            <p>Utwórz funkcję, która będzie rysowała prostokąty (bloki &lt;div&gt;) o zadanych wymiarach i wybranych kolorach. Pobierz od użytkownika ilość powtórzeń wykonania funkcji, wymiary (w pikselach) każdego z prostokątów oraz pozwól wybrać kolor poprzez podanie trzech wartości RGB (od 0 do 255) - skrypt powinien sprawdzić, czy wprowadzone wartości są poprawne (możesz użyć zapisu typu "lub" w warunku sprawdzającym - ma on postać || (np. "R &lt; 0 || R &gt; 255 || G &lt; 0...")). <br><br>Utwórz najpierw blok początkowy (zwykły, pusty &lt;div&gt; przed skryptem - nadaj mu id, np. "zadanie5") i przypisz go do zmiennej (np. "let blokStartowy = document.getElementById('zadanie5')"). <br><br>W każdym wykonaniu pętli twórz nowy obiekt (metoda document.createElement() "np. let nowyKlocek = document.createElement('div')"). Przypisz mu wartości stylu (np. "nowyKlocek.style.width = szerokosc+'px'; nowyKlocek.style.height = wysokosc+'px'"). <br><br>Na zakończenie każdego wykonania pętli (zakładając, że użytkownik podał poprawne wartości kolorów) skorzystaj z metody "appendChild()" aby dodać nowy blok-dziecko do już istniejącego bloku (np. "blokStartowy.appendChild(nowyKlocek)").<br><br>Wskazówka: reguła stylu dotycząca koloru tła powinna mieć postać np. 'nowyKlocek.style.backgroundColor = "rgb("+R+", "+G+", "+B+")"', gdzie R, G i B to wartości intensywności kolorów pobrane od użytkownika.
-            </p>
-            <button onclick="zad5()">Wykonaj</button>
-            <div id="zadanie5"></div>
-            <script>
-                function zad5(){
-                    let blokStartowy = document.getElementById("zadanie5");
+      <section id="cw1">
+        <h2>Zadanie 1</h2>
+        <p>
+          Wypisz liczby od 1 do 10 w konsoli przeglądarki za pomocą pętli
+          <code>for</code>.
+        </p>
+        <button onclick="zad1()">Wykonaj</button>
+        <script>
+          function zad1() {
+            // Pętla for wypisuje liczby od 1 do 10
+            for (let i = 1; i <= 10; i++) {
+              console.log(i); // Wypisanie liczby w konsoli
+            }
+          }
+        </script>
+      </section>
 
-                    ilosc_Pow = parseInt(prompt("Ilość powtórzeń"));
+      <section id="cw2">
+        <h2>Zadanie 2</h2>
+        <p>
+          Pobierz od użytkownika wartość początkową, krok i liczbę powtórzeń.
+          Wypisz kolejne wyniki dodawania w konsoli.
+        </p>
+        <button onclick="zad2()">Wykonaj</button>
+        <script>
+          function zad2() {
+            // Pobranie danych od użytkownika
+            let start = parseInt(prompt("Podaj wartość początkową:"));
+            let krok = parseInt(prompt("Podaj krok:"));
+            let powtorzenia = parseInt(prompt("Podaj liczbę powtórzeń:"));
 
-                    for(i = 0; i < ilosc_Pow; i++){
-                        let nowyKlocek = document.createElement("div");
-                        width = parseInt(prompt("Podaj szerokość"));
-                        height = parseInt(prompt("Podaj wysokość"));
+            // Pętla for wykonuje obliczenia i wypisuje wyniki
+            for (let i = 0; i < powtorzenia; i++) {
+              start += krok; // Dodanie kroku do wartości początkowej
+              console.log(start); // Wypisanie wyniku w konsoli
+            }
+          }
+        </script>
+      </section>
 
-                        Red = parseInt(prompt("Podaj wartość Czerwoną RGB"));
-                        Green = parseInt(prompt("Podaj wartość Zieloną RGB"));
-                        Blue = parseInt(prompt("Podaj wartość Niebieską RGB"));
-                        if(Red < 0 || Red > 255 || Green < 0 || Green > 255 || Blue < 0 || Blue > 255){
-                            alert("Wpisz poprawne wartości kolorów od 0 do 255");
-                        }
-                        else{
-                            nowyKlocek.style.width = width + "px";
-                            nowyKlocek.style.height = height + "px";
+      <section id="cw3">
+        <h2>Zadanie 3</h2>
+        <p>
+          Wypisz kolejne liczby ciągu Fibonacciego w konsoli. Pobierz od
+          użytkownika liczbę elementów do wyświetlenia.
+        </p>
+        <button onclick="zad3()">Wykonaj</button>
+        <script>
+          function zad3() {
+            // Inicjalizacja pierwszych dwóch liczb ciągu Fibonacciego
+            let a = 1,
+              b = 1;
+            let ilosc = parseInt(
+              prompt("Podaj liczbę elementów do wyświetlenia:")
+            );
 
-                            nowyKlocek.style.backgroundColor = "rgb(" + Red + "," + Green + "," + Blue + ")";
-                            blokStartowy.appendChild(nowyKlocek);
-                        }
-                    }
-                }
-            </script>
-        </section>
+            // Pętla for generuje kolejne liczby ciągu
+            for (let i = 0; i < ilosc; i++) {
+              console.log(a); // Wypisanie bieżącej liczby
+              let temp = a + b; // Obliczenie następnej liczby
+              a = b; // Przesunięcie wartości
+              b = temp;
+            }
+          }
+        </script>
+      </section>
+
+      <section id="cw4">
+        <h2>Zadanie 4</h2>
+        <p>
+          Pobierz od użytkownika kilka słów i wyświetl je w bloku
+          <code>div</code> o id <code>wyswietlacz</code>.
+        </p>
+        <div id="wyswietlacz"></div>
+        <button onclick="zad4()">Wykonaj</button>
+        <script>
+          function zad4() {
+            let owoce = []; // Tablica do przechowywania słów
+            let ilosc = parseInt(prompt("Podaj liczbę słów do wprowadzenia:"));
+
+            // Pobranie słów od użytkownika
+            for (let i = 0; i < ilosc; i++) {
+              owoce.push(prompt(`Podaj słowo ${i + 1}:`));
+            }
+
+            // Wyświetlenie słów w bloku div
+            let wyswietlacz = document.getElementById("wyswietlacz");
+            wyswietlacz.innerText = owoce.join(", "); // Połączenie słów przecinkami
+          }
+        </script>
+      </section>
+
+      <section id="cw5">
+        <h2>Zadanie 5*</h2>
+        <p>
+          Utwórz prostokąty o zadanych wymiarach i kolorach. Pobierz dane od
+          użytkownika.
+        </p>
+        <div id="zadanie5"></div>
+        <button onclick="zad5()">Wykonaj</button>
+        <script>
+          function zad5() {
+            let kontener = document.getElementById("zadanie5");
+            let ilosc = parseInt(
+              prompt("Podaj liczbę prostokątów do narysowania:")
+            );
+
+            // Pętla tworzy prostokąty
+            for (let i = 0; i < ilosc; i++) {
+              let szerokosc = parseInt(
+                prompt("Podaj szerokość prostokąta (px):")
+              );
+              let wysokosc = parseInt(
+                prompt("Podaj wysokość prostokąta (px):")
+              );
+              let r = parseInt(prompt("Podaj wartość R (0-255):"));
+              let g = parseInt(prompt("Podaj wartość G (0-255):"));
+              let b = parseInt(prompt("Podaj wartość B (0-255):"));
+
+              // Sprawdzenie poprawności wartości RGB
+              if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
+                alert("Niepoprawne wartości RGB. Spróbuj ponownie.");
+                continue;
+              }
+
+              // Tworzenie nowego prostokąta
+              let prostokat = document.createElement("div");
+              prostokat.style.width = szerokosc + "px";
+              prostokat.style.height = wysokosc + "px";
+              prostokat.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+              prostokat.style.margin = "10px";
+
+              // Dodanie prostokąta do kontenera
+              kontener.appendChild(prostokat);
+            }
+          }
+        </script>
+      </section>
     </main>
-</body>
+  </body>
 </html>

@@ -1,34 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Zadanie JavaScript 3</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<header style="padding-top: 2vh;">
-    <h1>Zadanie JavaScript Galeria</h1>
-    <h3>Nr ???</h3>
-</header>
-<body>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header style="padding-top: 2vh">
+      <h1>Zadanie JavaScript Galeria</h1>
+      <h3>Nr 3</h3>
+    </header>
     <aside>
-        <a onclick="zmiana('Lewo')" id="Lewo"><svg id="Lewoo" xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet">
-            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-          </svg></a>
+      <!-- Przycisk do zmiany zdjęcia w lewo -->
+      <a onclick="zmiana('Lewo')" id="Lewo">
+        <svg
+          id="Lewoo"
+          xmlns="http://www.w3.org/2000/svg"
+          width="64"
+          height="64"
+          fill="currentColor"
+          class="bi bi-arrow-left"
+          viewBox="0 0 16 16"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+          />
+        </svg>
+      </a>
     </aside>
     <main>
-        <div id="Galeria">
-            
-        </div>
+      <!-- Kontener na galerię -->
+      <div id="Galeria"></div>
     </main>
-    <aside style="float: right;">
-        <a onclick="zmiana('Prawo')" id="Prawo"><svg id="Prawoo" xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet">
-            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
-          </svg></a>
+    <aside style="float: right">
+      <!-- Przycisk do zmiany zdjęcia w prawo -->
+      <a onclick="zmiana('Prawo')" id="Prawo">
+        <svg
+          id="Prawoo"
+          xmlns="http://www.w3.org/2000/svg"
+          width="64"
+          height="64"
+          fill="currentColor"
+          class="bi bi-arrow-right"
+          viewBox="0 0 16 16"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"
+          />
+        </svg>
+      </a>
     </aside>
-</body>
-<Footer>
-    <p style="padding-bottom: 2vh;">Strona Stworzna Przez &copy; Aleksandra Staszków 1TSA</p>
-</Footer>
-<script src="js/script.js"></script>
+    <footer>
+      <p style="padding-bottom: 2vh">
+        Strona Stworzona Przez &copy; Aleksandra Staszków 1TSA
+      </p>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
 </html>

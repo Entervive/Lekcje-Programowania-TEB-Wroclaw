@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl-PL">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,58 +9,68 @@
 </head>
 <header>
     <?php
-        require 'include/header.php';
+    // Wczytanie nagłówka strony
+    require 'include/header.php';
     ?>
 </header>
+
 <body>
     <main>
         <?php
-            $uzytkownik = "aleksanderstaszkow1tsa";
-            $haslo = "TebWroclaw";
-            $bazadanych = "kinoaleksanderstaszkow";
-            $serwer = "localhost";
+        // Dane do połączenia z bazą danych
+        $dbUser = "aleksanderstaszkow1tsa";
+        $dbPassword = "TebWroclaw";
+        $dbName = "kinoaleksanderstaszkow";
+        $dbHost = "localhost";
 
-            $polaczenie =  new mysqli($serwer, $uzytkownik, $haslo, $bazadanych);
+        // Nawiązanie połączenia z bazą danych
+        $connection = new mysqli($dbHost, $dbUser, $dbPassword, $dbName);
 
-            if(!$polaczenie) {
-                die("Błąd połączenia z bazą danych" . mysqli_connect_error());
-            }
-            else {
-                echo "Witamy w sklepie kina Tytan";
-            }
+        // Sprawdzenie połączenia
+        if ($connection->connect_error) {
+            die("Błąd połączenia z bazą danych: " . $connection->connect_error);
+        } else {
+            echo "Witamy w sklepie kina Tytan";
+        }
 
-            $zapytanie = "SELECT * FROM produkt";
-            $wynik = mysqli_query($polaczenie, $zapytanie);
+        // Zapytanie SQL pobierające dane o produktach
+        $query = "SELECT * FROM produkt";
+        $result = $connection->query($query);
 
-            echo "<br>";
-            echo "<table>
+        // Wyświetlenie tabeli z danymi produktów
+        echo "<br>";
+        echo "<table>
                     <tr>
-                        <td>ID towaru</td>
-                        <td>Nazwa towaru</td>
-                        <td>Cena towaru</td>
-                        <td>Opis towaru</td>
-                        <td>Zdjęcie towaru</td>
-                    <tr>
-                ";
-            
-            while ($wiersz = mysqli_fetch_assoc($wynik)) {
-                echo "<tr>";
-                echo "<td>" . $wiersz["ID"] . "</td>";
-                echo "<td>" . $wiersz["Nazwa"] . "</td>";
-                echo "<td>" . $wiersz["Cena"] . "</td>";
-                echo "<td>" . $wiersz["Opis"] . "</td>";
-                echo "<td> <img src='IMG/" . $wiersz["Foto"] . ".jpg'> </td>";
-                echo "</tr>";
-            }
+                        <th>ID towaru</th>
+                        <th>Nazwa towaru</th>
+                        <th>Cena towaru</th>
+                        <th>Opis towaru</th>
+                        <th>Zdjęcie towaru</th>
+                    </tr>";
 
-            echo "</table>";
-            mysqli_close($polaczenie);
+        // Iteracja po wynikach zapytania
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($row["ID"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["Nazwa"]) . "</td>";
+            echo "<td>" . htmlspecialchars($row["Cena"]) . " zł</td>";
+            echo "<td>" . htmlspecialchars($row["Opis"]) . "</td>";
+            echo "<td><img src='IMG/" . htmlspecialchars($row["Foto"]) . ".jpg' alt='Zdjęcie produktu'></td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+
+        // Zamknięcie połączenia z bazą danych
+        $connection->close();
         ?>
     </main>
 </body>
 <footer>
     <?php
-        require 'include/footer.php';
+    // Wczytanie stopki strony
+    require 'include/footer.php';
     ?>
 </footer>
+
 </html>

@@ -1,55 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="IMG/logo.png">
-    <meta name="author" content="Aleksander Staszków">
-    <link rel="stylesheet" href="../../style.css">
-    <title>RadPlutUra</title>
-</head>
-<body>
+  <head>
+    <!-- Ustawienia meta i linki do zasobów -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="../../IMG/logo.png" />
+    <meta name="author" content="Aleksander Staszków" />
+    <link rel="stylesheet" href="../../style.css" />
+    <title>Płatki Uranowe - RadPlutUra</title>
+  </head>
+  <body>
+    <!-- Nagłówek strony -->
     <header>
-        <table>
-            <tr>
-                <td><img src="../../IMG/logo.png" style="width: 96px; height: 96px;"></td>
-                <td style="font-size: 22px;">Poczuj ten smak <b style="color: greenyellow;">rad</b>-ości</td>
-            </tr>
-        </table>
+      <table>
+        <tr>
+          <td>
+            <!-- Logo sklepu -->
+            <img
+              src="../../IMG/logo.png"
+              alt="Logo RadPlutUra"
+              style="width: 96px; height: 96px"
+            />
+          </td>
+          <td style="font-size: 22px">
+            Poczuj ten smak <b style="color: greenyellow">rad</b>-ości
+          </td>
+        </tr>
+      </table>
     </header>
-    <nav>
-        <ul>
-            <a href="../../index.html"><li>Strona Główna</li></a>
-            <a href="../produkty.html"><li>Produkty</li></a>
-            <a href="../onas.html"><li>O nas</li></a>
-            <a href="../kontakt.html"><li>Kontakt</li></a>
-        </ul>
-    </nav>
-    <main>
-        <a style="position: absolute; left: 20.5%;" href="../produkty.html"><svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet">
-            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-        </svg></a>
-        <img src="../../IMG/uranowe.png" style="height: 256px; width: 256px; margin-top: 3vh;">
-        <h1>Płatki Uranowe</h1>
-        <p>Chrupiące płatki zbożowe z dodatkiem uranu. Idealne do mleka, jogurtu lub owoców.
-            Zawierają aż 20% uranu w postaci U3​O8​ - tlenku uranu o żółtej barwie i lekko metalicznym smaku.
-            Płatki uranowe zapewnią ci nie tylko bogate źródło błonnika, wapnia i żelaza,
-            ale także podniosą twoją temperaturę ciała, zwiększą twoją odporność i poprawią twoją pamięć.
-            Jedna porcja płatków uranowych to 15 g - wystarczy, byś czuł się świetnie przez cały dzień!</p>
-        <button onclick="kup()">Kup</button>
-        <div id="tak">
 
-        </div>
+    <!-- Nawigacja między stronami -->
+    <nav>
+      <ul>
+        <a href="../../index.html"><li>Strona Główna</li></a>
+        <a href="../produkty.html"><li>Produkty</li></a>
+        <a href="../onas.html"><li>O nas</li></a>
+        <a href="../kontakt.html"><li>Kontakt</li></a>
+      </ul>
+    </nav>
+
+    <!-- Główna treść strony -->
+    <main>
+      <!-- Link powrotu do listy produktów -->
+      <a style="position: absolute; left: 20.5%" href="../produkty.html">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="64"
+          height="64"
+          fill="currentColor"
+          class="bi bi-arrow-left"
+          viewBox="0 0 16 16"
+          preserveAspectRatio="xMidYMid meet"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"
+          />
+        </svg>
+      </a>
+
+      <!-- Obraz produktu -->
+      <img
+        src="../../IMG/uranowe.png"
+        alt="Płatki Uranowe"
+        style="height: 256px; width: 256px; margin-top: 3vh"
+      />
+
+      <!-- Tytuł i opis produktu -->
+      <h1>Płatki Uranowe</h1>
+      <p>
+        Chrupiące płatki zbożowe z dodatkiem uranu. Idealne do mleka, jogurtu
+        lub owoców. Zawierają aż 20% uranu w postaci U3​O8​ - tlenku uranu o
+        żółtej barwie i lekko metalicznym smaku. Płatki uranowe zapewnią ci nie
+        tylko bogate źródło błonnika, wapnia i żelaza, ale także podniosą twoją
+        temperaturę ciała, zwiększą twoją odporność i poprawią twoją pamięć.
+        Jedna porcja płatków uranowych to 15 g - wystarczy, byś czuł się
+        świetnie przez cały dzień!
+      </p>
+
+      <!-- Przycisk zakupu -->
+      <button onclick="wyswietlKomunikatZakupu()">Kup</button>
+      <div id="kontener-komunikatu"></div>
     </main>
+
+    <!-- Stopka strony -->
     <footer>
-        <p>
-            Strona: &copf; Aleksander Staszków 1TSA<br>
-            Grafika: &copf; Monika Kuliś 1TR<br><br>
-            Strona ma cel chumorystyczny.<br>
-            Promieniotwórcze jedzenie jest bardzo niebezpieczne i szkodliwe dla zdrowia i życia.<br>
-            Nie bierz tego na poważnie. To tylko żart.
-        </p>
+      <p>
+        Strona: &copf; Aleksander Staszków 1TSA<br />
+        Grafika: &copf; Monika Kuliś 1TR<br /><br />
+        Strona ma cel humorystyczny.<br />
+        Promieniotwórcze jedzenie jest bardzo niebezpieczne i szkodliwe dla
+        zdrowia i życia.<br />
+        Nie bierz tego na poważnie. To tylko żart.
+      </p>
     </footer>
-</body>
-<script src="../../JS/script.js"></script>
+  </body>
+
+  <!-- Skrypt obsługujący interakcje -->
+  <script src="../../JS/script.js"></script>
 </html>

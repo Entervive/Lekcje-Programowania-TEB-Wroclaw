@@ -1,45 +1,66 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Twoja Miejsce Wakacji</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Twoje Miejsce Wakacji</title>
+  </head>
+  <body>
     <header>
-        <img id="logo" src="img/Rr.png"><h1>Wrocław - Miasto Spotkań</h1>
-        <nav>
-            <a href="index.html">Strona główna</a>
-            <a href="kalkulator_kosztow.html">Kalkulator Kosztów</a>
-            <a href="atrakcje.html">Atrakcje Turystyczne</a>
-        </nav>
-        <button onclick="zmien()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg>
-        </button>
+      <img id="logo" src="img/Rr.png" alt="Logo strony" />
+      <h1>Wrocław - Miasto Spotkań</h1>
+      <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="kalkulator_kosztow.html">Kalkulator Kosztów</a>
+        <a href="atrakcje.html">Atrakcje Turystyczne</a>
+      </nav>
+      <button onclick="toggleBackground()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-arrow-clockwise"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+          />
+          <path
+            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
+          />
+        </svg>
+      </button>
     </header>
     <main>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos, accusamus aliquid. Sapiente at, veniam voluptatum illo laudantium eaque qui excepturi deleniti voluptate placeat officiis quas voluptates, vitae cum neque repellendus!</p>
-        <div class="obrazy">
-            <img src="img/1.jpg">
-            <img src="img/2.png">
-            <img src="img/3.jpg">
-        </div>
+      <p>
+        Witamy na stronie poświęconej Wrocławiowi - miastu pełnemu atrakcji i
+        pięknych miejsc!
+      </p>
+      <div class="images">
+        <img src="img/1.jpg" style="width: 200px" alt="Zdjęcie Wrocławia" />
+        <img src="img/2.png" style="width: 200px" alt="Zdjęcie Wrocławia" />
+        <img src="img/3.jpg" style="width: 200px" alt="Zdjęcie Wrocławia" />
+      </div>
     </main>
     <aside>
-        <div class="tak">
-            <img src="img/avatar.png">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Suscipit pariatur soluta hic ullam sit deleniti itaque labore velit odit earum? Nam perferendis nemo accusantium harum, delectus nesciunt nobis corporis sequi.</p>
-        </div>
-        <div class="tak">
-            <img src="img/avatar2.png">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti, eaque odit? Officia esse repellendus nesciunt minus incidunt possimus assumenda delectus? Quia atque omnis vitae fuga in explicabo officiis obcaecati cum.</p>
-        </div>
+      <div class="info-box">
+        <img src="img/avatar.png" style="width: 50px" alt="Avatar" />
+        <p>
+          Wrocław to miasto pełne historii i kultury. Odwiedź nas i przekonaj
+          się sam!
+        </p>
+      </div>
+      <div class="info-box">
+        <img src="img/avatar2.png" style="width: 50px" alt="Avatar" />
+        <p>
+          Zapraszamy do odkrywania pięknych zakątków Wrocławia i jego okolic.
+        </p>
+      </div>
     </aside>
-    <footer style="padding-top: 20px;">
-        &copf; Strona Stworzona przez Aleksandra Staszków. 
-    </footer>
-</body>
-<script src="script.js"></script>
+    <footer>&copy; Strona stworzona przez Aleksandra Staszków.</footer>
+    <script src="script.js"></script>
+  </body>
 </html>

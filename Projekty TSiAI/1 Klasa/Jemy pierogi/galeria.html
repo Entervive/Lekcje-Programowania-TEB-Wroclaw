@@ -1,43 +1,82 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ogólnoświatowy Turniej Jedzenia Pierogoów Na Czas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="stylowo.css">
-</head>
-<body>
+  <head>
+    <!-- Ustawienie kodowania znaków i responsywności strony -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ogólnoświatowy Turniej Jedzenia Pierogów Na Czas - Galeria</title>
+    <!-- Dodanie zewnętrznej biblioteki animacji -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Podłączenie pliku CSS -->
+    <link rel="stylesheet" href="stylowo.css" />
+  </head>
+  <body>
+    <!-- Nagłówek strony -->
     <header>
-        <p>V Ogólnoświatowy Turniej Jedzenia Pierogoów Na Czas</p>
+      <p>V Ogólnoświatowy Turniej Jedzenia Pierogów Na Czas</p>
     </header>
+    <!-- Nawigacja z odnośnikami do podstron -->
     <nav>
-        <ul>
-            <a href="index.html"><li class="animate__animated animate__backInDown" >Strona Główna</li></a>
-            <a href="historia.html"><li class="animate__animated animate__backInLeft">Historia</li></a>
-            <a href="uczestnicy.html"><li class="animate__animated animate__backInUp">Uczestnicy</li></a>
-            <a href="galeria.html"><li class="animate__animated animate__backInRight">Galeria</li></a>
-        </ul>
+      <ul>
+        <a href="index.html"
+          ><li class="animate__animated animate__backInDown">
+            Strona Główna
+          </li></a
+        >
+        <a href="historia.html"
+          ><li class="animate__animated animate__backInLeft">Historia</li></a
+        >
+        <a href="uczestnicy.html"
+          ><li class="animate__animated animate__backInUp">Uczestnicy</li></a
+        >
+        <a href="galeria.html"
+          ><li class="animate__animated animate__backInRight">Galeria</li></a
+        >
+      </ul>
     </nav>
+    <!-- Główna zawartość strony -->
     <div id="wrapper">
-        <main>
-            <h2>Galeria</h2>
-            <p class="animate__animated animate__rollIn"><img src="https://bi.im-g.pl/im/34/f6/1b/z29323060IER,Pierogi-Magdy-Gessler.jpg">\
-            <img src="https://i.ytimg.com/vi/HWMVW2cSwM8/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4Ac4FgAKACooCDAgAEAEYciBNKDowDw==&rs=AOn4CLBuALQKFQO5hOPkZAATZXlLDdiWzg">
-            <img src="https://i.wpimg.pl/1200x630/pysznosci-pl.wpcdn.pl/img/2023/05/Projekt-bez-tytulu-10-42.jpg">
-            <img src="https://d-art.ppstatic.pl/kadry/k/r/1/47/7b/55f5dd115335f_o_medium.jpg"></p>
-        </main>
-        <aside>
-            <p>Formularz zgłoszeniowy na Turniej</p>
-            <form class="animate__animated animate__backInRight">
-                Imię: <input type="text" name="imie"><br>
-                Nazwisko: <input type="text" name="nazwisko"><br>
-                Telefon: <input type="number" name="numer"><br>
-                E-mail: <input type="email" name="mail"><br>
-                <input type="submit" value="Wyślij">
-            </form>
-        </aside>
+      <main>
+        <!-- Nagłówek sekcji galerii -->
+        <h2>Galeria</h2>
+        <!-- Obrazy w galerii -->
+        <p class="animate__animated animate__rollIn">
+          <img
+            src="https://bi.im-g.pl/im/34/f6/1b/z29323060IER,Pierogi-Magdy-Gessler.jpg"
+            alt="Pierogi Magdy Gessler"
+          />
+          <img
+            src="https://i.ytimg.com/vi/HWMVW2cSwM8/maxres2.jpg"
+            alt="Pierogi na talerzu"
+          />
+          <img
+            src="https://i.wpimg.pl/1200x630/pysznosci-pl.wpcdn.pl/img/2023/05/Projekt-bez-tytulu-10-42.jpg"
+            alt="Pierogi z farszem"
+          />
+          <img
+            src="https://d-art.ppstatic.pl/kadry/k/r/1/47/7b/55f5dd115335f_o_medium.jpg"
+            alt="Pierogi w restauracji"
+          />
+        </p>
+      </main>
+      <!-- Sekcja boczna z formularzem zgłoszeniowym -->
+      <aside>
+        <p>Formularz zgłoszeniowy na Turniej</p>
+        <form class="animate__animated animate__backInRight">
+          <!-- Pola formularza do wprowadzenia danych -->
+          Imię: <input type="text" name="imie" /><br />
+          Nazwisko: <input type="text" name="nazwisko" /><br />
+          Telefon: <input type="number" name="numer" /><br />
+          E-mail: <input type="email" name="mail" /><br />
+          <!-- Przycisk wysyłania -->
+          <input type="submit" value="Wyślij" />
+        </form>
+      </aside>
     </div>
+    <!-- Stopka strony -->
     <footer>Stronę przygotował: Aleksander Staszków</footer>
-</body>
+  </body>
 </html>

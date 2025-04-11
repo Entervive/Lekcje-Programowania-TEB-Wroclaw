@@ -1,3 +1,4 @@
 <?php
-    echo date("d-M-Y") . ' &copf; Aleksander Staszków'
+// Wyświetlenie aktualnej daty i informacji o autorze
+echo date("d-m-Y") . ' &copy; Aleksander Staszków';
 ?>

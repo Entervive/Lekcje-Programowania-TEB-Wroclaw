@@ -1,0 +1,212 @@
+@font-face {
+  font-family: startrek;
+  font-weight: 100;
+  src: url(../Fonts/Stardate81316-aolE.ttf);
+}
+* {
+  margin: auto;
+  text-shadow: 1px 0px 20px black;
+}
+body {
+  color: white;
+  font-family: startek;
+  font-weight: 100;
+  text-align: center;
+  background-color: black;
+}
+header {
+  font-family: startrek;
+  color: white;
+  height: auto;
+  background-image: url(../img/background.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+}
+.arrow {
+  position: absolute;
+  bottom: 0vh;
+  left: 50%;
+  margin-left: -20px;
+  width: 40px;
+  height: 40px;
+
+  background-image: url(../img/arrow.png);
+  color: white;
+  background-size: contain;
+}
+
+main {
+  font-family: startrek;
+  font-weight: 100;
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+#wstep {
+  padding-left: 10vh;
+  text-align: justify;
+  background-image: url(../img/nebula.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.naglowek {
+  font-size: 80px;
+  font-weight: 100;
+  padding-top: 40vh;
+}
+.podtekst {
+  padding-top: 0.5vh;
+}
+.postacie {
+  text-shadow: 2px 2px 51px white;
+  display: flex;
+  place-items: center;
+  column-gap: 10px;
+  align-items: center;
+}
+.postacie > div {
+  width: 280px;
+  height: 500px;
+  box-shadow:
+    0 4px 8px 0 rgba(0, 0, 0, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  display: grid;
+}
+.postacie > div > h3 {
+  padding-top: 10px;
+  font-weight: 100;
+  font-size: 40px;
+}
+.postacie > div > p {
+  padding-top: 15px;
+  font-weight: 100;
+  font-size: 30px;
+}
+.postacie > div > img {
+  width: 184px;
+  height: 350px;
+  align-self: center;
+  justify-self: center;
+}
+footer {
+  clear: both;
+}
+iframe {
+  overflow-x: none;
+  overflow-y: none;
+  border: none;
+}
+.galeria {
+  float: left;
+  display: flex;
+  height: 100%;
+}
+.galeria > img {
+  height: 100%;
+  width: 8%;
+  margin: 0;
+  object-fit: cover;
+  transition: width 2s;
+  transition-duration: 3s;
+}
+.galeria > .imgtwo {
+  height: 100%;
+  width: 76%;
+  margin: 0;
+  transition: width 2s;
+  transition-duration: 3s;
+  object-fit: cover;
+}
+#technologie {
+  padding: 0;
+}
+.oneimg {
+  width: 70%;
+}
+#tekstdoobrazu {
+  font-size: 60px;
+  left: 5%;
+  top: 10%;
+  text-align: justify;
+  transition: left 2s;
+  position: absolute;
+}
+#tekstpodobraz {
+  transition: left 2s;
+  text-align: justify;
+  width: 40%;
+  left: 5%;
+  font-size: 40px;
+  top: 18%;
+  position: absolute;
+}
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+}
+#footer {
+  font-size: 30px;
+  background-size: 100%;
+  background-image: url(../img/fotter.png);
+}
+a {
+  text-decoration: underline;
+  color: white;
+}
+a:hover {
+  color: rgba(255, 255, 255, 0.518);
+}
+#dog {
+  position: absolute;
+  z-index: -1;
+  left: 38%;
+  bottom: 0%;
+  width: 120px;
+  height: 80px;
+}
+#dog1 {
+  position: absolute;
+  z-index: -1;
+  left: 38%;
+  bottom: 8%;
+  width: 25%;
+}
+#nojs {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  font-weight: 100;
+  font-size: 60px;
+  background-color: black;
+  top: 0;
+  left: 0;
+}
+#nojs > h2 {
+  width: 80%;
+}

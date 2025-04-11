@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
   <head>
     <meta charset="UTF-8" />
@@ -10,37 +10,40 @@
 
     <section>
       <h2>Generator hasła</h2>
-      <input id="haslo" placeholder="Wpisz tekst" />
-      <button onclick="generuj()">Generuj</button>
-      <p id="wynik1"></p>
+      <input id="passwordInput" placeholder="Wpisz tekst" />
+      <button onclick="generatePassword()">Generuj</button>
+      <p id="passwordResult"></p>
     </section>
 
     <section>
       <h2>Weryfikacja zdania</h2>
-      <input id="zdanie" placeholder="Wpisz zdanie" />
-      <button onclick="weryfikuj()">Sprawdź</button>
-      <p id="wynik2"></p>
+      <input id="sentenceInput" placeholder="Wpisz zdanie" />
+      <button onclick="validateSentence()">Sprawdź</button>
+      <p id="sentenceResult"></p>
     </section>
 
     <section>
       <h2>Podmiana słowa</h2>
-      <input id="tekst" placeholder="Wpisz zdanie" />
-      <input id="slowo" placeholder="Wpisz słowo" />
-      <button onclick="podmien()">Zamień</button>
-      <p id="wynik3"></p>
+      <input id="textInput" placeholder="Wpisz zdanie" />
+      <input id="wordInput" placeholder="Wpisz słowo" />
+      <button onclick="replaceWord()">Zamień</button>
+      <p id="replaceResult"></p>
     </section>
 
     <section>
       <h2>Analiza e-maili</h2>
-      <input id="emaile" placeholder="Podaj e-maile oddzielone przecinkami" />
-      <button onclick="analizuj()">Analizuj</button>
-      <p id="wynik4"></p>
+      <input
+        id="emailInput"
+        placeholder="Podaj e-maile oddzielone przecinkami"
+      />
+      <button onclick="analyzeEmails()">Analizuj</button>
+      <p id="emailResult"></p>
     </section>
 
     <section>
       <h2>Automatyczne formatowanie zdania</h2>
       <form action="zadanie5.php" method="POST">
-        <input name="zadanie" id="zadanie" placeholder="Wpisz zdanie" />
+        <input name="sentence" id="sentence" placeholder="Wpisz zdanie" />
         <button type="submit">Formatuj</button>
       </form>
     </section>
@@ -48,56 +51,56 @@
     <section>
       <h2>Usuwanie słów zakazanych</h2>
       <form action="zadanie6.php" method="POST">
-        <input name="zadanie" id="zadanie" placeholder="Wpisz zdanie" />
+        <input name="sentence" id="sentence" placeholder="Wpisz zdanie" />
         <button type="submit">Usuń słowa</button>
       </form>
-      <p>$slowa_zakazane = ["jabłko", "banan"];</p>
+      <p>Zakazane słowa: ["jabłko", "banan"]</p>
     </section>
 
     <script>
-      function generuj() {
-        let tekst = document.getElementById("haslo").value.trim();
-        let wynik = tekst.replace(/\s/g, "").toUpperCase().substring(0, 8);
-        if (wynik.length < 8) {
-          let brakujaceZnaki = 8 - wynik.length;
-          for (let i = 0; i < brakujaceZnaki; i++) {
-            wynik += Math.floor(Math.random() * 10);
-          }
+      // Generowanie hasła
+      function generatePassword() {
+        let input = document.getElementById("passwordInput").value.trim();
+        let password = input.replace(/\s/g, "").toUpperCase().substring(0, 8);
+        while (password.length < 8) {
+          password += Math.floor(Math.random() * 10);
         }
-        document.getElementById("wynik1").textContent = wynik;
+        document.getElementById("passwordResult").textContent = password;
       }
 
-      function weryfikuj() {
-        let zdanie = document.getElementById("zdanie").value.trim();
-        let czyPierwszaDuze = zdanie[0] === zdanie[0]?.toUpperCase();
-        let czyKonczyWykrzyknikiem = zdanie.endsWith("!");
-        let wynik =
-          czyPierwszaDuze && czyKonczyWykrzyknikiem
+      // Weryfikacja zdania
+      function validateSentence() {
+        let sentence = document.getElementById("sentenceInput").value.trim();
+        let isFirstLetterUppercase = sentence[0] === sentence[0]?.toUpperCase();
+        let endsWithExclamation = sentence.endsWith("!");
+        let result =
+          isFirstLetterUppercase && endsWithExclamation
             ? "Poprawne :)"
             : "Niepoprawne :(";
-        document.getElementById("wynik2").textContent = wynik;
+        document.getElementById("sentenceResult").textContent = result;
       }
 
-      function podmien() {
-        let tekst = document.getElementById("tekst").value;
-        let slowo = document.getElementById("slowo").value;
-        let nowyTekst = tekst.replaceAll(slowo, "[REDACTED]");
-        let wynik = nowyTekst.split(" ").join("-");
-        document.getElementById("wynik3").textContent = wynik;
+      // Podmiana słowa w zdaniu
+      function replaceWord() {
+        let text = document.getElementById("textInput").value;
+        let word = document.getElementById("wordInput").value;
+        let updatedText = text
+          .replaceAll(word, "[REDACTED]")
+          .split(" ")
+          .join("-");
+        document.getElementById("replaceResult").textContent = updatedText;
       }
 
-      function analizuj() {
-        let emaile = document.getElementById("emaile").value.split(", ");
-        let wynik = "";
-        for (let i = 0; i < emaile.length; i++) {
-          let email = emaile[i].trim();
-          if (email.includes("@gmail.com")) {
-            wynik += email.toUpperCase() + "; ";
-          } else {
-            wynik += email + "; ";
-          }
-        }
-        document.getElementById("wynik4").textContent = wynik.slice(0, -2);
+      // Analiza e-maili
+      function analyzeEmails() {
+        let emails = document.getElementById("emailInput").value.split(",");
+        let result = emails
+          .map((email) => email.trim())
+          .map((email) =>
+            email.includes("@gmail.com") ? email.toUpperCase() : email
+          )
+          .join("; ");
+        document.getElementById("emailResult").textContent = result;
       }
     </script>
   </body>

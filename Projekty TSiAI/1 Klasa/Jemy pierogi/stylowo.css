@@ -1,78 +1,99 @@
-body{
-    background-color: black;
-    margin: auto;
-    color: white;
-    text-align: center;
-    width: 152.9051987767584vh;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-header{
-    background-image: url("baner.png");
-    width: 152.9051987767584vh;
-    height: 9.174311926605505vh;
-    font-size: 20px;
-    border-radius: 10px;
-}
-#wrapper{
-    height: 60vh;
-}
-main{
-    background-color: #1d2d44;
-    border-radius: 10px;
-    width: 69%;
-    float: left;
-    height: inherit;
-}
-aside{
-    background-color: #748cab;
-    float: right;
-    height: inherit;
-    width: 30%;
-    border-radius: 10px;
+/* Główne style dla projektu "Jemy Pierogi" */
 
+body {
+  background-color: #000; /* Czarny kolor tła */
+  margin: 0 auto;
+  color: #fff; /* Biały kolor tekstu */
+  text-align: center;
+  width: 100%; /* Poprawiono szerokość na 100% */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
-footer{
-    background-color: #1d2d44;
-    clear: both;
-    border-radius: 10px;
-    padding: 1vh;
-    margin-top: 2vh;
+
+header {
+  background-image: url("baner.png");
+  background-size: cover; /* Dopasowanie obrazu do nagłówka */
+  width: 100%; /* Poprawiono szerokość na 100% */
+  height: 10vh;
+  font-size: 20px;
+  border-radius: 10px;
 }
-nav{
-    background-color: #1d2d44;
-    border-radius: 10px;
+
+#wrapper {
+  display: flex; /* Użyto flexboxa dla lepszego układu */
+  height: 60vh;
 }
-nav li{
-    display: inline-block;
-    width: 20%;
-    background-color: #3e5c76;
-    height: 30px;
-    padding-top: 2vh;
-    border-radius: 10px;
+
+main {
+  background-color: #1d2d44;
+  border-radius: 10px;
+  width: 70%; /* Zmieniono szerokość na 70% */
+  margin-right: 1%;
+  height: 100%;
+  padding: 1rem;
 }
-nav li:hover{
-    display: inline-block;
-    width: 20%;
-    background-color: #94a3b1;
-    height: 30px;
-    padding-top: 2vh;
-    border-radius: 10px;
+
+aside {
+  background-color: #748cab;
+  width: 29%; /* Zmieniono szerokość na 29% */
+  border-radius: 10px;
+  padding: 1rem;
 }
-a{
-    color: white;
-    text-decoration: none;
+
+footer {
+  background-color: #1d2d44;
+  clear: both;
+  border-radius: 10px;
+  padding: 1vh;
+  margin-top: 2vh;
+  text-align: center;
 }
-form{
-    line-height: 1.5;
-    text-align: center;
+
+nav {
+  background-color: #1d2d44;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
-p{
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-    text-align: center;
-    margin: auto;
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
 }
-img{
-    width: 250px;
-    height: 150px;
+
+nav li {
+  display: inline-block;
+  width: 20%;
+  background-color: #3e5c76;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+nav li:hover {
+  background-color: #94a3b1;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+form {
+  line-height: 1.5;
+  text-align: center;
+}
+
+p {
+  padding: 2vh 0;
+  text-align: center;
+  margin: auto;
+}
+
+img {
+  width: 100%; /* Dopasowanie obrazów do kontenera */
+  height: auto;
+  border-radius: 10px;
 }

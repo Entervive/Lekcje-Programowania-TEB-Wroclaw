@@ -1,63 +1,110 @@
-body{
-       background-color: lightsalmon;
+/* Stylizacja ogólna */
+body {
+  background-color: lightsalmon;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-p{
-       text-align: center;
-       color: white;
-}
-a{
-       text-decoration: none;
-       text-align: center;
-       color: white;
-}
-aside{
-       height: 36rem;
-       background-color: chocolate;
-       font-size: medium;
-}
-#LEFT{
-       float: left;
-       width: 20%;
-}
-#RIGHT{
-       float: right;
-       width: 20%;
-}
-main{
-       background-color: coral;
-       width: 55%;
-       float: left;
-       margin-left: 2rem;
-}
-footer{
-       padding: 0.3rem;
-       clear: both;
-       background-color: brown;
-}
-h1{
-       color: white;
-       font-weight: bold;
-       text-align: center;
-}
-article, header{
-       background-color: rgba(255, 255, 255, 15%);
-       margin: 0.5rem;
-       text-align: center;
-}
-table{
-       border: 1px dotted white;
-       margin: auto;
 
+/* Stylizacja tekstu */
+p {
+  text-align: center;
+  color: white;
 }
-img{
-       width: 150px;
-       height: 100px;
+
+a {
+  text-decoration: none;
+  color: white;
 }
-form{
-       color: white;
-       margin: auto;
+
+h1 {
+  color: white;
+  font-weight: bold;
+  text-align: center;
 }
-.nwm{
-       height: 30px;
-       width: 300px;
+
+/* Stylizacja paneli bocznych */
+aside {
+  height: 36rem;
+  background-color: chocolate;
+  font-size: medium;
+  padding: 1rem;
+}
+
+#left-panel {
+  float: left;
+  width: 20%;
+}
+
+#right-panel {
+  float: right;
+  width: 20%;
+}
+
+/* Stylizacja głównej sekcji */
+main {
+  background-color: coral;
+  width: 55%;
+  float: left;
+  margin-left: 2rem;
+  padding: 1rem;
+}
+
+/* Stylizacja tabeli */
+table {
+  border: 1px dotted white;
+  margin: auto;
+  width: 100%;
+}
+
+td {
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Stylizacja obrazków */
+img {
+  width: 150px;
+  height: 100px;
+  border-radius: 8px;
+}
+
+/* Stylizacja formularza */
+form {
+  color: white;
+  margin: auto;
+  text-align: left;
+}
+
+form input,
+form select {
+  margin-bottom: 0.5rem;
+  width: 100%;
+}
+
+form input[type="submit"] {
+  background-color: white;
+  color: chocolate;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background-color: coral;
+}
+
+/* Stylizacja audio */
+.audio-player {
+  height: 30px;
+  width: 300px;
+}
+
+/* Stylizacja stopki */
+footer {
+  padding: 0.3rem;
+  clear: both;
+  background-color: brown;
+  text-align: center;
+  color: white;
 }

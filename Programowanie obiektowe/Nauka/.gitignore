@@ -1,0 +1,5 @@
+# Ignoruj wszystkie pliki .py
+*.py
+
+# Wyjątek dla pliku Zadania.ipynb
+!uczen.ipynb

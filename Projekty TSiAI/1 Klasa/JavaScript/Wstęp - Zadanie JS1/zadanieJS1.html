@@ -1,160 +1,174 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ćwiczenia z JS</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ćwiczenia z JavaScript</title>
     <style>
-        html {
-            background-color: rgb(255, 220, 176);
-            font-size: large;
-            padding: 20px;
-            text-align: center;
-        }
+      html {
+        background-color: rgb(255, 220, 176);
+        font-size: large;
+        padding: 20px;
+        text-align: center;
+      }
 
-        section {
-            background-color: rgb(250, 184, 103);
-            margin: 20px;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 5px 5px 2px rgb(205, 134, 49);
-        }
+      section {
+        background-color: rgb(250, 184, 103);
+        margin: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 5px 5px 2px rgb(205, 134, 49);
+      }
 
-        section li {
-            text-align: left;
-            margin-left: 33%;
-        }
+      section li {
+        text-align: left;
+        margin-left: 33%;
+      }
+
+      .klasa {
+        color: black;
+        background-color: white;
+        width: 500px;
+        height: 200px;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Ćwiczenia z JavaScript</h1>
+      <h1>Ćwiczenia z JavaScript</h1>
     </header>
     <main>
-        <section id="wstep">
-            <h2>Wstęp</h2>
-            <p>Wykonaj poniższe ćwiczenia w tym dokumencie: albo pisząc skrypt lokalnie w znaczniku &lt;script&gt;, albo podłączając skrypt zewnętrznie. Pamiętaj o komentarzach objaśniających działanie programu. Skrypty "podepnij" do przycisków poprzez "onclick()" (w pierwszym zadaniu jest przykład jak to zrobić).</p>
-        </section>
-        <section id="cw1">
-            <h2>Zadanie 1.</h2>
-            <p>Wyświetl w konsoli przeglądarki napis "Siemanko".</p>
-            <!--skrypt do zadań możesz wpisać w znaczniku <script> zaraz obok zadania, albo umieścić go w pliku zewnętrznym-->
-            <script>
-                function zad1() {
-                    console.log("Siemanko")
-                    /*Tu umieść swój kod. Pamiętaj, że każda funkcja musi mieć unikalną nazwę (np. zad1, zad2, zad3...)*/
-                }
-            </script>
-            <!--to jest przycisk, który uruchomi funkcję "zad1()"-->
-            <button onclick="zad1()">Wykonaj</button>
-        </section>
-        <section id="cw2">
-            <h2>Zadanie 2.</h2>
-            <p>Przypisz do dwóch stałych wartości odpowiednio 20 i 23. W konsoli przeglądarki wyświetl wyniki dodawania, odejmowania, mnożenia i dzielenia tych stałych</p>
-            <button onclick="zad2()">Kliknij</button>
-            <script>
-                function zad2(){
-                    const num1 = 20;
-                    const num2 = 23;
+      <section id="wstep">
+        <h2>Wstęp</h2>
+        <p>
+          Ćwiczenia stworzone przez pana Adama Kwiatkowskiego, aby pomóc uczniom
+          klasy 1 Technikum Programistycznego nauczyć się podstaw JavaScriptu. W
+          każdym zadaniu znajduje się przycisk uruchamiający funkcję z kodem.
+          Kod zawiera komentarze, które tłumaczą jego działanie.
+        </p>
+      </section>
 
-                    console.log(20+23)
-                    console.log(20-23)
-                    console.log(20*23)
-                    console.log(20/23)
-                }
-            </script>
-        </section>
-        <section id="cw3">
-            <h2>Zadanie 3.</h2>
-            <p>Przypisz do dwó
-                ch stałych dwie wartości liczbowe, pobrane od użytkownika, przy pomocy prompt("Podaj liczbę..."). Napisz skrypt, który wypisze w konsoli przeglądarki treść "Większa liczba to: " i wskaże właściwą stałą.</p>
-            <button onclick="zad3()">Tekst</button>
+      <section id="cw1">
+        <h2>Zadanie 1</h2>
+        <p>Wyświetl w konsoli przeglądarki napis "Siemanko".</p>
         <script>
-            function zad3(){
-                const x = prompt("Podaj liczbę numer 1")
-                const y = prompt("Podaj drugą liczbę")
-
-                if(x > y){
-                    console.log(x + " Jest większą liczbą od " + y)
-                }
-                else{
-                    console.log(y + " Jest większą liczbą od " + x)
-                }
-            }
+          function zad1() {
+            // Wypisujemy tekst "Siemanko" w konsoli przeglądarki
+            console.log("Siemanko");
+          }
         </script>
-        </section>
-        <section id="cw4">
-            <h2>Zadanie 4.</h2>
-            <p>Przypisz do trzech stałych trzy różne wartości liczbowe i sprawdź, która z nich jest największa - największą zwróć w okienku typu alert().</p>
-            <button onclick="zad4()">Pomarańcze?</button>
-        </section>
+        <button onclick="zad1()">Wykonaj</button>
+      </section>
+
+      <section id="cw2">
+        <h2>Zadanie 2</h2>
+        <p>
+          Dodaj, odejmij, pomnóż i podziel dwie stałe: 20 i 23. Wyniki pokaż w
+          konsoli.
+        </p>
         <script>
-            function zad4(){
-                const x = 2
-                const y = 3
-                const z = 4
+          function zad2() {
+            const num1 = 20;
+            const num2 = 23;
 
-                if(x > y && x > z){
-                    alert("Liczba jest największa: " + x)
-                }
-                if(y > x && y > z){
-                    alert("Liczba jest największa: " + y)
-                }
-                if(z > y && z > x){
-                    alert("Liczba jest największa: " + z)
-                }
-            }
+            // Wypisujemy wyniki operacji matematycznych
+            console.log("Dodawanie: ", num1 + num2);
+            console.log("Odejmowanie: ", num1 - num2);
+            console.log("Mnożenie: ", num1 * num2);
+            console.log("Dzielenie: ", num1 / num2);
+          }
         </script>
-        <section id="cw5">
-            <h2>Zadanie 5.</h2>
-            <p>Stwórz pod tym poleceniem nowy blok &lt;div&gt;, któremu nadasz id = "zadanie5" i (przy pomocy zadanie5.style.'właściwość' oraz zadanie5.style.innerText) zmienisz jego:
-                <ul>
-                    <li>szerokość = 400px;</li>
-                    <li>wysokość = 200px;</li>
-                    <li>kolor tła = #069420</li>
-                    <li>margines wewnętrzny = 20px;</li>
-                    <li>tekst wewnętrzny = "Witam w mojej kuchni".</li>
-                </ul>
-            </p>
-            <button onclick="zad5()">Kolor istnieje?!</button>
-            <div id="zadanie5"></div>
-            <script>
-                function zad5(){
-                    zadanie5 = document.getElementById("zadanie5");
-                    zadanie5.style.width = "400px";
-                    zadanie5.style.height = "200px";
-                    zadanie5.style.backgroundColor = "#069420";
-                    zadanie5.style.margin = "20px";
-                    zadanie5.innerText = "Witam w mojej kuchni";
-                }
-            </script>
-        </section>
-        <section id="cw6">
-            <h2>Zadanie 6.*</h2>
-            <p>Utwórz przycisk, który będzie zmieniał swój wygląd (np. kolor, rozmiar, itd.) między jednym stylem a drugim po jego naciśnięciu. Wykorzystaj do tego celu warunek sprawdzający, czy obiekt posiada klasę (obiekt.classList.contains("klasa")).</p>
-            <button id="przycisk" class="klasa" onclick="zad6()">Pomarańcze? Kolor!</button>
-            <script>
-                function zad6(){
-                    obiekt = document.getElementById("przycisk");
+        <button onclick="zad2()">Kliknij</button>
+      </section>
 
-                    if(obiekt.classList.contains("klasa")){
-                        obiekt.classList.remove("klasa");
-                    }
-                    else{
-                        obiekt.classList.add("klasa");
-                    }
-                }
-            </script>
-            <style>
-                .klasa{
-                    color: black;
-                    background-color: white;
-                    width: 500px;
-                    height: 200px;
-                }
-            </style>
-        </section>
+      <section id="cw3">
+        <h2>Zadanie 3</h2>
+        <p>
+          Pobierz dwie liczby od użytkownika i wypisz, która z nich jest
+          większa.
+        </p>
+        <script>
+          function zad3() {
+            // Pobieramy dane od użytkownika
+            const x = parseFloat(prompt("Podaj pierwszą liczbę"));
+            const y = parseFloat(prompt("Podaj drugą liczbę"));
+
+            // Sprawdzamy, która liczba jest większa
+            if (x > y) {
+              console.log("Większa liczba to: " + x);
+            } else if (y > x) {
+              console.log("Większa liczba to: " + y);
+            } else {
+              console.log("Obie liczby są równe: " + x);
+            }
+          }
+        </script>
+        <button onclick="zad3()">Sprawdź</button>
+      </section>
+
+      <section id="cw4">
+        <h2>Zadanie 4</h2>
+        <p>Porównaj trzy liczby i pokaż największą z nich w okienku alert().</p>
+        <script>
+          function zad4() {
+            const x = 2;
+            const y = 3;
+            const z = 4;
+
+            // Sprawdzamy, która liczba jest największa
+            let max = x;
+            if (y > max) max = y;
+            if (z > max) max = z;
+
+            alert("Największa liczba to: " + max);
+          }
+        </script>
+        <button onclick="zad4()">Sprawdź największą</button>
+      </section>
+
+      <section id="cw5">
+        <h2>Zadanie 5</h2>
+        <p>Stwórz element div, który po kliknięciu zmienia wygląd.</p>
+        <script>
+          function zad5() {
+            // Pobieramy element div po jego ID
+            const zadanie5 = document.getElementById("zadanie5");
+
+            // Zmieniamy jego wygląd i tekst
+            zadanie5.style.width = "400px";
+            zadanie5.style.height = "200px";
+            zadanie5.style.backgroundColor = "#069420";
+            zadanie5.style.padding = "20px";
+            zadanie5.innerText = "Witam w mojej kuchni";
+          }
+        </script>
+        <button onclick="zad5()">Kliknij, aby zmienić wygląd</button>
+        <div id="zadanie5"></div>
+      </section>
+
+      <section id="cw6">
+        <h2>Zadanie 6*</h2>
+        <p>
+          Przycisk zmienia swój wygląd po kliknięciu – na zmianę dodawana i
+          usuwana jest klasa CSS.
+        </p>
+        <script>
+          function zad6() {
+            // Pobieramy przycisk
+            const przycisk = document.getElementById("przycisk");
+
+            // Sprawdzamy, czy ma klasę "klasa"
+            if (przycisk.classList.contains("klasa")) {
+              przycisk.classList.remove("klasa");
+            } else {
+              przycisk.classList.add("klasa");
+            }
+          }
+        </script>
+        <button id="przycisk" class="klasa" onclick="zad6()">
+          Zmień wygląd
+        </button>
+      </section>
     </main>
-    
-</body>
+  </body>
 </html>

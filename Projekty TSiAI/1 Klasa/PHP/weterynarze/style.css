@@ -1,80 +1,50 @@
 body {
-    background-color: yellow;
-    text-align: center;
-    font-family: sans-serif;
+  background-color: #f9f871;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
+
 h1 {
-    font-size: 3em;
+  font-size: 2.5em;
+  margin-top: 20px;
 }
-input[type=text] {
-    border-color: black;
-    color: white;
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"] {
+  width: 40%;
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border: 2px solid #000;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
 }
-input[type=text] {
-    width: 40%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    background-color: #000000;
-    color: white;
+
+input[type="submit"] {
+  background-color: #333;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
 }
-input[type=email] {
-    width: 40%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    background-color: #000000;
-    color: white;
+
+input[type="submit"]:hover {
+  background-color: #555;
 }
-input[type=number] {
-    width: 40%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    background-color: #000000;
-    color: white;
-}
-input[type=date] {
-    width: 40%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    background-color: #000000;
-    color: white;
-}
-input:focus {
-    border: 3px solid white;
-}
-input[type=button], input[type=submit], input[type=reset] {
-    background-color: #000000;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-input[type=button]:hover, input[type=submit]:hover, input[type=reset]:hover {
-    background-color: gray;
-    border: none;
-    color: white;
-    padding: 16px 32px;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-p {
-    font-weight: 900;
-    font-size: 1em;
-}
+
 div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 15px;
-    font-size: 1.3em;
+  margin: 20px auto;
+  padding: 20px;
+  font-size: 1.2em;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

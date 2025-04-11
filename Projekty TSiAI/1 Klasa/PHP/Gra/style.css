@@ -1,5 +1,53 @@
+/* Stylizacja dla całej strony */
 body {
-    color: black;
-    text-align: center;
-    font-weight: bolder;
+  color: #333; /* Zmieniono na ciemniejszy kolor dla lepszej czytelności */
+  text-align: center;
+  font-weight: bold;
+  font-family: "Kanit", sans-serif; /* Dodano font z Google Fonts */
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9; /* Dodano tło */
+}
+
+/* Nagłówek strony */
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+
+/* Menu nawigacyjne */
+menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  margin: 0 10px;
+}
+
+menu a:hover {
+  text-decoration: underline;
+}
+
+/* Główna treść */
+main {
+  padding: 20px;
+}
+
+article {
+  margin: 20px auto;
+  max-width: 800px;
+  text-align: left;
+}
+
+/* Stopka */
+footer {
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
 }

@@ -1,12 +1,16 @@
 <?php
-if (isset($_POST['zadanie'])) {
-    $zdanie = $_POST['zadanie'];
+// Sprawdzenie, czy formularz został wysłany
+if (isset($_POST['sentence'])) {
+    $sentence = $_POST['sentence'];
 
-    $slowa_zakazane = ["jabłko", "banan"];
+    // Lista słów zakazanych
+    $forbiddenWords = ["jabłko", "banan"];
 
-    foreach ($slowa_zakazane as $slowo) {
-        $zdanie = str_replace($slowo, '***', $zdanie);
+    // Zamiana słów zakazanych na ***
+    foreach ($forbiddenWords as $word) {
+        $sentence = str_replace($word, '***', $sentence);
     }
 
-    echo $zdanie;
+    // Wyświetlenie przetworzonego zdania
+    echo $sentence;
 }

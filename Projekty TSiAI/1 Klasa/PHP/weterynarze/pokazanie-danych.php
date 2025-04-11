@@ -1,42 +1,52 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl-PL">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Weterynarz - Twoje Dane</title>
 </head>
+
 <body>
     <p>
-    <?php
+        <?php
+        // Pobranie danych z formularza
         $imie = $_POST['imie'];
         $nazwisko = $_POST['nazwisko'];
-        $numer = $_POST['numer'];
-        $mail = $_POST['mail'];
-        $imie_z = $_POST['imie_z'];
+        $telefon = $_POST['telefon'];
+        $email = $_POST['email'];
+        $imieZwierzaka = $_POST['imie_zwierzaka'];
         $gatunek = $_POST['gatunek'];
-        $data = $_POST['data'];
+        $dataWizyty = $_POST['data_wizyty'];
 
-        $plik_na_opinie_post = fopen("wizyty.txt", "a");
-        $opinie_do_zapisania = ("<div>\n Imie i Nazwisko: $imie $nazwisko \nNumer telefonu: $numer \nE-Mail: $mail \nImie Zwierzaka: $imie_z \nGatunek: $gatunek \nData Wizyty: $data \n </div>") . date('d/m/y H:i:s') . ("\n");
+        // Zapis danych do pliku
+        // Otworzenie pliku lub dodanie do istniejącego
+        $plikWizyt = fopen("wizyty.txt", "a");
+        // Dane do zapisania w pliku
+        $daneDoZapisania = "Imię i Nazwisko: $imie $nazwisko, Telefon: $telefon, E-Mail: $email, Imię Zwierzaka: $imieZwierzaka, Gatunek: $gatunek, Data Wizyty: $dataWizyty\n";
+        // Zapisanie danych do pliku
+        fwrite($plikWizyt, $daneDoZapisania);
+        // Zamknięcie pliku
+        fclose($plikWizyt);
 
-        fwrite($plik_na_opinie_post, $opinie_do_zapisania);
-        fclose($plik_na_opinie_post);
-
-        echo("Oto twoje dane<br><br>");
-
-        echo("Imie i Nazwiisko: $imie $nazwisko <br>");
-        echo("Numer telefonu: $numer <br>");
+        // Wyświetlenie danych
+        echo "<strong>Oto Twoje dane:</strong><br><br>";
+        echo "Imię i Nazwisko: $imie $nazwisko<br>";
+        echo "Numer telefonu: $telefon<br>";
+        // Sprawdzenie poprawności maila
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            echo "E-Mail: Nie podałeś maila lub jest nie prawidłowy<br>";
+            echo "E-Mail: Nie podałeś maila lub jest nieprawidłowy<br>";
         } else {
-            echo("E-Mail: $mail <br>");
+            echo "E-Mail: $email<br>";
         }
-        echo("Imie Zwierzaka: $imie_z <br>");
-        echo("Gatunek: $gatunek <br>");
-        echo("Data Wizyty: $data <br>");
-    ?>
+        echo "Imię Zwierzaka: $imieZwierzaka<br>";
+        echo "Gatunek: $gatunek<br>";
+        echo "Data Wizyty: $dataWizyty<br>";
+        ?>
     </p>
+    <!-- Link do powrotu do formularza -->
     <a href="wizyty.php">Pokaż wszystkie wizyty</a>
 </body>
+
 </html>

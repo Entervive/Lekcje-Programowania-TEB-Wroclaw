@@ -15,7 +15,11 @@
 }
 
 body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   display: flex;
@@ -147,7 +151,9 @@ button:active {
   flex-direction: column;
   gap: 1rem;
   border: 1px solid #e2e8f0;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
   height: fit-content;
   width: 35vw;
   max-width: 100%;

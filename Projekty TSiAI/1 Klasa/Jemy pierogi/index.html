@@ -1,43 +1,68 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl-PL">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ogólnoświatowy Turniej Jedzenia Pierogoów Na Czas</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="stylowo.css">
-</head>
-<body>
+  <head>
+    <!-- Ustawienie kodowania znaków i responsywności -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ogólnoświatowy Turniej Jedzenia Pierogów Na Czas</title>
+    <!-- Dodanie zewnętrznej biblioteki animacji -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- Podłączenie pliku CSS -->
+    <link rel="stylesheet" href="stylowo.css" />
+  </head>
+  <body>
+    <!-- Nagłówek strony -->
     <header>
-        <p>V Ogólnoświatowy Turniej Jedzenia Pierogoów Na Czas</p>
+      <p>V Ogólnoświatowy Turniej Jedzenia Pierogów Na Czas</p>
     </header>
+    <!-- Nawigacja z odnośnikami do podstron -->
     <nav>
-        <ul>
-            <a href="index.html"><li class="animate__animated animate__backInDown" >Strona Główna</li></a>
-            <a href="historia.html"><li class="animate__animated animate__backInLeft">Historia</li></a>
-            <a href="uczestnicy.html"><li class="animate__animated animate__backInUp">Uczestnicy</li></a>
-            <a href="galeria.html"><li class="animate__animated animate__backInRight">Galeria</li></a>
-        </ul>
+      <ul>
+        <a href="index.html"
+          ><li class="animate__animated animate__backInDown">
+            Strona Główna
+          </li></a
+        >
+        <a href="historia.html"
+          ><li class="animate__animated animate__backInLeft">Historia</li></a
+        >
+        <a href="uczestnicy.html"
+          ><li class="animate__animated animate__backInUp">Uczestnicy</li></a
+        >
+        <a href="galeria.html"
+          ><li class="animate__animated animate__backInRight">Galeria</li></a
+        >
+      </ul>
     </nav>
+    <!-- Główna zawartość strony -->
     <div id="wrapper">
-        <main>
-            <h2 class="animate__animated animate__rollIn">Czy chcesz by twój pieróg był tak wylizany jak paryż w 1944r.<br>
-            Czy uważasz twoją pracę za właściwą?<br>
-            Czy uważasz, że pracowałeś, że przez te wszystkie lata wciągałeś piergoi prawilnie?<br>
-            Jeśli tak! To podaj nam swoje poufne informacje w formularzu obok, a my MOŻE nie sprzedamy ich Chinczykom</h2>
-            <p style="text-align: right;">Autor tekstu: Igor T0ujek</p>
-        </main>
-        <aside>
-            <p>Formularz zgłoszeniowy na Turniej</p>
-            <form class="animate__animated animate__backInRight">
-                Imię: <input type="text" name="imie"><br>
-                Nazwisko: <input type="text" name="nazwisko"><br>
-                Telefon: <input type="number" name="numer"><br>
-                E-mail: <input type="email" name="mail"><br>
-                <input type="submit" value="Wyślij">
-            </form>
-        </aside>
+      <main>
+        <!-- Tekst promujący turniej -->
+        <h2 class="animate__animated animate__rollIn">
+          Czy chcesz, by Twój pieróg był tak wylizany jak Paryż w 1944 roku?<br />
+          Czy uważasz swoją pracę za właściwą?<br />
+          Jeśli tak, zgłoś się do turnieju!
+        </h2>
+        <p style="text-align: right">Autor tekstu: Igor T0ujek</p>
+      </main>
+      <!-- Sekcja boczna z formularzem -->
+      <aside>
+        <p>Formularz zgłoszeniowy na Turniej</p>
+        <form class="animate__animated animate__backInRight">
+          <!-- Pola formularza -->
+          Imię: <input type="text" name="imie" /><br />
+          Nazwisko: <input type="text" name="nazwisko" /><br />
+          Telefon: <input type="number" name="numer" /><br />
+          E-mail: <input type="email" name="mail" /><br />
+          <!-- Przycisk wysyłania -->
+          <input type="submit" value="Wyślij" />
+        </form>
+      </aside>
     </div>
+    <!-- Stopka strony -->
     <footer>Stronę przygotował: Aleksander Staszków</footer>
-</body>
+  </body>
 </html>

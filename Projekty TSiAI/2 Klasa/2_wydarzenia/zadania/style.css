@@ -1,18 +1,94 @@
+/* Styl dla całego dokumentu */
 body {
-    background-color: darkseagreen;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background-color: white;
+  color: #333;
 }
 
-main {
-    color: white;
-    background-color: seagreen;
-    width: 90%;
-    height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    flex-wrap: wrap;
+/* Styl dla nagłówka */
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Styl dla formularza */
+form {
+  margin: 20px auto;
+  width: 300px;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styl dla etykiet */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+/* Styl dla pól tekstowych i hasła */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Styl dla pola wyboru */
+select {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 14px;
+  background-color: #fff;
+}
+
+/* Styl dla przycisków */
+button {
+  width: 100%;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 3px;
+  background-color: green;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Styl dla przycisków podczas najechania myszką */
+button:hover {
+  background-color: darkgreen;
+}
+
+/* Styl dla pól tekstowych podczas podświetlenia */
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+select:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #e6f7ff;
+}
+
+/* Styl dla komunikatów błędów (opcjonalne) */
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: -10px;
+  margin-bottom: 10px;
 }

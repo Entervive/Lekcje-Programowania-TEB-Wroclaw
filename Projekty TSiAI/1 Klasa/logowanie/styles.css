@@ -1,33 +1,31 @@
 body {
-    background-color: #0E4ABB;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    background-color: #0E4ABB; /* Ustawia kolor tła na niebieski */
+    text-align: center; /* Wyrównuje tekst do środka */
+    display: flex; /* Umożliwia elastyczne rozmieszczenie elementów */
+    flex-direction: column; /* Ustawia kierunek rozmieszczenia elementów w kolumnie */
+    align-items: center; /* Wyrównuje elementy do środka w poziomie */
 }
 
-.nieaktywne {
-    display: none;
+.hidden {
+    display: none; /* Ukrywa elementy, które mają tę klasę */
 }
 
-.aktywne {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.visible {
+    display: flex; /* Umożliwia wyświetlanie elementów w elastycznym układzie */
+    flex-direction: column; /* Ustawia kierunek rozmieszczenia elementów w kolumnie */
+    align-items: center; /* Wyrównuje elementy do środka w poziomie */
 }
 
 main {
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
-    align-items: center;
-    height: 35vh;
-    width: 85vw;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    margin-top: 30vh;
-    box-shadow: 6px 6px 10px 5px black;
+    background-color: white; /* Ustawia kolor tła głównego kontenera na biały */
+    display: flex; /* Umożliwia elastyczne rozmieszczenie elementów */
+    flex-direction: column; /* Ustawia kierunek rozmieszczenia elementów w kolumnie */
+    align-content: center; /* Wyrównuje elementy do środka w pionie */
+    flex-wrap: wrap; /* Umożliwia zawijanie elementów, gdy nie mieszczą się w wierszu */
+    align-items: center; /* Wyrównuje elementy do środka w poziomie */
+    height: 35vh; /* Ustawia wysokość kontenera na 35% wysokości widoku */
+    width: 85vw; /* Ustawia szerokość kontenera na 85% szerokości widoku */
+    justify-content: center; /* Wyrównuje elementy do środka w poziomie */
+    margin-top: 30vh; /* Ustawia górny margines na 30% wysokości widoku */
+    box-shadow: 6px 6px 10px 5px black; /* Dodaje cień do kontenera */
 }

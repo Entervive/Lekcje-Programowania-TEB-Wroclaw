@@ -1,37 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styleee.css">
-    <title>Kalkulator kosztów wycieczki</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styleee.css" />
+    <title>Atrakcje Turystyczne</title>
+  </head>
+  <body>
     <header>
-        <img id="logo" src="img/Rr.png"><h1>Kalkulator kosztów wycieczki</h1>
-        <nav>
-            <a href="index.html">Strona główna</a>
-            <a href="kalkulator_kosztow.html">Kalkulator Kosztów</a>
-            <a href="atrakcje.html">Atrakcje Turystyczne</a>
-        </nav>
-        <button class="change" onclick="zmien()"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
-            <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"/></svg>
-        </button>
+      <img id="logo" src="img/Rr.png" alt="Logo strony" />
+      <h1>Atrakcje Turystyczne Wrocławia</h1>
+      <nav>
+        <a href="index.html">Strona główna</a>
+        <a href="kalkulator_kosztow.html">Kalkulator Kosztów</a>
+        <a href="atrakcje.html">Atrakcje Turystyczne</a>
+      </nav>
+      <button class="change" onclick="toggleBackground()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          fill="currentColor"
+          class="bi bi-arrow-clockwise"
+          viewBox="0 0 16 16"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"
+          />
+          <path
+            d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466"
+          />
+        </svg>
+      </button>
     </header>
     <main>
-        <div>
-            <img style="padding-left: 10px;" src="img/1.jpg" onmouseover="pw('<p>Na tym obrazku jest przedstawiony Wrocławskie rynek przy zachodzie słońca</p>')">
-            <img src="img/2.png" onmouseover="pw('<p>Na tym obrazku jest przedstawiony Wrocławskie rynek w ciągu dnia w cieniu</p>')">
-            <img src="img/3.jpg" onmouseover="pw('<p>Na tym obrazku jest przedstawiony Wrocławskie rynek w ciągu dnia</p>')">
-        </div>
-        <div style="margin-left: 9%; width: 40%;">
-            <p style="margin-top: 85px;" id="tekstObok"></p>
-        </div>
+      <div>
+        <img
+          src="img/1.jpg"
+          alt="Rynek Wrocławski"
+          onmouseover="displayTextNextToImage('Rynek Wrocławski przy zachodzie słońca')"
+        />
+        <img
+          src="img/2.png"
+          alt="Rynek Wrocławski"
+          onmouseover="displayTextNextToImage('Rynek Wrocławski w ciągu dnia w cieniu')"
+        />
+        <img
+          src="img/3.jpg"
+          alt="Rynek Wrocławski"
+          onmouseover="displayTextNextToImage('Rynek Wrocławski w ciągu dnia')"
+        />
+      </div>
+      <div style="margin-left: 9%; width: 40%">
+        <p id="tekstObok"></p>
+      </div>
     </main>
-    <footer style="padding-top: 20px;">
-        &copf; Strona Stworzona przez Aleksandra Staszków. 
-    </footer>
-</body>
-<script src="script.js"></script>
+    <footer>&copy; Strona stworzona przez Aleksandra Staszków.</footer>
+    <script src="script.js"></script>
+  </body>
 </html>

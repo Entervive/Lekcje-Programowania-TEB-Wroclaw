@@ -1,13 +1,17 @@
 <?php
-if (isset($_POST['zadanie'])) {
-    $zdanie = $_POST['zadanie'];
+// Sprawdzenie, czy formularz został wysłany
+if (isset($_POST['sentence'])) {
+    $sentence = $_POST['sentence'];
 
-    $zdanie = trim($zdanie);
-    $zdanie = ucfirst(rtrim($zdanie, '.') . '.');
+    // Usunięcie zbędnych spacji i poprawienie formatowania zdania
+    $sentence = trim($sentence);
+    $sentence = ucfirst(rtrim($sentence, '.') . '.');
 
-    $slowa = explode(' ', $zdanie);
-    $ilosc_slow = count($slowa);
+    // Podzielenie zdania na słowa i policzenie ich liczby
+    $words = explode(' ', $sentence);
+    $wordCount = count($words);
 
-    echo $zdanie . "<br>";
-    echo "Liczba słów: " . $ilosc_slow;
+    // Wyświetlenie sformatowanego zdania i liczby słów
+    echo $sentence . "<br>";
+    echo "Liczba słów: " . $wordCount;
 }
