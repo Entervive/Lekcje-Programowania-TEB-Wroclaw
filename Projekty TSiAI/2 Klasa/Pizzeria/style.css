@@ -1,0 +1,41 @@
+body {
+  background-image: url("bg.png");
+  text-align: center;
+  overflow: hidden;
+}
+.logoObroc {
+  transition: all 0.5s ease;
+  filter: sepia(50%);
+  transform: rotate(180deg);
+}
+header {
+  height: 10vh;
+  background-color: rgba(245, 245, 245, 0.75);
+  border: 5px double black;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+aside {
+  width: 20%;
+  height: 75vh;
+  background-color: rgba(245, 245, 245, 0.75);
+  border: 5px double black;
+  float: left;
+}
+main {
+  width: 78%;
+  height: 75vh;
+  background-color: rgba(245, 245, 245, 0.75);
+  border: 5px double black;
+  float: left;
+}
+fieldset {
+  border: 3px solid black;
+}
+footer {
+  clear: both;
+  height: 10vh;
+  background-color: rgba(245, 245, 245, 0.75);
+  border: 5px double black;
+}
