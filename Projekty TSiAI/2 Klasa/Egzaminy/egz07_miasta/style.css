@@ -1,0 +1,53 @@
+* {
+  font-family: Helvetica;
+}
+
+body {
+  background-color: lightsalmon;
+  text-align: center;
+}
+
+.lewyGorny {
+  width: 30%;
+  height: 400px;
+  float: left;
+}
+
+.lewyDolny {
+  width: 30%;
+  height: 100px;
+  clear: left;
+  background-color: darksalmon;
+}
+
+main {
+  background-color: darksalmon;
+  width: 70%;
+  height: 500px;
+  float: right;
+  overflow: auto;
+}
+
+img {
+  width: 100%;
+}
+
+.filtr {
+  font-style: italic;
+  font-size: 200%;
+  padding: 10px;
+}
+
+.filtr:hover {
+  color: ghostwhite;
+}
+
+td {
+  border: 1px dotted maroon;
+}
+
+table {
+  width: 70%;
+  margin: auto;
+  border: 1px dotted maroon;
+}

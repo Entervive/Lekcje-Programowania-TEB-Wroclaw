@@ -27,6 +27,17 @@ Folder zawiera materiały i projekty związane z egzaminami praktycznymi z przed
   - `kw1.jpg`, `kw2.jpg` - Zrzuty ekranu z kwerend.
   - ... (inne pliki projektu).
 
+### `egz07_miasta/`
+
+- **inf3_st25_prak7.pdf** - Treść zadania egzaminacyjnego.
+- **index.php** - Główny plik PHP aplikacji.
+- **wykaz.sql** - Skrypt SQL do utworzenia bazy danych miast.
+- **style.css** - Plik stylów CSS.
+- **baner.jpg**, **mapa_polski.jpg** - Pliki graficzne.
+- **fav.png**, **import.png**, **kw1.png**, **kw2.png**, **kw3.png**, **kw4.png** - Dodatkowe grafiki.
+- **kwerendy.txt** - Przykładowe zapytania SQL.
+- **przegladarka.txt** - Informacje o przeglądarkach.
+
 ### `egz09_galeria/`
 
 - **inf_03_2024_06_09_SG.pdf** - Treść zadania egzaminacyjnego.
