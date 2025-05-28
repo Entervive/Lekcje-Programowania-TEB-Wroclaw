@@ -1,0 +1,43 @@
+1. Stwórz stronę "magazyn.php", na której umieścisz:
+	- blok banera z nagłówkiem pierwszego stopnia o treści "Stany magazynowe"
+	- blok nawigacji, w którym będzie formularz, przesyłający dane metodą jawną do tego samego pliku, a w nim:
+		-- pole edycyjne (z odpowiednią etykietą) na wpisanie nazwy/fragmentu nazwy towaru
+		-- przycisk przesyłający formularz
+	- blok zawartośc głównej, w której będzie wynik działania skryptu
+	- blok stopki z podpisem 
+(2 pkt)
+
+2. Napisz skrypt PHP, który:
+	(2 pkt) - sprawdzi, czy pole na nazwę towaru ma wartość i nie jest puste. Reszta skryptu ma wykonywać się tylko, jeżeli tak jest.
+	(1 pkt) - pobierze z pola formularza nazwę/fragment nazwy towaru i przypisze go do zmiennej
+	(1 pkt) - połączy się z bazą danych "magazyn" na "localhost", użytkownik "root"
+	(2 pkt) - wykona zapytanie - wybierz nazwę, stan magazynowy i cenę towarów, które mają w nazwie podany przez użytkownika fragment, posortowane malejąco, według stanu magazynowego 
+	(1 pkt) - stworzy tabelę, w której w wierszu nagłówkowym będą napisy: "Towar", "Stan magazynowy", "Cena jednostkowa"
+	(2 pkt) - w pętli będzie tworzyć kolejne wiersze tej tabeli, w których będą wypisane kolejne towary, zgodne z zapytaniem
+	(1 pkt) - połączy się z plikiem tekstowym "historia_wyszukiwania.txt", otwierając go w trybie dopisywania
+	(1 pkt) - zapisze w tym pliku, w nowej linijce, każdą wyszukiwaną frazę, którą użytkownik wpisuje do formularza
+	(1 pkt) - zamknie połączenie z plikiem tekstowym
+	(1 pkt) - zamknie połączenie z bazą danych
+(13 pkt)
+
+3. Napisz skrypt JS, który uruchamia się, gdy użytkownik wpisuje cokolwiek (oninput) w polu formularza od nazwy towaru. Skrypt ma:
+	(2 pkt) - pobierać tekst z pola formularza i zachowywać go w zmiennej
+	(1 pkt) - sprawdzać długość tego tekstu i zachowywać ją w zmiennej
+	(1 pkt) - podnosić tę długość do kwadratu
+	(2 pkt) - losować wartość z zakresu <1 - 3> i zachowywać ją w zmiennej
+	(4 pkt) - "długość do kwadratu" ma zostać podstawiona jako jedna z wartości rgb(), w zależności od wylosowanej wartości <1 - 3>.
+		  Jeżeli 1: "długość do kwadratu" ma być wstawiona jako kolor czerwony, jeżeli 2: jako zielony, jeżeli 3: jako niebieski.
+		  Pozostałe dwie wartości ustaw na "255".
+		  (czyli, jeżeli 1: rgb(długość, 255, 255); jeżeli 2: rgb(255, długość, 255); jeżeli 3: (255, 255, długość).
+	(2 pkt) - Treść takiego "utworzonego" koloru ma być wyświetlona w konsoli przeglądarki
+	(1 pkt) - "Utworzony kolor" ma nakładać się jako kolor tła przycisku przesyłającego formularz
+(13 pkt)
+
+Punktacja:
+0 - 13 -> ndst
+14 - 16 -> dop
+17 - 20 -> dst
+21 - 24 -> db
+25 - 28 -> bdb
+
+

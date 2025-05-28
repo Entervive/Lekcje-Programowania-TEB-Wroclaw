@@ -1,0 +1,231 @@
+<script type="text/javascript">
+  var gk_isXlsx = false;
+  var gk_xlsxFileLookup = {};
+  var gk_fileData = {};
+  function filledCell(cell) {
+    return cell !== "" && cell != null;
+  }
+  function loadFileData(filename) {
+    if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+      try {
+        var workbook = XLSX.read(gk_fileData[filename], { type: "base64" });
+        var firstSheetName = workbook.SheetNames[0];
+        var worksheet = workbook.Sheets[firstSheetName];
+
+        // Convert sheet to JSON to filter blank rows
+        var jsonData = XLSX.utils.sheet_to_json(worksheet, {
+          header: 1,
+          blankrows: false,
+          defval: "",
+        });
+        // Filter out blank rows (rows where all cells are empty, null, or undefined)
+        var filteredData = jsonData.filter((row) => row.some(filledCell));
+
+        // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+        var headerRowIndex = filteredData.findIndex(
+          (row, index) =>
+            row.filter(filledCell).length >=
+            filteredData[index + 1]?.filter(filledCell).length
+        );
+        // Fallback
+        if (headerRowIndex === -1 || headerRowIndex > 25) {
+          headerRowIndex = 0;
+        }
+
+        // Convert filtered JSON back to CSV
+        var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+        csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+        return csv;
+      } catch (e) {
+        console.error(e);
+        return "";
+      }
+    }
+    return gk_fileData[filename] || "";
+  }
+</script>
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Aleksander Staszków" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ciekawostki o Antarktydzie</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f4;
+        color: #333;
+      }
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      h1,
+      h2 {
+        color: #005a87;
+      }
+      h1 {
+        text-align: center;
+      }
+      .author {
+        text-align: center;
+        font-style: italic;
+        color: #555;
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+      .image-container {
+        text-align: center;
+        margin: 20px 0;
+      }
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+      }
+      .image-caption {
+        font-size: 0.9em;
+        color: #555;
+        margin-top: 5px;
+      }
+      .references {
+        margin-top: 20px;
+        font-size: 0.9em;
+      }
+      .references a {
+        color: #005a87;
+        text-decoration: none;
+      }
+      .references a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Ciekawostki o Antarktydzie</h1>
+      <p class="author">Autor: Aleksander Staszków</p>
+
+      <h2>Wprowadzenie</h2>
+      <p>
+        Antarktyda to najzimniejszy i najbardziej odizolowany kontynent na
+        Ziemi, fascynujący zarówno naukowców, jak i miłośników przyrody. Pokryta
+        niemal w całości lodem, kryje wiele tajemnic i rekordów, które warto
+        poznać.
+      </p>
+
+      <h2>Najciekawsze fakty</h2>
+      <ul>
+        <li>
+          <strong>Rekord zimna:</strong> Antarktyda jest najzimniejszym miejscem
+          na Ziemi. W 1983 roku na stacji Wostok odnotowano temperaturę -89,2°C.
+        </li>
+        <li>
+          <strong>Życie w ekstremalnych warunkach:</strong> Żyją tam pingwiny,
+          foki oraz dwa gatunki roślin kwitnących: trawa antarktyczna i goździk
+          antarktyczny.
+          <div class="image-container">
+            <img src="pingwiny.png" alt="Pingwiny na Antarktydzie" />
+            <p class="image-caption">
+              Kolonia pingwinów cesarskich na lodowej równinie Antarktydy,
+              pokazująca ich adaptację do ekstremalnych warunków.
+            </p>
+          </div>
+        </li>
+        <li>
+          <strong>Aktywny wulkan:</strong> Mount Erebus to najbardziej na
+          południe położony aktywny wulkan, który erupguje kilka razy dziennie.
+          <div class="image-container">
+            <img src="mountErbus.jpg" alt="Mount Erebus" />
+            <p class="image-caption">
+              Wulkan Mount Erebus na Wyspie Rossa, aktywny wulkan z widocznym
+              kraterem i emisją gazów.
+            </p>
+          </div>
+        </li>
+        <li>
+          <strong>Jezioro Wostok:</strong> Pod 4 km lodu znajduje się największe
+          podlodowcowe jezioro, które może skrywać starożytne mikroorganizmy.
+          <div class="image-container">
+            <img src="jezioroWosk.jpg" alt="Jezioro Wostok" />
+            <p class="image-caption">
+              Schemat jeziora Wostok pod lodem, ilustrujący jego położenie i
+              potencjalne znaczenie naukowe.
+            </p>
+          </div>
+        </li>
+        <li>
+          <strong>Pierwsza ekspedycja:</strong> Roald Amundsen dotarł do Bieguna
+          Południowego w 1911 roku, wyprzedzając ekspedycję Roberta Scotta.
+        </li>
+        <li>
+          <strong>Badania naukowe:</strong> Obserwatorium Neutrino IceCube na
+          stacji Amundsen-Scott bada cząstki subatomowe zwane neutrinami.
+        </li>
+        <li>
+          <strong>Traktat Antarktyczny:</strong> Reguluje pokojowe wykorzystanie
+          kontynentu, zakazując działalności wojskowej i wydobycia surowców.
+        </li>
+        <li>
+          <strong>Dziura ozonowa:</strong> Odkryta w 1985 roku nad Antarktydą,
+          przyczyniła się do globalnych działań na rzecz ochrony warstwy
+          ozonowej.
+        </li>
+      </ul>
+
+      <h2>Znaczenie Antarktydy</h2>
+      <p>
+        Antarktyda odgrywa kluczową rolę w badaniach nad zmianami klimatycznymi.
+        Jej lądolód zawiera 90% światowych zasobów lodu, a jego topnienie
+        mogłoby podnieść poziom mórz o 70 metrów. Badania prowadzone na
+        kontynencie pomagają lepiej zrozumieć procesy zachodzące na Ziemi i w
+        kosmosie.
+      </p>
+
+      <h2>Podsumowanie</h2>
+      <p>
+        Antarktyda to nie tylko kraina lodu, ale także miejsce niezwykłych
+        odkryć naukowych i unikalnego ekosystemu. Ochrona tego kontynentu jest
+        kluczowa dla przyszłości naszej planety.
+      </p>
+
+      <div class="references">
+        <h2>Źródła</h2>
+        <ul>
+          <li>
+            <a
+              href="https://www.cia.gov/the-world-factbook/countries/antarctica/"
+              target="_blank"
+              >CIA World Factbook - Antarctica</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.livescience.com/32610-who-was-the-first-person-to-reach-the-south-pole-.html"
+              target="_blank"
+              >Live Science - South Pole</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.nationalgeographic.com/environment/article/ozone-depletion"
+              target="_blank"
+              >National Geographic - Ozone Hole</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
