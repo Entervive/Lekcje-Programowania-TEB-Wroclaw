@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styl.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Komputery</title>
+  </head>
+  <body>
+    <section id="container">
+      <section id="header">
+        <img src="animacja.gif" alt="Pogotowie komputerowe" />
+      </section>
+      <section id="nav">
+        <a href="index.html">Strona główna</a>
+        <a href="kontakt.html">Kontakt</a>
+      </section>
+      <section id="lewy"></section>
+      <section id="srodkowy">
+        <h2>Kontakt</h2>
+        <table>
+          <tr>
+            <td><label for="imie">Imię: </label></td>
+            <td><input type="text" name="imie" id="imie" /></td>
+          </tr>
+          <tr>
+            <td><label for="nazwisko">Nazwisko: </label></td>
+            <td><input type="text" name="nazwisko" id="nazwisko" /></td>
+          </tr>
+          <tr>
+            <td><label for="email">E-mail: </label></td>
+            <td><input type="email" name="email" id="email" /></td>
+          </tr>
+          <tr>
+            <td><label for="zgloszenie">Zgłoszenie: </label></td>
+            <td>
+              <select name="zgloszenie" id="zgloszenie">
+                <option value="naprawa komputerów">naprawa komputerów</option>
+                <option value="odzyskiwanie danych">odzyskiwanie danych</option>
+                <option value="wirusy">wirusy</option>
+                <option value="konfiguracja LAN">konfiguracja LAN</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="checkbox" name="kopia" id="kopuia" checked /> Wyślij
+              kopię wiadomości
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="button" onclick="reset()" value="Czyść" />
+              <input type="button" onclick="formularz()" value="Wyślij" />
+            </td>
+          </tr>
+        </table>
+        <hr />
+        <p id="tekst"></p>
+      </section>
+      <section id="prawy"></section>
+      <section id="stopka">Autor: &copf; <em>Aleksander Staszków</em></section>
+    </section>
+  </body>
+  <script>
+    function reset() {
+      let imie = (document.getElementById("imie").value = "");
+      let nazwisko = (document.getElementById("nazwisko").value = "");
+      let email = (document.getElementById("email").value = "");
+      let usluga = (document.getElementById("zgloszenie").value =
+        "naprawa komputerów");
+    }
+
+    function formularz() {
+      let paragraf = document.getElementById("tekst");
+      let imie = document.getElementById("imie").value;
+      let nazwisko = document.getElementById("nazwisko").value;
+      let email = document.getElementById("email").value;
+      let usluga = "Usługa: " + document.getElementById("zgloszenie").value;
+
+      paragraf.innerHTML =
+        imie + " " + nazwisko + "<br>" + email.toLowerCase() + "<br>" + usluga;
+    }
+  </script>
+</html>

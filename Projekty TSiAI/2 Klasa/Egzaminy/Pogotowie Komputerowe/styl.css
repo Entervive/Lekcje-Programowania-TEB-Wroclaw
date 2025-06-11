@@ -1,0 +1,57 @@
+body {
+  background-color: #e0f7fa;
+  font-family: Arial;
+  text-align: center;
+}
+
+#container {
+  width: 95%;
+  margin: auto;
+}
+
+#header {
+  background-color: #00838f;
+  height: 200px;
+}
+
+#nav {
+  background-color: #006064;
+  padding: 15px;
+}
+
+#nav > a {
+  color: white;
+  text-decoration: none;
+  font-size: 150%;
+}
+
+#lewy,
+#srodkowy,
+#prawy {
+  height: 350px;
+  width: 33%;
+  float: left;
+}
+
+#stopka {
+  background-color: #006064;
+  color: white;
+  text-align: left;
+  padding: 10px;
+  clear: both;
+}
+
+ul {
+  text-align: left;
+}
+
+input[type="reset"],
+input[type="button"] {
+  background-color: #00838f;
+  color: white;
+}
+
+input[type="reset"]:hover,
+input[type="button"]:hover {
+  color: #80deea;
+}

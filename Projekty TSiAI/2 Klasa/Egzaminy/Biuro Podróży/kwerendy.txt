@@ -1,0 +1,19 @@
+1.
+SELECT z.nazwaPliku, z.podpis
+FROM zdjecia z
+ORDER BY z.podpis ASC;
+
+2.
+SELECT w.cel, w.dataWyjazdu
+FROM wycieczki w
+WHERE w.dostepna = 0;
+
+3.
+SELECT w.cel, w.cena, z.podpis
+FROM wycieczki w
+JOIN zdjecia z
+ON w.zdjecia_id = z.id
+WHERE w.cena > 1300;
+
+4.
+DROP TABLE uzytkownik;

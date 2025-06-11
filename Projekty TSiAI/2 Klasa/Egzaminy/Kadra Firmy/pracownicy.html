@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styl.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nasz zespół</title>
+  </head>
+  <body>
+    <header>
+      <img src="logo.png" alt="logo firmy" />
+    </header>
+    <header>
+      <h1>Nasz zespół</h1>
+    </header>
+    <main>
+      <section id="pracownik">
+        <img src="osoba1.jpg" alt="Dyrektor" />
+        <h2>Krzysztof Dobromilski</h2>
+        <h3>Dyrektor</h3>
+        <p>
+          Firma logistyczna była jego marzeniem. Zrealizował je 10 lat temu.
+          Nasza firma prosperuje dzięki Krzysztofowi
+        </p>
+        <p>telefon: 111222333</p>
+        <h5><a href="mailto:Krzysztof.Dobromilski@firma.pl">Kontakt</a></h5>
+      </section>
+      <section id="pracownik">
+        <img src="osoba2.jpg" alt="Kierownik logistyków" />
+        <h2>Joanna Trojanowska</h2>
+        <h3>Kierownik logistyków</h3>
+        <p>
+          Od początku firmy z nami. Wie jak zorganizować pracę swoich logistyków
+          aby wszystko było na czas
+        </p>
+        <p>telefon: 222333444</p>
+        <h5><a href="mailto:Joanna.Trojanowska@firma.pl">Kontakt</a></h5>
+      </section>
+      <section id="pracownik">
+        <img src="osoba3.jpg" alt="Kadry" />
+        <h2>Ewa Nowak</h2>
+        <h3>Księgowość i kadry</h3>
+        <p>
+          Od lat finanse powierzamy niezawodnej Ewie. Twardą ręką trzyma kasę i
+          dba o wszystkich pracowników
+        </p>
+        <p>telefon: 333444555</p>
+        <h5><a href="mailto:Ewa.Nowak@firma.pl">Kontakt</a></h5>
+      </section>
+    </main>
+    <section id="cytaty">
+      <blockquote id="1" onclick="zmianaCytatu(1)">
+        "Każdego dnia stawiam sobie nieosiągalne wyzwania i próbuję je wykonać"
+        <p>- Krzysztof</p>
+      </blockquote>
+
+      <blockquote id="2" onclick="zmianaCytatu(2)" class="ukryty">
+        "Nie bój się porażek, im więcej ich rozwiążesz, tym szybciej osiągniesz
+        cel"
+        <p>- Joanna</p>
+      </blockquote>
+
+      <blockquote id="3" onclick="zmianaCytatu(3)" class="ukryty">
+        "Niezadowolony pracownik jest dla mnie źródłem nauki"
+        <p>- Ewa</p>
+      </blockquote>
+    </section>
+    <footer>
+      <p>Stronę wykonał: &copf; Aleksander Staszków</p>
+    </footer>
+  </body>
+  <script>
+    function zmianaCytatu(blok) {
+      if (blok != 3) {
+        document.getElementById(blok).classList.add("ukryty");
+        blok++;
+        document.getElementById(blok).classList.remove("ukryty");
+      } else if (blok == 3) {
+        document.getElementById(blok).classList.add("ukryty");
+        blok = 1;
+        document.getElementById(blok).classList.remove("ukryty");
+      }
+    }
+  </script>
+</html>
