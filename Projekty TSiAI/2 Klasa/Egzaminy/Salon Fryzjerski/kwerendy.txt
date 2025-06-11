@@ -1,0 +1,18 @@
+1.
+SELECT k.imie, k.nazwisko, k.stanowisko
+FROM kadra k
+WHERE k.stanowisko = "fryzjer" OR k.stanowisko = "stylista";
+
+2.
+SELECT COUNT(u.id), MAX(u.cena)
+FROM uslugi u
+WHERE u.rodzaj = 2;
+
+3.
+SELECT u.nazwa, k.imie
+FROM kadra k
+JOIN uslugi u
+ON k.id = u.kadra_id;
+
+4.
+ALTER TABLE uslugi ADD COLUMN opinia TEXT;

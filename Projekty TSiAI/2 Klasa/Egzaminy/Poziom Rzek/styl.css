@@ -1,0 +1,62 @@
+* {
+  font-family: Georgia;
+}
+
+header {
+  background-color: navy;
+  color: white;
+  text-align: center;
+  height: 100px;
+  width: 50%;
+  float: left;
+}
+
+nav {
+  background-color: navy;
+  padding: 20px;
+}
+
+.formatowanieTekstu {
+  color: silver;
+  margin: 50px;
+}
+
+.formatowanieTekstu:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+main,
+aside {
+  float: left;
+  background-color: azure;
+  height: 550px;
+}
+
+main {
+  width: 70%;
+}
+
+aside {
+  width: 30%;
+}
+
+footer {
+  clear: both;
+  background-color: navy;
+  color: white;
+}
+
+table {
+  border: 1px solid navy;
+  margin: auto;
+  width: 70%;
+}
+
+tr:hover {
+  background-color: skyblue;
+}
+
+aside > img {
+  width: 90%;
+}

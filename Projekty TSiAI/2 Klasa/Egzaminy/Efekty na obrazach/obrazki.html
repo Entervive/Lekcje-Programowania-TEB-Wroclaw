@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pl-PL">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="styl.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Efekty obrazu</title>
+  </head>
+  <body>
+    <header>
+      <h2>Efekty na obrazach</h2>
+    </header>
+    <section>
+      <img
+        src="pszczola.jpg"
+        alt="pszczola na fioletowym kwiatku"
+        id="pszczola"
+      />
+      <br />
+      <input type="radio" name="filtr" id="blur" />
+      <label for="filtr">Blur</label><br />
+      <input type="radio" name="filtr" id="sepia" />
+      <label for="filtr">Sepia</label><br />
+      <input type="radio" name="filtr" id="negatywny" />
+      <label for="filtr">Negatywny</label><br />
+      <button onclick="pszczola()">Zastosuj</button>
+    </section>
+    <section>
+      <img src="pomarancza.jpg" alt="drzewo pomarańczy" id="pomarancze" /><br />
+      <button onclick="pomarancze('kolory')">Kolorowy</button>
+      <button onclick="pomarancze('czarnoBialy')">Czarno biały</button>
+    </section>
+    <section>
+      <img src="owoce.jpg" alt="Kosz pełen owoców" id="owoce" />
+      <input
+        type="range"
+        min="0"
+        max="100"
+        value="100"
+        name="owoceSuwak"
+        id="owoceSuwak"
+      /><br />
+      <button onclick="owoce()">Zastosuj</button>
+    </section>
+    <section>
+      <img src="zolw.jpg" alt="Żółw w wodzie" id="zolw" />
+      <input
+        type="range"
+        min="0"
+        max="250"
+        name="zolwSuwak"
+        id="zolwSuwak"
+      /><br />
+      <button onclick="zolw()">Zastosuj</button>
+    </section>
+    <footer>
+      <p>
+        <a href="http://www.css.com" target="_blank"
+          >Zobacz inne efekty obrazu</a
+        >
+      </p>
+      <p>Stronę wykonał: &copf; Aleksander Staszków</p>
+    </footer>
+  </body>
+  <script>
+    function pszczola() {
+      let obraz = document.getElementById("pszczola");
+
+      if (document.getElementById("blur").checked) {
+        let liczba = Math.floor(Math.random() * (8 - 4 + 1) + 4);
+        obraz.style.filter = "blur(" + liczba + "px)";
+      } else if (document.getElementById("sepia").checked) {
+        obraz.style.filter = "sepia(100%)";
+      } else if (document.getElementById("negatywny").checked) {
+        obraz.style.filter = "invert(100%)";
+      }
+    }
+
+    function pomarancze(filtr) {
+      let obraz = document.getElementById("pomarancze");
+
+      if (filtr == "czarnoBialy") {
+        obraz.style.filter = "grayscale(100%)";
+      } else if (filtr == "kolory") {
+        obraz.style.filter = "";
+      }
+    }
+
+    function owoce() {
+      let suwak = document.getElementById("owoceSuwak").value;
+      let obraz = document.getElementById("owoce");
+
+      obraz.style.filter = "opacity(" + suwak + "%)";
+    }
+
+    function zolw() {
+      let suwak = document.getElementById("zolwSuwak").value;
+      let obraz = document.getElementById("zolw");
+
+      obraz.style.filter = "brightness(" + suwak + "%)";
+    }
+  </script>
+</html>

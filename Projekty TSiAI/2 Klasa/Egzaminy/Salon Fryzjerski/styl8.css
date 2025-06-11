@@ -1,0 +1,61 @@
+* {
+  font-family: Garamond;
+  text-align: center;
+}
+
+#lewy {
+  float: left;
+  width: 72%;
+}
+
+.lewy-pierwszy {
+  background-color: #795548;
+  font-size: 170%;
+}
+
+.lewy-drugi {
+  height: 400px;
+}
+
+#prawy {
+  float: right;
+  background-color: #bcaaa4;
+  color: #795548;
+  height: 400px;
+  width: 28%;
+}
+
+footer {
+  clear: both;
+  background-color: #795548;
+  color: white;
+  padding: 20px;
+}
+
+table {
+  margin: auto;
+  width: 80%;
+  border: solid 1px #795548;
+}
+
+tr:hover {
+  background-color: sienna;
+  color: white;
+}
+
+h4 {
+  font-size: 220%;
+}
+
+img {
+  padding: 20px;
+  border-radius: 40px;
+}
+
+a {
+  color: white;
+}
+
+input[type="radio"] {
+  margin: 7px;
+}

@@ -1,0 +1,19 @@
+1.
+SELECT n.nazwa, n.opis, n.cena
+FROM nagrody n
+ORDER BY RAND()
+LIMIT 5;
+
+2.
+SELECT *
+FROM nagrody n
+WHERE n.cena BETWEEN 100 AND 1000 AND n.ilosc_sztuk = 2; 
+
+3.
+DELETE FROM nagrody
+WHERE cena = 0 OR cena IS NULL;
+
+4.
+SELECT n.nazwa, n.cena, n.data_dodania
+FROM nagrody n
+WHERE n.data_dodania LIKE "2021-08-%";

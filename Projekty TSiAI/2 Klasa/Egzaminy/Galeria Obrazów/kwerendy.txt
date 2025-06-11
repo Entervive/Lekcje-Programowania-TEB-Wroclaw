@@ -1,0 +1,21 @@
+1.
+SELECT z.tytul, z.plik
+FROM zdjecia z
+WHERE z.polubienia >= 100;
+
+2.
+SELECT z.plik, z.tytul, z.polubienia, a.imie, a.nazwisko
+FROM zdjecia z
+JOIN autorzy a
+ON z.autorzy_id = a.id
+ORDER BY a.nazwisko ASC;
+
+3.
+SELECT a.imie, COUNT(z.autorzy_id)
+FROM autorzy a
+JOIN zdjecia z
+ON a.id = z.autorzy_id
+GROUP BY a.imie;
+
+4.
+ALTER TABLE zdjecia ADD rozmiarPliku INT;

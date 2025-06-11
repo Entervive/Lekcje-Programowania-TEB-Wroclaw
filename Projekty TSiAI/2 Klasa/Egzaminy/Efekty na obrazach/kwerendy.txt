@@ -1,0 +1,19 @@
+1.
+SELECT p.imie, p.pensja
+FROM pracownicy p
+WHERE p.staz < 5;
+
+2.
+SELECT AVG(p.pensja), s.nazwa
+FROM pracownicy p
+JOIN stanowiska s
+ON p.stanowiska_id = s.id
+GROUP BY s.nazwa;
+
+3.
+SELECT p.imie, p.nazwisko, p.pensja
+FROM pracownicy p
+WHERE p.pensja = (SELECT MAX(p.pensja) FROM pracownicy p);
+
+4.
+UPDATE pracownicy p SET p.staz = staz + 1;
