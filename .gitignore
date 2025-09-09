@@ -1,0 +1,71 @@
+# JetBrains IDEs
+.idea/
+*.iml
+*.iws
+out/
+# VS Code
+.vscode/
+.history/
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.log
+*.javadoc
+target/
+bin/
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+pip-wheel-metadata/
+# OS files
+.DS_Store
+Thumbs.db
+# General
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+# Test/coverage
+.coverage
+.tox/
+.nox/
+.cache/
+.pytest_cache/
+# Jupyter
+.ipynb_checkpoints/
+# Maven
+.mvn/
+# Gradle
+.gradle/
+build/
+# Logs
+*.log
+logs/
+# Misc
+*.sqlite3
+*.db
+# Django specific
+*.sqlite3
+db.sqlite3
+media/
+staticfiles/
+*.pot
+*.pyc
+*.pyo
+*.pyd
+*.log
+local_settings.py
+.env
