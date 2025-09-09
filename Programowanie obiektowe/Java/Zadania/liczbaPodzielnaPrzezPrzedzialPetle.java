@@ -16,7 +16,6 @@ public class liczbaPodzielnaPrzezPrzedzialPetle {
                 }
             }
         }
-
-
+        scan.close(); // Zamknięcie skanera
     }
 }
